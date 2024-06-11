@@ -19,7 +19,6 @@ public class Square extends JFrame implements Runnable {
             for (int i = 0; i < 15; i++) {
                 for (int j = 0; j < 25; j++) {
                     g.drawRect(100 + (j * 40), 50+(i*40), 40, 40);
-
                 }
             }
     }
