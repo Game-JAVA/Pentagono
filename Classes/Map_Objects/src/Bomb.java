@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class Bomb {
+public class Bomb {
+
+    private int damage;
+    private int timer;
+    private
 }
