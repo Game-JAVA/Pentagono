@@ -1,4 +1,4 @@
-public class Character extends Move{
+public class Character extends Map_Objects{
     private String name;
     private int health;
     private int score;
@@ -6,7 +6,7 @@ public class Character extends Move{
 
     //Constructor
     public Character(int posX, int posY, int speed) {
-        super(posX, posY, speed);
+
     }
 
     //Methods
