@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 
 public class Main extends javax.swing.JFrame implements Runnable {
 
@@ -141,7 +140,6 @@ public class Main extends javax.swing.JFrame implements Runnable {
 
 
         //Instancie os objetos
-        ArrayList<Map_Objects>Array = new ArrayList<Shape>();
 
         while (true) {
             // Atualiza g
@@ -155,10 +153,6 @@ public class Main extends javax.swing.JFrame implements Runnable {
                 shape.draw(g);
                 shape.move(width, height);
             }*/
-            for (Map_Objects mo: MO){
-                MO.draw(g);
-                MO.move(width,height);
-            }
 
             // Exibe a tela
             getBufferStrategy().show();
