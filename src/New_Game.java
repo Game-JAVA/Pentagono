@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class New_Game extends javax.swing.JFrame implements Runnable {
@@ -68,40 +67,7 @@ private int squareSize;
             }
         }
     }
-    private void formKeyPressed(java.awt.event.KeyEvent evt) {
-        if (evt.getKeyCode() == KeyEvent.VK_A) {
-            keyA = true;
 
-        }
-        else if (evt.getKeyCode() == KeyEvent.VK_D) {
-            keyD = true;
-        }
-        else if (evt.getKeyCode() == KeyEvent.VK_W) {
-            keyW = true;
-        }
-        else if (evt.getKeyCode() == KeyEvent.VK_S) {
-            keyS = true;
-        }
-    }
-    private void formKeyReleased(java.awt.event.KeyEvent evt){
-        if(evt.getKeyCode()==KeyEvent.VK_A)
-        {
-            keyA = false;
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_D)
-        {
-
-            keyD = false;
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_W)
-        {
-            keyW = false;
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_S)
-        {
-            keyS = false;
-        }
-    }
     public void createBoard(Graphics g) {
         g.setColor(Color.MAGENTA);
         g.drawRect(r.nextInt(1000)+80, r.nextInt(600)+30, 20, 20);
