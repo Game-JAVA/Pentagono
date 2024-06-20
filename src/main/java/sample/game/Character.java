@@ -1,15 +1,16 @@
 package sample.game;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
 import static eu.hansolo.tilesfx.tools.Location.CardinalDirection.W;
 
-public class Character {
+
+public class Character extends Map_Objects{
+
     private String name;
     private int health;
     private int score;
     private boolean statusItem;
+
     private int pos_x;
     private int pos_y;
 
@@ -41,6 +42,7 @@ public Character(String name, int pos_x, int pos_y, int width, int height, Color
     }
 
 //to String
+
 
     @Override
     public String toString() {

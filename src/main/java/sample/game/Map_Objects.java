@@ -1,5 +1,6 @@
 package sample.game;
 
+
 import java.util.Random;
 
 public class  Map_Objects{
@@ -25,3 +26,19 @@ public class  Map_Objects{
 
 
 }
+
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+
+    //methods
+
+
+}
+

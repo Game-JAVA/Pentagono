@@ -1,7 +1,5 @@
 package sample.game;
-
 import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class Boots extends Map_Objects{
@@ -21,9 +19,17 @@ public class Boots extends Map_Objects{
         super();
         pos_x= super.aleatoryPositionX();
         pos_y= super.aleatoryPositionY();
+
+
     }
 
     // getters and setters
+
+
+    public double getSpeed() {
+        return speed;
+    }
+
 
     public int getPos_x() {
         return pos_x;
@@ -34,8 +40,10 @@ public class Boots extends Map_Objects{
     }
 
     // methods
+
     public double increase_speed(){
         return 1.5;
+
     }
 
     //toString
