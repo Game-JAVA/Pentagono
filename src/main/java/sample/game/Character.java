@@ -7,7 +7,6 @@ public class Character extends Map_Objects{
     private boolean statusItem;
 
     //Constructor
-
     public Character(int width, int height, String name, int health, int score) {
         super(width, height);
         this.name = name;

@@ -1,12 +1,10 @@
 package sample.game;
 
-import java.util.Random;
-
 public abstract class Map_Objects{
     //ATTRIBUTES
 
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
 
     //CONSTRUCTOR

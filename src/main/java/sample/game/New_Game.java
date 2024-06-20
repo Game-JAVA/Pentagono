@@ -1,5 +1,7 @@
 package sample.game;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class New_Game extends Application {
     private int squareSize = 40;
@@ -16,6 +19,9 @@ public class New_Game extends Application {
     private int startY = 80;
     private int rows = 13;
     private int cols = 27;
+    private Label label2 = new Label("00:00");
+    private Timeline timeline;
+    private int secondsElapsed = 0;
 
     public static void main(String[] args) {
         launch();
@@ -38,20 +44,32 @@ public class New_Game extends Application {
         Button b3 = new Button("Return to Menu");
 
         Label label1 = new Label("Welcome to Page 1");
-        Label label2 = new Label("Cronômetro");
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
             primaryStage.setScene(s2);
+            primaryStage.setX(40);
+            primaryStage.setY(0);
+            startTimer();
         });
 
         // Button b3 to Scene s1
-        b3.setOnAction(e -> primaryStage.setScene(s1));
+        b3.setOnAction(e -> {
+            primaryStage.setScene(s1);
+            primaryStage.setX(435);
+            primaryStage.setY(45);
+            stopTimer();
+        });
 
-        // Layout 1
+
+        // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
-        // Layout 2
+        // Set the position of the label2
+        label2.setLayoutX(1100);
+        label2.setLayoutY(10);
+
+        // Scene/Layout 2
         layout2.getChildren().addAll(label2, b3, r1);
 
         // Set initial position of the rectangle
@@ -115,5 +133,32 @@ public class New_Game extends Application {
                 number++;
             }
         }
+    }
+
+    private void startTimer() {
+        secondsElapsed = 0;
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    secondsElapsed++;
+                    updateTimerLabel();
+                    if (secondsElapsed >= 3599) {
+                        timeline.stop();
+                    }
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
+
+    private void stopTimer() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+    }
+
+    private void updateTimerLabel() {
+        int minutes = secondsElapsed / 60;
+        int seconds = secondsElapsed % 60;
+        label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
 }
