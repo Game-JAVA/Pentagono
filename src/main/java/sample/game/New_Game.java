@@ -6,8 +6,9 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -30,10 +31,10 @@ public class New_Game extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Classes Instances
-
         Map_Objects MO = new Map_Objects();
-
-        VBox layout1 = new VBox(20);
+        Image backgroundImage = new Image("backgroundStartWindow.jpeg");
+        ImageView backg = new ImageView(backgroundImage);
+        VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
@@ -47,6 +48,11 @@ public class New_Game extends Application {
         Button b3 = new Button("Return to Menu");
 
         Label label1 = new Label("Welcome to Page 1");
+
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+        BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+        layout1.setBackground(new Background(background));
+//        layout1.setBackground(new Background(background));
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -64,7 +70,6 @@ public class New_Game extends Application {
             stopTimer();
         });
 
-
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
@@ -76,8 +81,8 @@ public class New_Game extends Application {
         layout2.getChildren().addAll(label2, b3, character);
 
         // Set initial position of the rectangle
-        character.setPos_y(MO.aleatoryPositionY()*40);
-        character.setPos_x(MO.aleatoryPositionX()*40);
+        character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         // Create the board of squares
         createBoard(layout2);
@@ -86,23 +91,23 @@ public class New_Game extends Application {
         s2.setOnKeyPressed(event -> {
             switch (event.getCode()) {
                 case W:
-                    if(character.getPos_x() > startY) {
-                        character.setPos_y(character.getPos_y() - 40);
+                    if (character.getPos_y() > startY) {
+                        character.setPos_y(character.getPos_y() - squareSize);
                     }
                     break;
                 case S:
-                    if(character.getPos_x() < (squareSize * (rows-1)) + startY) {
-                        character.setPos_y(character.getPos_y() + 40);
+                    if (character.getPos_y() < (squareSize * (rows - 1)) + startY) {
+                        character.setPos_y(character.getPos_y() + squareSize);
                     }
                     break;
                 case A:
-                    if(character.getPos_x() > startX) {
-                        character.setPos_x(character.getPos_x() - 40);
+                    if (character.getPos_x() > startX) {
+                        character.setPos_x(character.getPos_x() - squareSize);
                     }
                     break;
                 case D:
-                    if(character.getPos_x() < (squareSize * (cols-1)) + startX) {
-                        character.setPos_x(character.getPos_x() + 40);
+                    if (character.getPos_x() < (squareSize * (cols - 1)) + startX) {
+                        character.setPos_x(character.getPos_x() + squareSize);
                     }
                     break;
                 default:
