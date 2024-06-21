@@ -15,7 +15,6 @@ public class Apple extends Map_Objects{
 
 
     public Apple(int width, int height, int score, int pos_x, int pos_y) {
-        super(width, height);
         this.score = 2;
         this.pos_x = r.nextInt(1001);
         this.pos_y = r.nextInt(601);

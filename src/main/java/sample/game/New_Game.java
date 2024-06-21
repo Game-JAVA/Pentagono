@@ -30,6 +30,9 @@ public class New_Game extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Classes Instances
+
+        Map_Objects MO = new Map_Objects();
+
         VBox layout1 = new VBox(20);
         Pane layout2 = new Pane();
 
@@ -37,7 +40,7 @@ public class New_Game extends Application {
         Scene s2 = new Scene(layout2, 1200, 1000);
 
         // Components
-        Rectangle r1 = new Rectangle(40, 40, Color.BLUE);
+        Character character = new Character("Eliezer", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
@@ -70,11 +73,11 @@ public class New_Game extends Application {
         label2.setLayoutY(10);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, b3, r1);
+        layout2.getChildren().addAll(label2, b3, character);
 
         // Set initial position of the rectangle
-        r1.setY(360);
-        r1.setX(640);
+        character.setPos_y(MO.aleatoryPositionY()*40);
+        character.setPos_x(MO.aleatoryPositionX()*40);
 
         // Create the board of squares
         createBoard(layout2);
@@ -83,23 +86,23 @@ public class New_Game extends Application {
         s2.setOnKeyPressed(event -> {
             switch (event.getCode()) {
                 case W:
-                    if(r1.getY() > startY) {
-                        r1.setY(r1.getY() - 40);
+                    if(character.getPos_x() > startY) {
+                        character.setPos_y(character.getPos_y() - 40);
                     }
                     break;
                 case S:
-                    if(r1.getY() < (squareSize * (rows-1)) + startY) {
-                        r1.setY(r1.getY() + 40);
+                    if(character.getPos_x() < (squareSize * (rows-1)) + startY) {
+                        character.setPos_y(character.getPos_y() + 40);
                     }
                     break;
                 case A:
-                    if(r1.getX() > startX) {
-                        r1.setX(r1.getX() - 40);
+                    if(character.getPos_x() > startX) {
+                        character.setPos_x(character.getPos_x() - 40);
                     }
                     break;
                 case D:
-                    if(r1.getX() < (squareSize * (cols-1)) + startX) {
-                        r1.setX(r1.getX() + 40);
+                    if(character.getPos_x() < (squareSize * (cols-1)) + startX) {
+                        character.setPos_x(character.getPos_x() + 40);
                     }
                     break;
                 default:
@@ -121,8 +124,8 @@ public class New_Game extends Application {
                 int y = startY + (i * squareSize);
 
                 Rectangle square = new Rectangle(x, y, squareSize, squareSize);
-                square.setFill(null);  // No fill
-                square.setStroke(Color.BLACK);  // Black border
+                square.setFill(null);
+                square.setStroke(Color.BLACK);
 
                 // Create a label to display the number
                 Label numberLabel = new Label(Integer.toString(number));

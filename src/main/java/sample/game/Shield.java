@@ -15,7 +15,6 @@ public class Shield extends Map_Objects{
 
 
     public Shield(int width, int height, int shield, int pos_x, int pos_y) {
-        super(width, height);
         this.shield = 0;
         this.pos_x = r.nextInt(1001);
         this.pos_y = r.nextInt(601);

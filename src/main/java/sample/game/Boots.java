@@ -15,7 +15,6 @@ public class Boots extends Map_Objects{
 
 
     public Boots(int width, int height, double speed, int pos_x, int pos_y) {
-        super(width, height);
         this.speed = 1;
         this.pos_x = r.nextInt(1001);
         this.pos_y = r.nextInt(601);

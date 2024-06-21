@@ -1,33 +1,27 @@
 package sample.game;
 
-public abstract class Map_Objects{
-    //ATTRIBUTES
+import java.util.Random;
 
-    private final int width;
-    private final int height;
+public class  Map_Objects{
 
+    private static int width;
+    private static int height;
 
-    //CONSTRUCTOR
+    private static Random random;
 
-    public Map_Objects(int width, int height) {
-        this.width = width;
-        this.height = height;
+    // Constructor
+    public Map_Objects() {
+        this.random = new Random();
     }
 
-
-
-    //getters and setters
-
-    public int getWidth() {
-        return width;
+    // Method to generate a random position within a specified bound
+    public int aleatoryPositionY() {
+        return random.nextInt(2+(13));
     }
 
-    public int getHeight() {
-        return height;
+    public int aleatoryPositionX(){
+        return random.nextInt(2+(27));
     }
-
-
-    //methods
 
 
 }

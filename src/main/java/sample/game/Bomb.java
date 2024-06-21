@@ -16,7 +16,6 @@ public class Bomb extends Map_Objects{
 
 
     public Bomb(int width, int height, int explosion_range, int explosion_diameter, int explosion_damage, int pos_x, int pos_y) {
-        super(width, height);
         this.explosion_range = explosion_range;
         this.explosion_diameter = 40;
         this.explosion_damage = explosion_damage;
