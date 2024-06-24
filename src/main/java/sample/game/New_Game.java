@@ -43,6 +43,12 @@ public class New_Game extends Application {
         // Components
         Character character = new Character("Eliezer", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
 
+        Shield shield = new Shield(1200, 1000, Color.BLACK);
+
+        // Convert Shield to a graphical object
+        Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
+        shieldRectangle.setFill(shield.getColor());
+
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
@@ -52,7 +58,6 @@ public class New_Game extends Application {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
-//        layout1.setBackground(new Background(background));
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -78,11 +83,17 @@ public class New_Game extends Application {
         label2.setLayoutY(10);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, b3, character);
+        layout2.getChildren().addAll(label2, b3, character, shieldRectangle);
 
         // Set initial position of the rectangle
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        shieldRectangle.setX(shield.getPos_x());
+        shieldRectangle.setY(shield.getPos_y());
 
         // Create the board of squares
         createBoard(layout2);
@@ -134,8 +145,8 @@ public class New_Game extends Application {
 
                 // Create a label to display the number
                 Label numberLabel = new Label(Integer.toString(number));
-                numberLabel.setLayoutX(x + squareSize / 2 - 10);  //
-                numberLabel.setLayoutY(y + squareSize / 2 - 10);  //
+                numberLabel.setLayoutX(x + squareSize / 2 - 10);
+                numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
                 pane.getChildren().addAll(square, numberLabel);
                 number++;

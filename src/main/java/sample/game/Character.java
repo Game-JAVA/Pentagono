@@ -3,7 +3,7 @@ package sample.game;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Character extends Rectangle {
+public class Character extends Rectangle{
     private String name;
     private int health;
     private int score;
