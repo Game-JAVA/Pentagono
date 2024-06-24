@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -31,7 +32,8 @@ public class New_Game extends Application {
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
-        Image backgroundImage = new Image("file:backgroundStartWindow.jpeg");
+        Image backgroundImage = new Image("backgroundStartWindow.jpeg");
+        ImageView backg = new ImageView(backgroundImage);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
 
@@ -41,6 +43,16 @@ public class New_Game extends Application {
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
+        Shield shield = new Shield(1200, 1000, Color.BLACK);
+
+        // Convert Shield to a graphical object
+        Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
+        shieldRectangle.setFill(shield.getColor());
+
+
+
+
+
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
@@ -76,7 +88,7 @@ public class New_Game extends Application {
         label2.setLayoutY(10);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, b3, character, a1);
+        layout2.getChildren().addAll(label2, b3, character, a1,shieldRectangle);
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -85,6 +97,12 @@ public class New_Game extends Application {
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        shieldRectangle.setX(shield.getPos_x());
+        shieldRectangle.setY(shield.getPos_y());
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
