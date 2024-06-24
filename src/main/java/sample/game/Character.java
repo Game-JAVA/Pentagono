@@ -5,9 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Character extends Rectangle {
     private String name;
-    private int health;
-    private int score;
-    private boolean statusItem;
+    private int score = 0;
 
     // Constructor
     public Character(String name, int pos_x, int pos_y, int width, int height, Color color) {
@@ -17,6 +15,14 @@ public class Character extends Rectangle {
     }
 
     // Methods
+    public void setScore(int valor) {
+        this.score += valor;
+    }
+
+    public int getScore() {
+        return this.score;
+    }
+
     public int getPos_x() {
         return (int) this.getX();
     }
@@ -38,9 +44,7 @@ public class Character extends Rectangle {
     public String toString() {
         return "Character{" +
                 "name='" + name + '\'' +
-                ", health=" + health +
                 ", score=" + score +
-                ", statusItem=" + statusItem +
                 ", pos_x=" + getPos_x() +
                 ", pos_y=" + getPos_y() +
                 '}';

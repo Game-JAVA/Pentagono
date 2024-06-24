@@ -14,14 +14,13 @@ public class  Map_Objects{
         this.random = new Random();
     }
 
+
     // Method to generate a random position within a specified bound
     public int aleatoryPositionY() {
-        return random.nextInt(2+(13));
+        return random.nextInt((13));
     }
 
     public int aleatoryPositionX(){
-        return random.nextInt(2+(27));
+        return random.nextInt((27));
     }
-
-
 }

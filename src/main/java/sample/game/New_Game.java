@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -32,8 +31,7 @@ public class New_Game extends Application {
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
-        Image backgroundImage = new Image("backgroundStartWindow.jpeg");
-        ImageView backg = new ImageView(backgroundImage);
+        Image backgroundImage = new Image("file:backgroundStartWindow.jpeg");
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
 
@@ -41,7 +39,8 @@ public class New_Game extends Application {
         Scene s2 = new Scene(layout2, 1200, 1000);
 
         // Components
-        Character character = new Character("Eliezer", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
+        Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
+        Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
@@ -52,7 +51,6 @@ public class New_Game extends Application {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
-//        layout1.setBackground(new Background(background));
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -78,17 +76,30 @@ public class New_Game extends Application {
         label2.setLayoutY(10);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, b3, character);
+        layout2.getChildren().addAll(label2, b3, character, a1);
 
-        // Set initial position of the rectangle
+        // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        // Set initial position of the apple
+        a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        // Log positions
+        System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
+        System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
 
         // Create the board of squares
         createBoard(layout2);
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
+            int characterPosX = character.getPos_x();
+            int characterPosY = character.getPos_y();
+            int applePosX = a1.getPos_x();
+            int applePosY = a1.getPos_y();
+
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
@@ -113,6 +124,18 @@ public class New_Game extends Application {
                 default:
                     break;
             }
+
+            // Check if character and apple occupy the same square
+            if (characterPosX == applePosX && characterPosY == applePosY) {
+                // Reset apple position
+                character.setScore(a1.getScore());
+                a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+                a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+            }
+
+            // Log position after movement
+            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
+            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
 
         // Build the Window
@@ -134,8 +157,8 @@ public class New_Game extends Application {
 
                 // Create a label to display the number
                 Label numberLabel = new Label(Integer.toString(number));
-                numberLabel.setLayoutX(x + squareSize / 2 - 10);  //
-                numberLabel.setLayoutY(y + squareSize / 2 - 10);  //
+                numberLabel.setLayoutX(x + squareSize / 2 - 10);
+                numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
                 pane.getChildren().addAll(square, numberLabel);
                 number++;
