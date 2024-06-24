@@ -40,6 +40,17 @@ public class New_Game extends Application {
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
 
+
+        // Tentar carregar o CSS e adicionar às cenas
+        try {
+            String css = getClass().getResource("/style.css").toExternalForm();
+            s1.getStylesheets().add(css);
+            s2.getStylesheets().add(css);
+        } catch (NullPointerException e) {
+            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
+            e.printStackTrace();
+        }
+
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
@@ -48,10 +59,6 @@ public class New_Game extends Application {
         // Convert Shield to a graphical object
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
         shieldRectangle.setFill(shield.getColor());
-
-
-
-
 
 
         Button b1 = new Button("New Game");
