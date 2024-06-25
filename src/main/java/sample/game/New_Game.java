@@ -14,6 +14,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
+
 public class New_Game extends Application {
     private int squareSize = 40;
     private int startX = 80;
@@ -31,6 +33,7 @@ public class New_Game extends Application {
         launch();
     }
 
+
     @Override
     public void start(Stage primaryStage) {
         // Classes Instances
@@ -41,18 +44,9 @@ public class New_Game extends Application {
         Pane layout2 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
+
         Scene s2 = new Scene(layout2, 1200, 1000);
 
-
-        // Tentar carregar o CSS e adicionar às cenas
-        try {
-            String css = getClass().getResource("/style.css").toExternalForm();
-            s1.getStylesheets().add(css);
-            s2.getStylesheets().add(css);
-        } catch (NullPointerException e) {
-            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
-            e.printStackTrace();
-        }
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
@@ -63,16 +57,55 @@ public class New_Game extends Application {
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
         shieldRectangle.setFill(shield.getColor());
 
+        VBox vbox = new VBox(10);
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
 
-        Label label1 = new Label("Welcome to Page 1");
 
-        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+        b1.setStyle(
+                "-fx-background-color: black;"+
+                        "-fx-text-fill: yellow;"+
+                        "-fx-font-size: 12px;"+
+                        "-fx-border-radius: 5;"+
+                        "-fx-background-radius: 5;"+
+                        "-fx-padding: 10 10 10 10;"+
+                        "-fx-border-color: yellow;"
+        );
+
+        b2.setStyle(
+                "-fx-background-color: black;"+
+                        "-fx-text-fill: yellow;"+
+                        "-fx-font-size: 12px;"+
+                        "-fx-border-radius: 5;"+
+                        "-fx-background-radius: 5;"+
+                        "-fx-padding: 10 10 10 10;"+
+                        "-fx-border-color: yellow;"
+        );
+
+        b3.setStyle(
+                "-fx-background-color: black;"+
+                        "-fx-text-fill: yellow;"+
+                        "-fx-font-size: 12px;"+
+                        "-fx-border-radius: 5;"+
+                        "-fx-background-radius: 5;"+
+                        "-fx-padding: 10 10 10 10;"+
+                        "-fx-border-color: yellow;"
+        );
+
+
+        Label label1 = new Label("Welcome to Page 1");
+        label1.setStyle(
+
+                "-fx-font-size: 18px;"+
+                        "-fx-padding: 10 0 0 120"
+        );
+
+        BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
+
 
         // Initialize sounds
         try {
@@ -88,6 +121,8 @@ public class New_Game extends Application {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
+
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -180,6 +215,20 @@ public class New_Game extends Application {
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
+
+
+        /*
+        try {
+            String css = getClass().getResource("style.css").toExternalForm();
+            s1.getStylesheets().add(css);
+            s2.getStylesheets().add(css);
+        } catch (NullPointerException e) {
+            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        */
+
 
         // Build the Window
         primaryStage.setScene(s1);
