@@ -24,6 +24,9 @@ public class New_Game extends Application {
     private Timeline timeline;
     private int secondsElapsed = 0;
 
+    private Sound backgroundSound;
+    private Sound themeSound;
+
     public static void main(String[] args) {
         launch();
     }
@@ -70,6 +73,21 @@ public class New_Game extends Application {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
+
+        // Initialize sounds
+        try {
+            // Example URLs pointing to WAV files
+            String backgroundUrl = "https://www.soundjay.com/button/beep-07.wav";
+            backgroundSound = new Sound(backgroundUrl);
+            backgroundSound.setVolume(-10.0f); // Adjust volume as needed
+
+            String themeUrl = "https://www.soundjay.com/button/beep-08b.wav";
+            themeSound = new Sound(themeUrl);
+            themeSound.setVolume(-10.0f); // Adjust volume as needed
+            themeSound.loop();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -216,5 +234,29 @@ public class New_Game extends Application {
         int minutes = secondsElapsed / 60;
         int seconds = secondsElapsed % 60;
         label2.setText(String.format("%02d:%02d", minutes, seconds));
+    }
+
+    private void startBackgroundSound() {
+        if (backgroundSound != null) {
+            backgroundSound.loop();
+        }
+    }
+
+    private void stopBackgroundSound() {
+        if (backgroundSound != null) {
+            backgroundSound.stop();
+        }
+    }
+
+    private void startThemeSound() {
+        if (themeSound != null) {
+            themeSound.loop();
+        }
+    }
+
+    private void stopThemeSound() {
+        if (themeSound != null) {
+            themeSound.stop();
+        }
     }
 }
