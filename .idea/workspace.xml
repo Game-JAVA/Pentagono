@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4f7a5e7-c52f-404c-8c7e-89e25bf1c618" name="Changes" comment="feat: classes again">
-      <change afterPath="$PROJECT_DIR$/target/classes/backgroundStartWindow.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Apple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Character.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/HelloController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Map_Objects.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Sound$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/Sound.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sample/game/hello-view.fxml" afterDir="false" />
+    <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,16 +15,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,77 +28,74 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2i6u9DDxTVIpxjy34jGLICPALQA" />
+  <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.New_Game.executor": "Run",
-    "Application.Sound.executor": "Run",
-    "Application.positionWindow.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Feature__Implementation",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Game_Julio",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.61264366",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "last_opened_file_path": "C:/Users/gabri/OneDrive/Área de Trabalho/Matérias Faculdade ADS/PRIMEIRO SEMESTRE/Pentagono",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projetos\Geral\INTELLJ\Game\src\main\java\sample\game\audios" />
-      <recent name="C:\Projetos\Geral\INTELLJ\Game\src\main\java\sample\game" />
-      <recent name="C:\Projetos\Geral\INTELLJ\Game\src\main\resources" />
-    </key>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PentagonoFile" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PentagonoFile" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f4f7a5e7-c52f-404c-8c7e-89e25bf1c618" name="Changes" comment="" />
-      <created>1718823196690</created>
+      <changelist id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="" />
+      <created>1719347024750</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718823196690</updated>
+      <updated>1719347024750</updated>
     </task>
-    <task id="LOCAL-00001" summary="feat: classes">
-      <option name="closed" value="true" />
-      <created>1718911881345</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1718911881345</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: classes again">
-      <option name="closed" value="true" />
-      <created>1718988860991</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1718988860991</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: classes" />
-    <MESSAGE value="feat: classes again" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: classes again" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

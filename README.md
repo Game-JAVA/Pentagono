@@ -6,7 +6,7 @@ Este é um jogo de ação e estratégia no estilo de Bomberman, com uma temátic
 
 ## Como Jogar
 
-- **Movimentação:** Utilize as teclas de WASD para mover o personagem pelo mapa.
+- **Movimentação:** Utilize as teclas de setas (ou WASD) para mover o personagem pelo mapa.
 - **Desvio de Ataques:** Os ataques (magias) surgem aleatoriamente na tela. Desvie deles para não perder vida.
 - **Itens:** Colete itens para melhorar suas chances de sobrevivência:
   - **Escudo:** Protege você de um ataque.
@@ -20,5 +20,5 @@ Este é um jogo de ação e estratégia no estilo de Bomberman, com uma temátic
 
 ## Controles
 
-- **WASD:** Movimentar o personagem.
+- **Setas (ou WASD):** Movimentar o personagem.
 
