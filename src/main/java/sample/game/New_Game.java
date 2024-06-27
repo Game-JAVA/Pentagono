@@ -51,6 +51,8 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+
 
         // Convert Shield to a graphical object
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
@@ -59,6 +61,13 @@ public class New_Game extends Application {
         //Implemented boots with Rectangle
         Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
         bootsRectangle.setFill(boots.getColor());
+
+
+        //BOMB IMPLEMENTATION
+        Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
+        bombRectangle.setFill(bomb.getColor());
+
+
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
 
@@ -179,29 +188,47 @@ public class New_Game extends Application {
         label5.setLayoutY(10);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle);
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
+
+
+
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
+
         //Implemented Shield in Window
+
         shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         shieldRectangle.setX(shield.getPos_x());
         shieldRectangle.setY(shield.getPos_y());
 
+
         //Implemented Boots in window.
+
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         bootsRectangle.setX(boots.getPos_x());
         bootsRectangle.setY(boots.getPos_y());
+
+
+        //BOMB IMPLEMENTATION
+
+        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        bombRectangle.setX(bomb.getPos_x());
+        bombRectangle.setY(bomb.getPos_y());
+
+
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
@@ -286,14 +313,21 @@ public class New_Game extends Application {
                         })
                 );
                 delayTimeline.play();
-            }
+    }
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
-
-
         });
+
+        try {
+            String css = getClass().getResource("style.css").toExternalForm();
+            s1.getStylesheets().add(css);
+            s2.getStylesheets().add(css);
+        } catch (NullPointerException e) {
+            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
+            e.printStackTrace();
+        }
 
         // Build the Window
         primaryStage.setScene(s1);
@@ -378,4 +412,7 @@ public class New_Game extends Application {
         }
     }
     */
+}
+
+public void main() {
 }
