@@ -57,6 +57,8 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+
 
         // Convert Shield to a graphical object
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
@@ -65,6 +67,13 @@ public class New_Game extends Application {
         //Implemented boots with Rectangle
         Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
         bootsRectangle.setFill(boots.getColor());
+
+
+        //BOMB IMPLEMENTATION
+        Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
+        bombRectangle.setFill(bomb.getColor());
+
+
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
 
@@ -194,9 +203,7 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle);
-
-
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
 
 
 
@@ -230,6 +237,13 @@ public class New_Game extends Application {
         bootsRectangle.setY(boots.getPos_y());
 
 
+        //BOMB IMPLEMENTATION
+
+        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        bombRectangle.setX(bomb.getPos_x());
+        bombRectangle.setY(bomb.getPos_y());
 
 
 
@@ -308,7 +322,7 @@ public class New_Game extends Application {
 
 
 
-        /*
+
         try {
             String css = getClass().getResource("style.css").toExternalForm();
             s1.getStylesheets().add(css);
@@ -318,7 +332,7 @@ public class New_Game extends Application {
             e.printStackTrace();
         }
 
-        */
+
 
 
         // Build the Window
