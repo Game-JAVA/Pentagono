@@ -12,6 +12,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.geometry.Pos;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Insets;
 
 import java.awt.*;
 
@@ -24,7 +28,6 @@ public class New_Game extends Application {
     private Label label2 = new Label("00:00");
     private Timeline timeline;
     private int secondsElapsed = 0;
-
     private Sound backgroundSound;
     private Sound themeSound;
 
@@ -39,6 +42,8 @@ public class New_Game extends Application {
         Map_Objects MO = new Map_Objects();
         Image backgroundImage = new Image("backgroundStartWindow.jpeg");
         ImageView backg = new ImageView(backgroundImage);
+        Image backgroundImage2 = new Image("imgtela2.jpeg");
+        ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
 
@@ -61,41 +66,53 @@ public class New_Game extends Application {
         Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
         bootsRectangle.setFill(boots.getColor());
         VBox vbox = new VBox(10);
+        vbox.setAlignment(Pos.CENTER);
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
 
+        VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
+        VBox.setMargin(b2, new Insets(10, 20, 10, 155));
+        VBox.setMargin(b3, new Insets(10, 20, 10, 155));
+        vbox.getChildren().addAll(b1, b2, b3);
 
-        b1.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
+        String buttonStyle = "-fx-background-color: black;" +
+                "-fx-text-fill: yellow;" +
+                "-fx-font-size: 12px;" +
+                "-fx-border-radius: 5;" +
+                "-fx-background-radius: 5;" +
+                "-fx-padding: 15 15 15 15;" +
+                "-fx-border-color: yellow;"+
+                "-fx-cursor: hand";
+
+        b1.setStyle(buttonStyle);
+        b2.setStyle(buttonStyle);
+        b3.setStyle(buttonStyle);
+
+
+        BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+
+        BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+
+        BackgroundImage background = new BackgroundImage(
+                backgroundImage,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
         );
 
-        b2.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
+        BackgroundImage background2 = new BackgroundImage(
+                backgroundImage2,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
         );
 
-        b3.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
-        );
+        layout1.setBackground(new Background(background));
+        layout2.setBackground(new Background(background2));
 
 
         Label label1 = new Label("Welcome to Page 1");//Window 1
@@ -103,25 +120,27 @@ public class New_Game extends Application {
         Label label4 = new Label("00");//Score
         Label label5 = new Label("TIMER");//Text Timer
         label1.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 60"
 
-                "-fx-font-size: 18px;"+
-                        "-fx-padding: 10 0 0 120"
         );
-                                                            // 400   //500
-        BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
-        BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-        layout1.setBackground(new Background(background));
+
+        Label label3 = new Label("SCORE:");
+        Label label4 = new Label("00");
+        Label label5 = new Label("TIMER:");
+
+
 
         // Initialize sounds
         try {
-            // Example URLs pointing to WAV files
-            String backgroundUrl = "https://www.soundjay.com/button/beep-07.wav";
+            String backgroundUrl = "https://www.dropbox.com/scl/fi/mb2oriy1rnqik15fwwpyt/741558_the_ramdom_cheese_echos-of-the-mead-hall-online-audio-converter.com.wav?rlkey=m6h0ag0awxvj71ftwrgenxa8p&dl=1";
             backgroundSound = new Sound(backgroundUrl);
-            backgroundSound.setVolume(-10.0f); // Adjust volume as needed
+            backgroundSound.setVolume(-15.0f);
 
-            String themeUrl = "https://www.soundjay.com/button/beep-08b.wav";
+            String themeUrl = "https://www.dropbox.com/scl/fi/ukaczgwifhx65tqhygqnw/646460_g-14_medieval-march-mp3-online-audio-converter.com.wav?rlkey=d77d8w0tlo4x4ib4dtakwybxp&st=c0d7uhj4&dl=1";
             themeSound = new Sound(themeUrl);
-            themeSound.setVolume(-10.0f); // Adjust volume as needed
+            themeSound.setVolume(-10.0f);
             themeSound.loop();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -133,6 +152,8 @@ public class New_Game extends Application {
             primaryStage.setX(40);
             primaryStage.setY(0);
             startTimer();
+            stopThemeSound();
+            startBackgroundSound();
         });
 
         // Button b3 to Scene s1
@@ -141,6 +162,8 @@ public class New_Game extends Application {
             primaryStage.setX(435);
             primaryStage.setY(45);
             stopTimer();
+            stopBackgroundSound();
+            startThemeSound();
         });
 
         // Scene/Layout 1
@@ -153,6 +176,15 @@ public class New_Game extends Application {
         label2.setLayoutX(1100);
         label2.setLayoutY(30);
 
+
+        label2.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+
         // Set the position of the label3
         label3.setLayoutX(800);
         label3.setLayoutY(10);
@@ -164,6 +196,13 @@ public class New_Game extends Application {
         // Set the position of the label5
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
+
+
+        // Scene/Layout 2
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle);
+
+
+
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -233,7 +272,6 @@ public class New_Game extends Application {
                 label4.setText(String.valueOf(character.getScore()));
                 a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                 a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-
             }
 
             if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
@@ -310,20 +348,24 @@ public class New_Game extends Application {
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
-    private void startBackgroundSound() {
-        if (backgroundSound != null) {
-            backgroundSound.loop();
-        }
-    }
 
     private void stopBackgroundSound() {
         if (backgroundSound != null) {
             backgroundSound.stop();
         }
     }
+    private void startBackgroundSound() {
+        if (backgroundSound != null) {
+            backgroundSound.stop();
+            backgroundSound.play();
+            backgroundSound.loop();
+        }
+    }
 
     private void startThemeSound() {
         if (themeSound != null) {
+            themeSound.stop();
+            themeSound.play();
             themeSound.loop();
         }
     }
