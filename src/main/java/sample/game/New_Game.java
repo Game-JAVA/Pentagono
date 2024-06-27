@@ -57,6 +57,8 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+
 
         // Convert Shield to a graphical object
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
@@ -65,6 +67,13 @@ public class New_Game extends Application {
         //Implemented boots with Rectangle
         Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
         bootsRectangle.setFill(boots.getColor());
+
+
+        //BOMB IMPLEMENTATION
+        Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
+        bombRectangle.setFill(bomb.getColor());
+
+
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
 
@@ -115,10 +124,7 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
 
 
-        Label label1 = new Label("Welcome to Page 1");//Window 1
-        Label label3 = new Label("SCORE");//Text score
-        Label label4 = new Label("00");//Score
-        Label label5 = new Label("TIMER");//Text Timer
+        Label label1 = new Label("Welcome to Page 1");
         label1.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
@@ -129,6 +135,8 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
+
+
 
 
 
@@ -169,13 +177,9 @@ public class New_Game extends Application {
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsRectangle);
-
         // Set the position of the label2
         label2.setLayoutX(1100);
         label2.setLayoutY(30);
-
 
         label2.setStyle(
                 "-fx-text-fill: black;"+
@@ -199,8 +203,7 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle);
-
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
 
 
 
@@ -208,23 +211,41 @@ public class New_Game extends Application {
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
+
+
+
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
+
         //Implemented Shield in Window
+
         shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         shieldRectangle.setX(shield.getPos_x());
         shieldRectangle.setY(shield.getPos_y());
 
+
         //Implemented Boots in window.
+
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         bootsRectangle.setX(boots.getPos_x());
         bootsRectangle.setY(boots.getPos_y());
+
+
+        //BOMB IMPLEMENTATION
+
+        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        bombRectangle.setX(bomb.getPos_x());
+        bombRectangle.setY(bomb.getPos_y());
+
+
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
@@ -274,16 +295,34 @@ public class New_Game extends Application {
                 a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
             }
 
-            if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
-                System.out.println("TESTE");
+            if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
+                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
+                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
             }
+
+            if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
+                shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
+                shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
+            }
+
+
+
+
+
+
+
+
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
 
 
         });
-        /*
+
+
+
+
+
         try {
             String css = getClass().getResource("style.css").toExternalForm();
             s1.getStylesheets().add(css);
@@ -292,7 +331,10 @@ public class New_Game extends Application {
             System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
             e.printStackTrace();
         }
-        */
+
+
+
+
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
