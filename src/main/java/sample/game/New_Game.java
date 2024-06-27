@@ -98,7 +98,10 @@ public class New_Game extends Application {
         );
 
 
-        Label label1 = new Label("Welcome to Page 1");
+        Label label1 = new Label("Welcome to Page 1");//Window 1
+        Label label3 = new Label("SCORE");//Text score
+        Label label4 = new Label("00");//Score
+        Label label5 = new Label("TIMER");//Text Timer
         label1.setStyle(
 
                 "-fx-font-size: 18px;"+
@@ -108,8 +111,6 @@ public class New_Game extends Application {
         BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
-
-
 
         // Initialize sounds
         try {
@@ -125,8 +126,6 @@ public class New_Game extends Application {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
 
         // Button b1 to Scene s2
         b1.setOnAction(e -> {
@@ -147,48 +146,46 @@ public class New_Game extends Application {
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
+        // Scene/Layout 2
+        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsRectangle);
+
         // Set the position of the label2
         label2.setLayoutX(1100);
-        label2.setLayoutY(10);
+        label2.setLayoutY(30);
 
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2, b3, character, a1,shieldRectangle, bootsRectangle);
+        // Set the position of the label3
+        label3.setLayoutX(800);
+        label3.setLayoutY(10);
 
+        // Set the position of the label4
+        label4.setLayoutX(800);
+        label4.setLayoutY(30);
 
-
+        // Set the position of the label5
+        label5.setLayoutX(1100);
+        label5.setLayoutY(10);
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-
-
-
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-
         //Implemented Shield in Window
-
         shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         shieldRectangle.setX(shield.getPos_x());
         shieldRectangle.setY(shield.getPos_y());
 
-
         //Implemented Boots in window.
-
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         bootsRectangle.setX(boots.getPos_x());
         bootsRectangle.setY(boots.getPos_y());
-
-
-
-
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
@@ -233,38 +230,21 @@ public class New_Game extends Application {
             if (characterPosX == applePosX && characterPosY == applePosY) {
                 // Reset apple position
                 character.setScore(a1.getScore());
+                label4.setText(String.valueOf(character.getScore()));
                 a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                 a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
 
             }
 
-            if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
-                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
+            if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
+                System.out.println("TESTE");
             }
-
-            if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
-                shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
-            }
-
-
-
-
-
-
-
-
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
 
 
         });
-
-
-
-
         /*
         try {
             String css = getClass().getResource("style.css").toExternalForm();
@@ -274,10 +254,7 @@ public class New_Game extends Application {
             System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
             e.printStackTrace();
         }
-
         */
-
-
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
