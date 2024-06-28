@@ -286,8 +286,6 @@ public class New_Game extends Application {
             }
 
             if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
-                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
                 bootsRectangle.setVisible(false);
                 character.setSpeedMore();
                 Timeline delayTimeline = new Timeline(
@@ -313,21 +311,12 @@ public class New_Game extends Application {
                         })
                 );
                 delayTimeline.play();
-    }
+            }
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
-
-        try {
-            String css = getClass().getResource("style.css").toExternalForm();
-            s1.getStylesheets().add(css);
-            s2.getStylesheets().add(css);
-        } catch (NullPointerException e) {
-            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
-            e.printStackTrace();
-        }
 
         // Build the Window
         primaryStage.setScene(s1);
@@ -412,7 +401,4 @@ public class New_Game extends Application {
         }
     }
     */
-}
-
-public void main() {
 }
