@@ -20,8 +20,12 @@ public class Character extends Rectangle {
         this.score += valor;
     }
 
-    public void setSpeed(int speed){
-        this.speed= speed;
+    public void setSpeedMore(){
+        this.speed = getSpeed() + 10;
+    }
+
+    public void setSpeedLess(){
+        this.speed = getSpeed() - 10;
     }
 
     public int getSpeed(){
