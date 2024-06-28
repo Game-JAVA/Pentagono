@@ -48,7 +48,7 @@ public class New_Game extends Application {
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
-        Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
+        Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
         Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
