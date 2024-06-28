@@ -56,9 +56,15 @@ public class New_Game extends Application {
         Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
 
 
-        // Convert Shield to a graphical object
-        Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
-        shieldRectangle.setFill(shield.getColor());
+
+        // Create ImageView for the shield
+        ImageView shieldImageView = new ImageView(new Image("Shield.png"));
+        shieldImageView.setFitWidth(squareSize);
+        shieldImageView.setFitHeight(squareSize);
+
+        // Adjust position based on the Boots' location
+        shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         // Create ImageView for the Boots
         ImageView bootsImageView = new ImageView(new Image("Boot.png"));
@@ -172,7 +178,7 @@ public class New_Game extends Application {
         layout1.getChildren().addAll(label1, b1, b2);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsImageView);
+        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -209,8 +215,8 @@ public class New_Game extends Application {
         shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        shieldRectangle.setX(shield.getPos_x());
-        shieldRectangle.setY(shield.getPos_y());
+        shieldImageView.setX(shield.getPos_x());
+        shieldImageView.setY(shield.getPos_y());
 
         //Implemented Boots in window.
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -296,15 +302,15 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
-                shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
-                shieldRectangle.setVisible(false);
+            if(characterPosX == shieldImageView.getX() && characterPosY == shieldImageView.getY()){
+                shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
+                shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
+                shieldImageView.setVisible(false);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-                            shieldRectangle.setVisible(true);
+                            shieldImageView.setVisible(true);
                         })
                 );
                 delayTimeline.play();
