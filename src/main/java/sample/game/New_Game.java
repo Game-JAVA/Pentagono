@@ -1,4 +1,5 @@
 package sample.game;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -50,8 +51,8 @@ public class New_Game extends Application {
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
-        Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
 
         // Convert Shield to a graphical object
@@ -271,6 +272,10 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+
+            // Check if character and boots occupy the same square
+
+
             if(character.getPos_x() == bootsRectangle.getX() && character.getPos_y() == bootsRectangle.getY()){
                 bootsRectangle.setVisible(false);
                 character.setSpeedMore();
@@ -287,7 +292,11 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+
+            // Check if character and shield occupy the same square
+
             if(character.getPos_x() == shieldRectangle.getX() && character.getPos_y() == shieldRectangle.getY()){
+
                 shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldRectangle.setVisible(false);
@@ -301,10 +310,26 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+
+            Timeline bombGeneration = new Timeline(
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+                        bombRectangle.setX(bomb.getPos_x());
+                        bombRectangle.setY(bomb.getPos_y());
+                    })
+            );
+            bombGeneration.setCycleCount(Timeline.INDEFINITE); // Faz o timeline executar indefinidamente
+            bombGeneration.play();
+
+
+
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
+
 
         // Build the Window
         primaryStage.setScene(s1);
