@@ -23,7 +23,7 @@ public class Shield extends Map_Objects {
 
     // getters and setters
     public int getShield() {
-        return shield;
+         return shield;
     }
 
     public int getPos_x() {
