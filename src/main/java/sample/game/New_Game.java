@@ -12,8 +12,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.awt.*;
+import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Insets;
 
 public class New_Game extends Application {
     private int squareSize = 40;
@@ -24,7 +25,6 @@ public class New_Game extends Application {
     private Label label2 = new Label("00:00");
     private Timeline timeline;
     private int secondsElapsed = 0;
-
     private Sound backgroundSound;
     private Sound themeSound;
 
@@ -32,26 +32,27 @@ public class New_Game extends Application {
         launch();
     }
 
-
     @Override
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
         Image backgroundImage = new Image("backgroundStartWindow.jpeg");
         ImageView backg = new ImageView(backgroundImage);
+        Image backgroundImage2 = new Image("imgtela2.jpeg");
+        ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
-
         Scene s2 = new Scene(layout2, 1200, 1000);
-
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+
 
         // Convert Shield to a graphical object
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
@@ -60,42 +61,58 @@ public class New_Game extends Application {
         //Implemented boots with Rectangle
         Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
         bootsRectangle.setFill(boots.getColor());
+
+
+        //BOMB IMPLEMENTATION
+        Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
+        bombRectangle.setFill(bomb.getColor());
+
+
         VBox vbox = new VBox(10);
+        vbox.setAlignment(Pos.CENTER);
 
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
 
+        VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
+        VBox.setMargin(b2, new Insets(10, 20, 10, 155));
+        VBox.setMargin(b3, new Insets(10, 20, 10, 155));
+        vbox.getChildren().addAll(b1, b2, b3);
 
-        b1.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
+        String buttonStyle = "-fx-background-color: black;" +
+                "-fx-text-fill: yellow;" +
+                "-fx-font-size: 12px;" +
+                "-fx-border-radius: 5;" +
+                "-fx-background-radius: 5;" +
+                "-fx-padding: 15 15 15 15;" +
+                "-fx-border-color: yellow;"+
+                "-fx-cursor: hand";
+
+        b1.setStyle(buttonStyle);
+        b2.setStyle(buttonStyle);
+        b3.setStyle(buttonStyle);
+
+        BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+        BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+        BackgroundImage background = new BackgroundImage(
+                backgroundImage,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
         );
 
-        b2.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
+        BackgroundImage background2 = new BackgroundImage(
+                backgroundImage2,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
         );
 
-        b3.setStyle(
-                "-fx-background-color: black;"+
-                        "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 12px;"+
-                        "-fx-border-radius: 5;"+
-                        "-fx-background-radius: 5;"+
-                        "-fx-padding: 10 10 10 10;"+
-                        "-fx-border-color: yellow;"
-        );
+        layout1.setBackground(new Background(background));
+        layout2.setBackground(new Background(background2));
 
 
         Label label1 = new Label("Welcome to Page 1");//Window 1
@@ -103,25 +120,25 @@ public class New_Game extends Application {
         Label label4 = new Label("00");//Score
         Label label5 = new Label("TIMER");//Text Timer
         label1.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 60"
 
-                "-fx-font-size: 18px;"+
-                        "-fx-padding: 10 0 0 120"
         );
-                                                            // 400   //500
+                                                         
         BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         layout1.setBackground(new Background(background));
 
         // Initialize sounds
         try {
-            // Example URLs pointing to WAV files
-            String backgroundUrl = "https://www.soundjay.com/button/beep-07.wav";
+            String backgroundUrl = "https://www.dropbox.com/scl/fi/mb2oriy1rnqik15fwwpyt/741558_the_ramdom_cheese_echos-of-the-mead-hall-online-audio-converter.com.wav?rlkey=m6h0ag0awxvj71ftwrgenxa8p&dl=1";
             backgroundSound = new Sound(backgroundUrl);
-            backgroundSound.setVolume(-10.0f); // Adjust volume as needed
+            backgroundSound.setVolume(-15.0f);
 
-            String themeUrl = "https://www.soundjay.com/button/beep-08b.wav";
+            String themeUrl = "https://www.dropbox.com/scl/fi/ukaczgwifhx65tqhygqnw/646460_g-14_medieval-march-mp3-online-audio-converter.com.wav?rlkey=d77d8w0tlo4x4ib4dtakwybxp&st=c0d7uhj4&dl=1";
             themeSound = new Sound(themeUrl);
-            themeSound.setVolume(-10.0f); // Adjust volume as needed
+            themeSound.setVolume(-10.0f);
             themeSound.loop();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -132,7 +149,9 @@ public class New_Game extends Application {
             primaryStage.setScene(s2);
             primaryStage.setX(40);
             primaryStage.setY(0);
-            startTimer();
+            startTimer();/*
+            stopThemeSound();
+            startBackgroundSound();*/
         });
 
         // Button b3 to Scene s1
@@ -140,7 +159,9 @@ public class New_Game extends Application {
             primaryStage.setScene(s1);
             primaryStage.setX(435);
             primaryStage.setY(45);
-            stopTimer();
+            stopTimer();/*
+            stopBackgroundSound();
+            startThemeSound();*/
         });
 
         // Scene/Layout 1
@@ -152,6 +173,13 @@ public class New_Game extends Application {
         // Set the position of the label2
         label2.setLayoutX(1100);
         label2.setLayoutY(30);
+
+        label2.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 10"
+
+        );
 
         // Set the position of the label3
         label3.setLayoutX(800);
@@ -187,6 +215,13 @@ public class New_Game extends Application {
         bootsRectangle.setX(boots.getPos_x());
         bootsRectangle.setY(boots.getPos_y());
 
+        //BOMB IMPLEMENTATION
+        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+
+        bombRectangle.setX(bomb.getPos_x());
+        bombRectangle.setY(bomb.getPos_y());
+
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
         System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
@@ -204,22 +239,22 @@ public class New_Game extends Application {
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
-                        character.setPos_y(character.getPos_y() - squareSize);
+                        character.setPos_y(character.getPos_y() - character.getSpeed());
                     }
                     break;
                 case S:
                     if (character.getPos_y() < (squareSize * (rows - 1)) + startY) {
-                        character.setPos_y(character.getPos_y() + squareSize);
+                        character.setPos_y(character.getPos_y() + character.getSpeed());
                     }
                     break;
                 case A:
                     if (character.getPos_x() > startX) {
-                        character.setPos_x(character.getPos_x() - squareSize);
+                        character.setPos_x(character.getPos_x() - character.getSpeed());
                     }
                     break;
                 case D:
                     if (character.getPos_x() < (squareSize * (cols - 1)) + startX) {
-                        character.setPos_x(character.getPos_x() + squareSize);
+                        character.setPos_x(character.getPos_x() + character.getSpeed());
                     }
                     break;
                 default:
@@ -231,9 +266,46 @@ public class New_Game extends Application {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
+                a1.setVisible(false);
+                Timeline delayTimeline = new Timeline(
+                        new KeyFrame(Duration.seconds(3), e -> {
+                            a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+                            a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                            a1.setVisible(true);
+                        })
+                );
+                delayTimeline.play();
+            }
+
+            if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
+                bootsRectangle.setVisible(false);
+                character.setSpeedMore();
+                Timeline delayTimeline = new Timeline(
+                        new KeyFrame(Duration.seconds(3), e -> {
+                            boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+                            boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                            character.setSpeedLess();
+                            bootsRectangle.setVisible(true);
+                        })
+                );
+                delayTimeline.play();
+            }
+
+            if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
+                shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
+                shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
+                shieldRectangle.setVisible(false);
+                Timeline delayTimeline = new Timeline(
+                        new KeyFrame(Duration.seconds(3), e -> {
+                            shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+                            shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                            shieldRectangle.setVisible(true);
+                        })
+                );
+                delayTimeline.play();
+            }
                 a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                 a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-
             }
 
             if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
@@ -242,8 +314,6 @@ public class New_Game extends Application {
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
-
-
         });
         /*
         try {
@@ -309,21 +379,25 @@ public class New_Game extends Application {
         int seconds = secondsElapsed % 60;
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
-
-    private void startBackgroundSound() {
-        if (backgroundSound != null) {
-            backgroundSound.loop();
-        }
-    }
+/*
 
     private void stopBackgroundSound() {
         if (backgroundSound != null) {
             backgroundSound.stop();
         }
     }
+    private void startBackgroundSound() {
+        if (backgroundSound != null) {
+            backgroundSound.stop();
+            backgroundSound.play();
+            backgroundSound.loop();
+        }
+    }
 
     private void startThemeSound() {
         if (themeSound != null) {
+            themeSound.stop();
+            themeSound.play();
             themeSound.loop();
         }
     }
@@ -333,4 +407,5 @@ public class New_Game extends Application {
             themeSound.stop();
         }
     }
+    */
 }

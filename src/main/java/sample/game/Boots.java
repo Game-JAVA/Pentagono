@@ -62,9 +62,6 @@ public class Boots extends Map_Objects{
     }
 
     // methods
-    public void increase_speed(){
-        this.speed+=0.25;
-    }
 
     //toString
 
