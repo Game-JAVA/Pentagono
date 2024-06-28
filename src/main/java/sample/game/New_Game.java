@@ -51,7 +51,7 @@ public class New_Game extends Application {
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, Color.BLUE);
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
-        Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
         Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
 
@@ -315,10 +315,18 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            private void pump_replacement(){
+            Timeline bombGeneration = new Timeline(
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
+                        bombRectangle.setX(bomb.getPos_x());
+                        bombRectangle.setY(bomb.getPos_y());
+                    })
+            );
+            bombGeneration.setCycleCount(Timeline.INDEFINITE); // Faz o timeline executar indefinidamente
+            bombGeneration.play();
 
-            }
 
 
 
