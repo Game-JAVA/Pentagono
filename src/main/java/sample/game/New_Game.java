@@ -15,6 +15,8 @@ import javafx.util.Duration;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class New_Game extends Application {
     private int squareSize = 40;
@@ -58,10 +60,14 @@ public class New_Game extends Application {
         Rectangle shieldRectangle = new Rectangle(shield.getPos_x(), shield.getPos_y(), squareSize, squareSize);
         shieldRectangle.setFill(shield.getColor());
 
-        //Implemented boots with Rectangle
-        Rectangle bootsRectangle = new Rectangle(boots.getPos_x(), boots.getPos_y(), squareSize, squareSize);
-        bootsRectangle.setFill(boots.getColor());
+        // Create ImageView for the Boots
+        ImageView bootsImageView = new ImageView(new Image("Boot.png"));
+        bootsImageView.setFitWidth(squareSize);
+        bootsImageView.setFitHeight(squareSize);
 
+        // Adjust position based on the Boots' location
+        bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         //BOMB IMPLEMENTATION
         Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
@@ -166,7 +172,7 @@ public class New_Game extends Application {
         layout1.getChildren().addAll(label1, b1, b2);
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsRectangle);
+        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsImageView);
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -210,8 +216,8 @@ public class New_Game extends Application {
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        bootsRectangle.setX(boots.getPos_x());
-        bootsRectangle.setY(boots.getPos_y());
+        bootsImageView.setX(boots.getPos_x());
+        bootsImageView.setY(boots.getPos_y());
 
         //BOMB IMPLEMENTATION
         bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -276,15 +282,15 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
-                bootsRectangle.setVisible(false);
+            if(characterPosX == bootsImageView.getX() && characterPosY == bootsImageView.getY()){
+                bootsImageView.setVisible(false);
                 character.setSpeedMore();
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
                             character.setSpeedLess();
-                            bootsRectangle.setVisible(true);
+                            bootsImageView.setVisible(true);
                         })
                 );
                 delayTimeline.play();
