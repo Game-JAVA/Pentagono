@@ -145,7 +145,8 @@ public class New_Game extends Application {
             primaryStage.setScene(s2);
             primaryStage.setX(40);
             primaryStage.setY(0);
-            startTimer();/*
+            startTimer();
+            /*
             stopThemeSound();
             startBackgroundSound();*/
         });
@@ -188,18 +189,13 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
-
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-
-
-
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
 
         //Implemented Shield in Window
         shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -208,14 +204,12 @@ public class New_Game extends Application {
         shieldRectangle.setX(shield.getPos_x());
         shieldRectangle.setY(shield.getPos_y());
 
-
         //Implemented Boots in window.
         boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         bootsRectangle.setX(boots.getPos_x());
         bootsRectangle.setY(boots.getPos_y());
-
 
         //BOMB IMPLEMENTATION
         bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
