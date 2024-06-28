@@ -115,20 +115,16 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
 
 
-        Label label1 = new Label("Welcome to Page 1");//Window 1
-        Label label3 = new Label("SCORE");//Text score
-        Label label4 = new Label("00");//Score
-        Label label5 = new Label("TIMER");//Text Timer
+        Label label1 = new Label("Welcome to Page 1");
         label1.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
                         "-fx-padding: 10 0 0 60"
-
         );
-                                                         
-        BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
-        BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-        layout1.setBackground(new Background(background));
+
+        Label label3 = new Label("SCORE:");
+        Label label4 = new Label("00");
+        Label label5 = new Label("TIMER:");
 
         // Initialize sounds
         try {
@@ -149,7 +145,8 @@ public class New_Game extends Application {
             primaryStage.setScene(s2);
             primaryStage.setX(40);
             primaryStage.setY(0);
-            startTimer();/*
+            startTimer();
+            /*
             stopThemeSound();
             startBackgroundSound();*/
         });
@@ -166,9 +163,6 @@ public class New_Game extends Application {
 
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
-
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldRectangle, bootsRectangle);
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -193,6 +187,8 @@ public class New_Game extends Application {
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
 
+        // Scene/Layout 2
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -231,8 +227,6 @@ public class New_Game extends Application {
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
-            int characterPosX = character.getPos_x();
-            int characterPosY = character.getPos_y();
             int applePosX = a1.getPos_x();
             int applePosY = a1.getPos_y();
 
@@ -262,7 +256,7 @@ public class New_Game extends Application {
             }
 
             // Check if character and apple occupy the same square
-            if (characterPosX == applePosX && characterPosY == applePosY) {
+            if (character.getPos_x() == applePosX && character.getPos_y() == applePosY) {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
@@ -277,9 +271,11 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
+            if(character.getPos_x() == bootsRectangle.getX() && character.getPos_y() == bootsRectangle.getY()){
                 bootsRectangle.setVisible(false);
                 character.setSpeedMore();
+                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
+                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -291,7 +287,7 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
+            if(character.getPos_x() == shieldRectangle.getX() && character.getPos_y() == shieldRectangle.getY()){
                 shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldRectangle.setVisible(false);
@@ -304,27 +300,12 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
-                a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-                a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-            }
 
-            if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
-                System.out.println("TESTE");
-            }
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
-        /*
-        try {
-            String css = getClass().getResource("style.css").toExternalForm();
-            s1.getStylesheets().add(css);
-            s2.getStylesheets().add(css);
-        } catch (NullPointerException e) {
-            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
-            e.printStackTrace();
-        }
-        */
+
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
