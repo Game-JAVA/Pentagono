@@ -10,7 +10,7 @@ public class Bomb extends Map_Objects{
     private int pos_x;
     private int pos_y;
     private Color color;
-    Random r = new Random();    the getters and setters methods were changed and the constructor signature was changed to add color
+    Random r = new Random();
 
     // constructor
     public Bomb(int width, int height, int pos_x, int pos_y, Color color) {
@@ -59,12 +59,6 @@ public class Bomb extends Map_Objects{
         this.r = r;
     }
     // methods
-
-    public void explode(){
-
-    }
-
-
 
     // toString
 
