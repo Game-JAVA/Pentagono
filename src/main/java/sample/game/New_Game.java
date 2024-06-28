@@ -125,9 +125,7 @@ public class New_Game extends Application {
                         "-fx-padding: 10 0 0 60"
 
         );
-                                                         
-        BackgroundSize backgroundSize = new BackgroundSize(400, 500, false, false, true, false);
-        BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+
         layout1.setBackground(new Background(background));
 
         // Initialize sounds
@@ -236,6 +234,7 @@ public class New_Game extends Application {
             int applePosX = a1.getPos_x();
             int applePosY = a1.getPos_y();
 
+
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
@@ -262,7 +261,7 @@ public class New_Game extends Application {
             }
 
             // Check if character and apple occupy the same square
-            if (characterPosX == applePosX && characterPosY == applePosY) {
+            if (character.getPos_x() == applePosX && character.getPos_y() == applePosY) {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
@@ -304,17 +303,10 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
-                a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-                a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-            }
-
-            if(characterPosX == boots.getPos_x() && characterPosY == boots.getPos_y()){
-                System.out.println("TESTE");
-            }
-            // Log position after movement
-            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
-        });
+        // Log position after movement
+        System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
+        System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+    });
         /*
         try {
             String css = getClass().getResource("style.css").toExternalForm();
@@ -325,60 +317,60 @@ public class New_Game extends Application {
             e.printStackTrace();
         }
         */
-        // Build the Window
+    // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
-    }
+}
 
-    private void createBoard(Pane pane) {
-        int number = 1;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                int x = startX + (j * squareSize);
-                int y = startY + (i * squareSize);
+private void createBoard(Pane pane) {
+    int number = 1;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            int x = startX + (j * squareSize);
+            int y = startY + (i * squareSize);
 
-                Rectangle square = new Rectangle(x, y, squareSize, squareSize);
-                square.setFill(null);
-                square.setStroke(Color.BLACK);
+            Rectangle square = new Rectangle(x, y, squareSize, squareSize);
+            square.setFill(null);
+            square.setStroke(Color.BLACK);
 
-                // Create a label to display the number
-                Label numberLabel = new Label(Integer.toString(number));
-                numberLabel.setLayoutX(x + squareSize / 2 - 10);
-                numberLabel.setLayoutY(y + squareSize / 2 - 10);
+            // Create a label to display the number
+            Label numberLabel = new Label(Integer.toString(number));
+            numberLabel.setLayoutX(x + squareSize / 2 - 10);
+            numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
-                pane.getChildren().addAll(square, numberLabel);
-                number++;
-            }
+            pane.getChildren().addAll(square, numberLabel);
+            number++;
         }
     }
+}
 
-    private void startTimer() {
-        secondsElapsed = 0;
-        timeline = new Timeline(
-                new KeyFrame(Duration.seconds(1), event -> {
-                    secondsElapsed++;
-                    updateTimerLabel();
-                    if (secondsElapsed >= 3599) {
-                        timeline.stop();
-                    }
-                })
-        );
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-    }
+private void startTimer() {
+    secondsElapsed = 0;
+    timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1), event -> {
+                secondsElapsed++;
+                updateTimerLabel();
+                if (secondsElapsed >= 3599) {
+                    timeline.stop();
+                }
+            })
+    );
+    timeline.setCycleCount(Timeline.INDEFINITE);
+    timeline.play();
+}
 
-    private void stopTimer() {
-        if (timeline != null) {
-            timeline.stop();
-        }
+private void stopTimer() {
+    if (timeline != null) {
+        timeline.stop();
     }
+}
 
-    private void updateTimerLabel() {
-        int minutes = secondsElapsed / 60;
-        int seconds = secondsElapsed % 60;
-        label2.setText(String.format("%02d:%02d", minutes, seconds));
-    }
+private void updateTimerLabel() {
+    int minutes = secondsElapsed / 60;
+    int seconds = secondsElapsed % 60;
+    label2.setText(String.format("%02d:%02d", minutes, seconds));
+}
 /*
 
     private void stopBackgroundSound() {
