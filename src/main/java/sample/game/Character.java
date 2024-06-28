@@ -8,6 +8,7 @@ public class Character extends Rectangle {
     private int score = 0;
     private int speed = 10;
 
+
     // Constructor
     public Character(String name, int pos_x, int pos_y, int width, int height, Color color) {
         super(pos_x, pos_y, width, height);
