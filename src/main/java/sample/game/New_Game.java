@@ -1,4 +1,5 @@
 package sample.game;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -51,7 +52,7 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.YELLOW);
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40,0, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        Bomb bomb = new Bomb(40, 40,3,3,1, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.BLUEVIOLET);
+        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
 
         // Convert Shield to a graphical object
@@ -194,9 +195,6 @@ public class New_Game extends Application {
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-
-
-
         // Set initial position of the apple
         a1.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -285,6 +283,7 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+            // Check if character and boots occupy the same square
             if(characterPosX == bootsRectangle.getX() && characterPosY == bootsRectangle.getY()){
                 bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
                 bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
@@ -301,6 +300,7 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+            // Check if character and shield occupy the same square
             if(characterPosX == shieldRectangle.getX() && characterPosY == shieldRectangle.getY()){
                 shieldRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
@@ -313,21 +313,22 @@ public class New_Game extends Application {
                         })
                 );
                 delayTimeline.play();
-    }
+            }
+
+            private void pump_replacement(){
+
+
+            }
+
+
+
+
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
 
-        try {
-            String css = getClass().getResource("style.css").toExternalForm();
-            s1.getStylesheets().add(css);
-            s2.getStylesheets().add(css);
-        } catch (NullPointerException e) {
-            System.err.println("Arquivo CSS não encontrado. Verifique o caminho: " + e.getMessage());
-            e.printStackTrace();
-        }
 
         // Build the Window
         primaryStage.setScene(s1);
@@ -414,5 +415,3 @@ public class New_Game extends Application {
     */
 }
 
-public void main() {
-}
