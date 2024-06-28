@@ -1,18 +1,22 @@
 package sample.game;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-public class Character extends Rectangle {
+
+public class Character extends ImageView {
     private String name;
     private int score = 0;
     private int speed = 10;
 
     // Constructor
-    public Character(String name, int pos_x, int pos_y, int width, int height, Color color) {
-        super(pos_x, pos_y, width, height);
+    public Character(String name, int pos_x, int pos_y, int width, int height, String imagePath) {
         this.name = name;
-        this.setFill(color);
+        this.setImage(new Image(imagePath));
+        this.setX(pos_x);
+        this.setY(pos_y);
+        this.setFitWidth(width);
+        this.setFitHeight(height);
     }
 
     // Methods
