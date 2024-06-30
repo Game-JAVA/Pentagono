@@ -1,5 +1,12 @@
 # Pentagon
 
+## Index
+1. [Description](#description)
+2. [How to Play](#how-to-play)
+3. [Game Rules](#game-rules)
+4. [Controls](#controls)
+5. [Requirements](#requirements)
+
 ## Description
 
 This is an action and strategy game in the style of Bomberman, with a medieval theme. The objective of the game is to survive as long as possible while dodging magical attacks and collecting items that increase your score and abilities.
