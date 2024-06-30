@@ -5,7 +5,8 @@
 2. [How to Play](#how-to-play)
 3. [Game Rules](#game-rules)
 4. [Controls](#controls)
-5. [Requirements](#requirements)
+5. [Sound Effects](#sound-effects)
+6. [Requirements](#requirements)
 
 ## Description
 
@@ -32,6 +33,12 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
   - **A:** Move the character left.
   - **S:** Move the character down.
   - **D:** Move the character right.
+
+## Sound Effects
+
+- **Background Music:** There are two background tracks: one for the menu and one for gameplay.
+- **Attack Sound:** A sound effect for when an spell appears.
+- **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
 ## Requirements
 
