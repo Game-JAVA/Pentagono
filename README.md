@@ -6,8 +6,8 @@
 3. [Game Rules](#game-rules)
 4. [Controls](#controls)
 5. [Sound Effects](#sound-effects)
-6. [UML Diagram] (#uml-diagram)
-6. [Requirements](#requirements)
+6. [UML Diagram](#uml-diagram)
+7. [Requirements](#requirements)
 
 ## Description
 
