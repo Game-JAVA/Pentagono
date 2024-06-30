@@ -1,32 +1,33 @@
-# Pentagono
+# Pentagon
 
-## Descrição
+## Description
 
-Este é um jogo de ação e estratégia no estilo de Bomberman, com uma temática medieval. O objetivo do jogo é sobreviver o maior tempo possível enquanto desvia dos ataques mágicos e coleta itens que aumentam sua pontuação e habilidades.
+This is an action and strategy game in the style of Bomberman, with a medieval theme. The objective of the game is to survive as long as possible while dodging magical attacks and collecting items that increase your score and abilities.
 
-## Como Jogar
+## How to Play
 
-<<<<<<< HEAD
-- **Movimentação:** Utilize as teclas de WASD para mover o personagem pelo mapa.
-=======
-- **Movimentação:** Utilize as teclas de setas (ou WASD) para mover o personagem pelo mapa.
->>>>>>> 880d580 (feat (design): heart)
-- **Desvio de Ataques:** Os ataques (magias) surgem aleatoriamente na tela. Desvie deles para não perder vida.
-- **Itens:** Colete itens para melhorar suas chances de sobrevivência:
-  - **Escudo:** Protege você de um ataque.
-  - **Maçã:** Aumenta sua pontuação.
-  - **Bota:** Aumenta a velocidade do personagem.
+- **Movement:** Use the WASD keys to move the character around the map.
+- **Dodging Attacks:** Attacks (spells) appear randomly on the screen. Dodge them to avoid losing health.
+- **Items:** Collect items to improve your chances of survival:
+  - **Shield:** Protects you from one attack.
+  - **Apple:** Increases your score.
+  - **Boots:** Increases the character's speed.
 
-## Regras do Jogo
+## Game Rules
 
-- A dificuldade aumenta conforme a pontuação do jogador. Mais ataques mágicos surgem na tela conforme você avança.
-- O jogo termina quando você é atingido por um ataque e não possui mais vidas.
+- The difficulty increases as the player's score goes up. More magical attacks appear on the screen as you progress.
+- The game ends when you are hit by an attack and have no more lives left.
 
-## Controles
+## Controls
 
-<<<<<<< HEAD
-- **WASD:** Movimentar o personagem.
-=======
-- **Setas (ou WASD):** Movimentar o personagem.
->>>>>>> 880d580 (feat (design): heart)
+- **WASD:** Move the character.
+  - **W:** Move the character up.
+  - **A:** Move the character left.
+  - **S:** Move the character down.
+  - **D:** Move the character right.
 
+## Requirements
+
+- **Java:** Version 8 or higher.
+- **JavaFX:** Version 11 or higher.
+- **Maven:** Version 3.6.0 or higher.
