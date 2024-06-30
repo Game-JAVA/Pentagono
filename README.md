@@ -41,7 +41,7 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
 ## Diagram UML
-![alt text](<Imagem do WhatsApp de 2024-06-18 à(s) 15.54.48_531aa6dc.jpg>)
+![alt text](<URL diagram.jpg>)
 
 ## Requirements
 
