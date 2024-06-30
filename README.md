@@ -6,6 +6,7 @@
 3. [Game Rules](#game-rules)
 4. [Controls](#controls)
 5. [Sound Effects](#sound-effects)
+6. [UML Diagram] (#uml-diagram)
 6. [Requirements](#requirements)
 
 ## Description
@@ -40,7 +41,7 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - **Attack Sound:** A sound effect for when an spell appears.
 - **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
-## Diagram UML
+## UML Diagram
 ![alt text](<UML diagram.jpg>)
 
 ## Requirements
