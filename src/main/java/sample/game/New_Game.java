@@ -50,7 +50,7 @@ public class New_Game extends Application {
 
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
-        Scene s3 = new Scene(layout3, 800, 700);
+        Scene s3 = new Scene(layout3, 800, 500);
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
@@ -144,7 +144,9 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
-        Label label6 = new Label("Título do jogo");
+        Label label6 = new Label("Title");
+        Label label7 = new Label("Objetivo do jogo:");
+        Label label8 = new Label("Como Jogar:");
 
         // Initialize sounds
         try {
@@ -213,7 +215,7 @@ public class New_Game extends Application {
         label5.setLayoutY(10);
 
         // Set the position of the label6
-        label6.setLayoutX(300);
+        label6.setLayoutX(350);
         label6.setLayoutY(10);
 
         label6.setStyle(
@@ -223,9 +225,27 @@ public class New_Game extends Application {
 
         );
 
+        // Set the position of the label7
+        label7.setLayoutX(20);
+        label7.setLayoutY(40);
+
+        label7.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 22px;"
+        );
+
+        // Set the position of the label8
+        label8.setLayoutX(20);
+        label8.setLayoutY(200);
+
+        label8.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 22px;"
+        );
+
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldImageView, bootsImageView, bombRectangle);
-        layout3.getChildren().addAll(label6);
+        layout3.getChildren().addAll(label6, label7, label8);
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
