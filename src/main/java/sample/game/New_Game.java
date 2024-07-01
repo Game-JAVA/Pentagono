@@ -130,16 +130,12 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
 
 
-<<<<<<< HEAD
         Label label1 = new Label("Welcome to Page 1");//Window 1
         Label label3 = new Label("SCORE");//Text score
         Label label4 = new Label("00");//Score
         Label label5 = new Label("TIMER");//Text Timer
         Label label6 = new Label("Título do jogo: ");
         Label label7 = new Label("Objetivo do jogo: ");
-=======
-        Label label1 = new Label("Welcome to Page 1");
->>>>>>> f8b4dfef7212fd549e1d800de52b92b0bc4d6243
         label1.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
@@ -147,15 +143,11 @@ public class New_Game extends Application {
         );
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f8b4dfef7212fd549e1d800de52b92b0bc4d6243
+
         layout1.setBackground(new Background(background));
 
-        Label label3 = new Label("SCORE:");
-        Label label4 = new Label("00");
-        Label label5 = new Label("TIMER:");
+
 
 
         // Initialize sounds
@@ -205,10 +197,7 @@ public class New_Game extends Application {
         // Scene/Layout 2
         layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
 
-<<<<<<< HEAD
-        layout3.getChildren().addAll(label6, label7);
-=======
->>>>>>> f8b4dfef7212fd549e1d800de52b92b0bc4d6243
+
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -233,7 +222,7 @@ public class New_Game extends Application {
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
 
-<<<<<<< HEAD
+
         // Set the position of the label5
         label6.setLayoutX(300);
         label6.setLayoutY(10);
@@ -255,10 +244,10 @@ public class New_Game extends Application {
 
         );
 
-=======
+
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
->>>>>>> f8b4dfef7212fd549e1d800de52b92b0bc4d6243
+
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
