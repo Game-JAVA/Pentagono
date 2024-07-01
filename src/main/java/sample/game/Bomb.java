@@ -23,7 +23,6 @@ public class Bomb extends Map_Objects{
     }
 
     // getters and setters
-
     public int getExplosion_range() {
         return explosion_range;
     }
