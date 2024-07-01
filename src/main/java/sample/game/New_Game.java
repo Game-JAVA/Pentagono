@@ -47,6 +47,7 @@ public class New_Game extends Application {
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
 
+
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
         Scene s3 = new Scene(layout3, 800, 700);
@@ -130,12 +131,7 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
 
 
-        Label label1 = new Label("Welcome to Page 1");//Window 1
-        Label label3 = new Label("SCORE");//Text score
-        Label label4 = new Label("00");//Score
-        Label label5 = new Label("TIMER");//Text Timer
-        Label label6 = new Label("Título do jogo: ");
-        Label label7 = new Label("Objetivo do jogo: ");
+        Label label1 = new Label("Welcome to Page 1");
         label1.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
@@ -143,12 +139,12 @@ public class New_Game extends Application {
         );
 
 
-
-
         layout1.setBackground(new Background(background));
 
-
-
+        Label label3 = new Label("SCORE:");
+        Label label4 = new Label("00");
+        Label label5 = new Label("TIMER:");
+        Label label6 = new Label("Título do jogo");
 
         // Initialize sounds
         try {
@@ -185,18 +181,12 @@ public class New_Game extends Application {
             startThemeSound();*/
         });
 
-        b2.setOnAction(e->{
+        b2.setOnAction(e ->{
             primaryStage.setScene(s3);
-
         });
 
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
-
-
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
-
 
 
         // Set the position of the label2
@@ -222,8 +212,7 @@ public class New_Game extends Application {
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
 
-
-        // Set the position of the label5
+        // Set the position of the label6
         label6.setLayoutX(300);
         label6.setLayoutY(10);
 
@@ -234,19 +223,9 @@ public class New_Game extends Application {
 
         );
 
-        label7.setLayoutX(20);
-        label7.setLayoutY(40);
-
-        label7.setStyle(
-                "-fx-text-fill: black;"+
-                        "-fx-font-size: 22px;"
-
-
-        );
-
-
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldImageView, bootsImageView, bombRectangle);
+        layout3.getChildren().addAll(label6);
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -331,11 +310,11 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == bootsImageView.getX() && characterPosY == bootsImageView.getY()){
+            if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
-                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
+                bootsImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
+                bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -348,7 +327,7 @@ public class New_Game extends Application {
             }
 
 
-            if(characterPosX == shieldImageView.getX() && characterPosY == shieldImageView.getY()){
+            if(character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()){
                 shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldImageView.setVisible(false);
