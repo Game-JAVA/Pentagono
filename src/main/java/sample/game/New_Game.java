@@ -44,9 +44,11 @@ public class New_Game extends Application {
         ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
+        Pane layout3 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
+        Scene s3 = new Scene(layout3, 800, 700);
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
@@ -131,12 +133,16 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE");//Text score
         Label label4 = new Label("00");//Score
         Label label5 = new Label("TIMER");//Text Timer
+        Label label6 = new Label("Título do jogo: ");
+        Label label7 = new Label("Objetivo do jogo: ");
         label1.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
                         "-fx-padding: 10 0 0 60"
 
         );
+
+
 
         layout1.setBackground(new Background(background));
 
@@ -174,11 +180,18 @@ public class New_Game extends Application {
             startThemeSound();*/
         });
 
+        b2.setOnAction(e->{
+            primaryStage.setScene(s3);
+
+        });
+
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
+
+        layout3.getChildren().addAll(label6, label7);
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -202,6 +215,27 @@ public class New_Game extends Application {
         // Set the position of the label5
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
+
+        // Set the position of the label5
+        label6.setLayoutX(300);
+        label6.setLayoutY(10);
+
+        label6.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 26px;"
+
+
+        );
+
+        label7.setLayoutX(20);
+        label7.setLayoutY(40);
+
+        label7.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 22px;"
+
+
+        );
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
