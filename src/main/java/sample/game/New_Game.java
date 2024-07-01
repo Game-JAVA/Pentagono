@@ -90,11 +90,14 @@ public class New_Game extends Application {
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
+        Button b4 = new Button("Return to Menu");
+
 
         VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
-        vbox.getChildren().addAll(b1, b2, b3);
+        VBox.setMargin(b3, new Insets(500, 10, 10, 300));
+        vbox.getChildren().addAll(b1, b2, b3, b4);
 
         String buttonStyle = "-fx-background-color: black;" +
                 "-fx-text-fill: yellow;" +
@@ -108,6 +111,7 @@ public class New_Game extends Application {
         b1.setStyle(buttonStyle);
         b2.setStyle(buttonStyle);
         b3.setStyle(buttonStyle);
+        b4.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
@@ -187,6 +191,11 @@ public class New_Game extends Application {
             primaryStage.setScene(s3);
         });
 
+        b4.setOnAction(e -> {
+            primaryStage.setScene(s1);
+
+        });
+
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
@@ -245,7 +254,10 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldImageView, bootsImageView, bombRectangle);
-        layout3.getChildren().addAll(label6, label7, label8);
+        layout3.getChildren().addAll(label6, label7, label8, b4);
+
+        b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
+        b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
