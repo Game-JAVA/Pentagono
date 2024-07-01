@@ -16,8 +16,10 @@ import javafx.util.Duration;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
+import java.util.Random;
+
+import static eu.hansolo.tilesfx.tools.Country.MO;
 
 public class New_Game extends Application {
     private int squareSize = 40;
@@ -54,8 +56,7 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
-
+        // Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
 
         // Create ImageView for the shield
@@ -77,9 +78,8 @@ public class New_Game extends Application {
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         //BOMB IMPLEMENTATION
-        Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
-        bombRectangle.setFill(bomb.getColor());
-
+        //  Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
+        //  bombRectangle.setFill(bomb.getColor());
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -99,7 +99,7 @@ public class New_Game extends Application {
                 "-fx-border-radius: 5;" +
                 "-fx-background-radius: 5;" +
                 "-fx-padding: 15 15 15 15;" +
-                "-fx-border-color: yellow;"+
+                "-fx-border-color: yellow;" +
                 "-fx-cursor: hand";
 
         b1.setStyle(buttonStyle);
@@ -130,8 +130,8 @@ public class New_Game extends Application {
 
         Label label1 = new Label("Welcome to Page 1");
         label1.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 26px;"+
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 26px;" +
                         "-fx-padding: 10 0 0 60"
         );
 
@@ -183,7 +183,7 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
 
 
         // Set the position of the label2
@@ -191,8 +191,8 @@ public class New_Game extends Application {
         label2.setLayoutY(30);
 
         label2.setStyle(
-                "-fx-text-fill: black;"+
-                        "-fx-font-size: 26px;"+
+                "-fx-text-fill: black;" +
+                        "-fx-font-size: 26px;" +
                         "-fx-padding: 10 0 0 10"
 
         );
@@ -209,8 +209,6 @@ public class New_Game extends Application {
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
 
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldRectangle, bootsRectangle, bombRectangle);
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -234,12 +232,11 @@ public class New_Game extends Application {
         bootsImageView.setY(boots.getPos_y());
 
         //BOMB IMPLEMENTATION
-        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        //      bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+        //       bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        bombRectangle.setX(bomb.getPos_x());
-        bombRectangle.setY(bomb.getPos_y());
-
+        //      bombRectangle.setX(bomb.getPos_x());
+        //      bombRectangle.setY(bomb.getPos_y());
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
         System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
@@ -294,11 +291,11 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if(characterPosX == bootsImageView.getX() && characterPosY == bootsImageView.getY()){
+            if (character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()) {
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
-                bootsRectangle.setX(MO.aleatoryPositionX()*squareSize + startY);
-                bootsRectangle.setY(MO.aleatoryPositionY()*squareSize + startX);
+                boots.setPos_x(MO.aleatoryPositionX() * squareSize + startY);
+                boots.setPos_y(MO.aleatoryPositionY() * squareSize + startX);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -311,9 +308,9 @@ public class New_Game extends Application {
             }
 
 
-            if(characterPosX == shieldImageView.getX() && characterPosY == shieldImageView.getY()){
-                shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
-                shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
+            if (character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()) {
+                shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startY);
+                shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startX);
                 shieldImageView.setVisible(false);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
@@ -324,78 +321,114 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
-            Timeline bombGeneration = new Timeline(
-                    new KeyFrame(Duration.seconds(5), e -> {
-                            bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-                            bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-                            bombRectangle.setX(bomb.getPos_x());
-                            bombRectangle.setY(bomb.getPos_y());
-                    })
-            );
-            bombGeneration.setCycleCount(Timeline.INDEFINITE); // Faz o timeline executar indefinidamente
-            bombGeneration.play();
-
 
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
-      
+
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
-}
+    }
 
-private void createBoard(Pane pane) {
-    int number = 1;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            int x = startX + (j * squareSize);
-            int y = startY + (i * squareSize);
+    private void createBoard(Pane pane) {
+        int number = 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int x = startX + (j * squareSize);
+                int y = startY + (i * squareSize);
 
-            Rectangle square = new Rectangle(x, y, squareSize, squareSize);
-            square.setFill(null);
-            square.setStroke(Color.BLACK);
+                Rectangle square = new Rectangle(x, y, squareSize, squareSize);
+                square.setFill(null);
+                square.setStroke(Color.BLACK);
 
-            // Create a label to display the number
-            Label numberLabel = new Label(Integer.toString(number));
-            numberLabel.setLayoutX(x + squareSize / 2 - 10);
-            numberLabel.setLayoutY(y + squareSize / 2 - 10);
+                // Create a label to display the number
+                Label numberLabel = new Label(Integer.toString(number));
+                numberLabel.setLayoutX(x + squareSize / 2 - 10);
+                numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
-            pane.getChildren().addAll(square, numberLabel);
-            number++;
+                pane.getChildren().addAll(square, numberLabel);
+                number++;
+            }
         }
     }
-}
 
-private void startTimer() {
-    secondsElapsed = 0;
-    timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), event -> {
-                secondsElapsed++;
-                updateTimerLabel();
-                if (secondsElapsed >= 3599) {
-                    timeline.stop();
-                }
-            })
-    );
-    timeline.setCycleCount(Timeline.INDEFINITE);
-    timeline.play();
-}
-
-private void stopTimer() {
-    if (timeline != null) {
-        timeline.stop();
+    private void startTimer() {
+        secondsElapsed = 0;
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    secondsElapsed++;
+                    updateTimerLabel();
+                    if (secondsElapsed >= 3599) {
+                        timeline.stop();
+                    }
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
-}
 
-private void updateTimerLabel() {
-    int minutes = secondsElapsed / 60;
-    int seconds = secondsElapsed % 60;
-    label2.setText(String.format("%02d:%02d", minutes, seconds));
-}
+    private void stopTimer() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+    }
+
+    private void updateTimerLabel() {
+        int minutes = secondsElapsed / 60;
+        int seconds = secondsElapsed % 60;
+        label2.setText(String.format("%02d:%02d", minutes, seconds));
+    }
+
+    private Rectangle createnewbomb() {
+        Map_Objects MOA = new Map_Objects();
+        Bomb bomba = new Bomb(40, 40, MOA.aleatoryPositionX(), MOA.aleatoryPositionY(), Color.BLACK);
+        bomba.setPos_y(MOA.aleatoryPositionY() * squareSize + startY);
+        bomba.setPos_x(MOA.aleatoryPositionX() * squareSize + startX);
+        Rectangle bombRectanglea = new Rectangle(bomba.getPos_x(), bomba.getPos_y(), squareSize, squareSize);
+        bombRectanglea.setFill(bomba.getColor());
+        bombRectanglea.setX(bomba.getPos_x());
+        bombRectanglea.setY(bomba.getPos_y());
+        return bombRectanglea ;
+    }
+    private Rectangle createnewbombB() {
+        Map_Objects MOB = new Map_Objects();
+        Bomb bombb = new Bomb(40, 40, MOB.aleatoryPositionX(), MOB.aleatoryPositionY(), Color.BLACK);
+        bombb.setPos_y(MOB.aleatoryPositionY() * squareSize + startY);
+        bombb.setPos_x(MOB.aleatoryPositionX() * squareSize + startX);
+        Rectangle bombRectangleb = new Rectangle(bombb.getPos_x(), bombb.getPos_y(), squareSize, squareSize);
+        bombRectangleb.setFill(bombb.getColor());
+        bombRectangleb.setX(bombb.getPos_x());
+        bombRectangleb.setY(bombb.getPos_y());
+        return bombRectangleb ;
+    }
+    private Rectangle createnewbombaC() {
+        Map_Objects MOC = new Map_Objects();
+        Bomb bombc = new Bomb(40, 40, MOC.aleatoryPositionX(), MOC.aleatoryPositionY(), Color.BLACK);
+        bombc.setPos_y(MOC.aleatoryPositionY() * squareSize + startY);
+        bombc.setPos_x(MOC.aleatoryPositionX() * squareSize + startX);
+        Rectangle bombRectanglec = new Rectangle(bombc.getPos_x(), bombc.getPos_y(), squareSize, squareSize);
+        bombRectanglec.setFill(bombc.getColor());
+        bombRectanglec.setX(bombc.getPos_x());
+        bombRectanglec.setY(bombc.getPos_y());
+        return bombRectanglec ;
+    }
+
+    private Rectangle createnewbombaD() {
+        Map_Objects MOD = new Map_Objects();
+        Bomb bombD = new Bomb(40, 40, MOD.aleatoryPositionX(), MOD.aleatoryPositionY(), Color.BLACK);
+        bombD.setPos_y(MOD.aleatoryPositionY() * squareSize + startY);
+        bombD.setPos_x(MOD.aleatoryPositionX() * squareSize + startX);
+        Rectangle bombRectangleD = new Rectangle(bombD.getPos_x(), bombD.getPos_y(), squareSize, squareSize);
+        bombRectangleD.setFill(bombD.getColor());
+        bombRectangleD.setX(bombD.getPos_x());
+        bombRectangleD.setY(bombD.getPos_y());
+        return bombRectangleD ;
+    }
+
 /*
 
     private void stopBackgroundSound() {
