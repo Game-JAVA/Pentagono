@@ -342,61 +342,61 @@ public class New_Game extends Application {
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
-      
+
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
-}
+    }
 
-private void createBoard(Pane pane) {
-    int number = 1;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            int x = startX + (j * squareSize);
-            int y = startY + (i * squareSize);
+    private void createBoard(Pane pane) {
+        int number = 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int x = startX + (j * squareSize);
+                int y = startY + (i * squareSize);
 
-            Rectangle square = new Rectangle(x, y, squareSize, squareSize);
-            square.setFill(null);
-            square.setStroke(Color.BLACK);
+                Rectangle square = new Rectangle(x, y, squareSize, squareSize);
+                square.setFill(null);
+                square.setStroke(Color.BLACK);
 
-            // Create a label to display the number
-            Label numberLabel = new Label(Integer.toString(number));
-            numberLabel.setLayoutX(x + squareSize / 2 - 10);
-            numberLabel.setLayoutY(y + squareSize / 2 - 10);
+                // Create a label to display the number
+                Label numberLabel = new Label(Integer.toString(number));
+                numberLabel.setLayoutX(x + squareSize / 2 - 10);
+                numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
-            pane.getChildren().addAll(square, numberLabel);
-            number++;
+                pane.getChildren().addAll(square, numberLabel);
+                number++;
+            }
         }
     }
-}
 
-private void startTimer() {
-    secondsElapsed = 0;
-    timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), event -> {
-                secondsElapsed++;
-                updateTimerLabel();
-                if (secondsElapsed >= 3599) {
-                    timeline.stop();
-                }
-            })
-    );
-    timeline.setCycleCount(Timeline.INDEFINITE);
-    timeline.play();
-}
-
-private void stopTimer() {
-    if (timeline != null) {
-        timeline.stop();
+    private void startTimer() {
+        secondsElapsed = 0;
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    secondsElapsed++;
+                    updateTimerLabel();
+                    if (secondsElapsed >= 3599) {
+                        timeline.stop();
+                    }
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
-}
 
-private void updateTimerLabel() {
-    int minutes = secondsElapsed / 60;
-    int seconds = secondsElapsed % 60;
-    label2.setText(String.format("%02d:%02d", minutes, seconds));
-}
+    private void stopTimer() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+    }
+
+    private void updateTimerLabel() {
+        int minutes = secondsElapsed / 60;
+        int seconds = secondsElapsed % 60;
+        label2.setText(String.format("%02d:%02d", minutes, seconds));
+    }
 /*
 
     private void stopBackgroundSound() {

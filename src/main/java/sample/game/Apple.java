@@ -54,5 +54,3 @@ public class Apple extends ImageView {
                 '}';
     }
 }
-
-
