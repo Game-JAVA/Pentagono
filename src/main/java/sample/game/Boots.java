@@ -47,9 +47,6 @@ public class Boots extends Map_Objects{
         this.pos_y = pos_y;
     }
 
-    public void setR(Random r) {
-        this.r = r;
-    }
 
     // methods
 
