@@ -54,7 +54,61 @@ public class New_Game extends Application {
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
         Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
+        // Create ImageView for the first character's heath
+        ImageView heathFull1 = new ImageView(new Image("heathFull.png"));
+        heathFull1.setFitHeight(60);
+        heathFull1.setFitWidth(60);
+        heathFull1.setX(130);
+        heathFull1.setY(10);
+        heathFull1.setVisible(true);
 
+        // Create ImageView for the second character's heath
+        ImageView heathFull2 = new ImageView(new Image("heathFull.png"));
+        heathFull2.setFitHeight(60);
+        heathFull2.setFitWidth(60);
+        heathFull2.setX(230);
+        heathFull2.setY(10);
+        heathFull2.setVisible(true);
+
+        // Create ImageView for the third character's heath
+        ImageView heathFull3 = new ImageView(new Image("heathFull.png"));
+        heathFull3.setFitHeight(60);
+        heathFull3.setFitWidth(60);
+        heathFull3.setX(330);
+        heathFull3.setY(10);
+        heathFull3.setVisible(true);
+
+        // Create ImageView for the third character's Empyt heath
+        ImageView heathEmpty3 = new ImageView(new Image("heathEmpty.png"));
+        heathEmpty3.setFitHeight(60);
+        heathEmpty3.setFitWidth(60);
+        heathEmpty3.setX(330);
+        heathEmpty3.setY(10);
+        heathEmpty3.setVisible(false);
+
+        // Create ImageView for the second character's Empyt heath
+        ImageView heathEmpty2 = new ImageView(new Image("heathEmpty.png"));
+        heathEmpty2.setFitHeight(60);
+        heathEmpty2.setFitWidth(60);
+        heathEmpty2.setX(230);
+        heathEmpty2.setY(10);
+        heathEmpty2.setVisible(false);
+
+        // Create ImageView for the first character's Empyt heath
+        ImageView heathEmpty1 = new ImageView(new Image("heathEmpty.png"));
+        heathEmpty1.setFitHeight(60);
+        heathEmpty1.setFitWidth(60);
+        heathEmpty1.setX(130);
+        heathEmpty1.setY(10);
+        heathEmpty1.setVisible(false);
+
+        // Create ImageView for the character's heathShield
+        ImageView heathShield = new ImageView(new Image("heathShield.png"));
+        heathShield.setFitHeight(60);
+        heathShield.setFitWidth(60);
+        heathShield.setX(330);
+        heathShield.setY(10);
+        heathShield.setVisible(false);
 
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
@@ -180,7 +234,24 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView,bombRectangle);
+        layout2.getChildren().addAll(
+                label2,
+                label3,
+                label4,
+                label5,
+                b3,
+                character,
+                a1,shieldImageView,
+                bootsImageView,
+                bombRectangle,
+                heathFull1,
+                heathFull2,
+                heathFull3,
+                heathEmpty3,
+                heathEmpty2,
+                heathEmpty1,
+                heathShield
+        );
 
 
         // Set the position of the label2
@@ -247,7 +318,6 @@ public class New_Game extends Application {
             int applePosX = a1.getPos_x();
             int applePosY = a1.getPos_y();
 
-
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
@@ -269,7 +339,15 @@ public class New_Game extends Application {
                         character.setPos_x(character.getPos_x() + character.getSpeed());
                     }
                     break;
-                default:
+                case O:
+                    if(character.getHealth()<=4 && character.getHealth()>0)
+                        character.setHealth(-1);
+                    character.setHealth(0);
+                    break;
+                case P:
+                    if(character.getHealth()<4)
+                        character.setHealth(+1);
+                    character.setHealth(0);
                     break;
             }
 
@@ -290,21 +368,20 @@ public class New_Game extends Application {
             }
 
             if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
-                bootsImageView.setVisible(false);
-                character.setSpeedMore();
                 boots.setPos_x(MO.aleatoryPositionX()*squareSize + startY);
                 boots.setPos_y(MO.aleatoryPositionY()*squareSize + startX);
+                bootsImageView.setVisible(false);
+                character.setSpeedMore();
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-                            character.setSpeedLess();
                             bootsImageView.setVisible(true);
+                            character.setSpeedLess();
                         })
                 );
                 delayTimeline.play();
             }
-
 
             if(character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()){
                 shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
@@ -331,64 +408,113 @@ public class New_Game extends Application {
             bombGeneration.play();
 
             // Log position after movement
-            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
+            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
             System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+
+            //Heath's conditions
+            switch (character.getHealth()){
+                case 3:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(true);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(false);
+                    heathShield.setVisible(false);
+                    break;
+                case 4:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(false);
+                    heathShield.setVisible(true);
+                    break;
+                case 2:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+                case 1:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(false);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(true);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+                case 0:
+                    heathFull1.setVisible(false);
+                    heathFull2.setVisible(false);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(true);
+                    heathEmpty2.setVisible(true);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+            }
         });
-      
+
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
-}
+    }
 
-private void createBoard(Pane pane) {
-    int number = 1;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            int x = startX + (j * squareSize);
-            int y = startY + (i * squareSize);
+    private void createBoard(Pane pane) {
+        int number = 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int x = startX + (j * squareSize);
+                int y = startY + (i * squareSize);
 
-            Rectangle square = new Rectangle(x, y, squareSize, squareSize);
-            square.setFill(null);
-            square.setStroke(Color.BLACK);
+                Rectangle square = new Rectangle(x, y, squareSize, squareSize);
+                square.setFill(null);
+                square.setStroke(Color.BLACK);
 
-            // Create a label to display the number
-            Label numberLabel = new Label(Integer.toString(number));
-            numberLabel.setLayoutX(x + squareSize / 2 - 10);
-            numberLabel.setLayoutY(y + squareSize / 2 - 10);
+                // Create a label to display the number
+                Label numberLabel = new Label(Integer.toString(number));
+                numberLabel.setLayoutX(x + squareSize / 2 - 10);
+                numberLabel.setLayoutY(y + squareSize / 2 - 10);
 
-            pane.getChildren().addAll(square, numberLabel);
-            number++;
+                pane.getChildren().addAll(square, numberLabel);
+                number++;
+            }
         }
     }
-}
 
-private void startTimer() {
-    secondsElapsed = 0;
-    timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), event -> {
-                secondsElapsed++;
-                updateTimerLabel();
-                if (secondsElapsed >= 3599) {
-                    timeline.stop();
-                }
-            })
-    );
-    timeline.setCycleCount(Timeline.INDEFINITE);
-    timeline.play();
-}
-
-private void stopTimer() {
-    if (timeline != null) {
-        timeline.stop();
+    private void startTimer() {
+        secondsElapsed = 0;
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    secondsElapsed++;
+                    updateTimerLabel();
+                    if (secondsElapsed >= 3599) {
+                        timeline.stop();
+                    }
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
-}
 
-private void updateTimerLabel() {
-    int minutes = secondsElapsed / 60;
-    int seconds = secondsElapsed % 60;
-    label2.setText(String.format("%02d:%02d", minutes, seconds));
-}
+    private void stopTimer() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+    }
+
+    private void updateTimerLabel() {
+        int minutes = secondsElapsed / 60;
+        int seconds = secondsElapsed % 60;
+        label2.setText(String.format("%02d:%02d", minutes, seconds));
+    }
 /*
 
     private void stopBackgroundSound() {
