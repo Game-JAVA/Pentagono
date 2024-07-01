@@ -9,6 +9,7 @@ public class Character extends ImageView {
     private int score = 0;
     private int speed = 10;
 
+
     // Constructor
     public Character(String name, int pos_x, int pos_y, int width, int height, String imagePath) {
         this.name = name;
