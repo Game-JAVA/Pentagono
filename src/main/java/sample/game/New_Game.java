@@ -316,12 +316,11 @@ public class New_Game extends Application {
             }
 
             Timeline bombGeneration = new Timeline(
-                    new KeyFrame(Duration.seconds(1), e -> {
-                        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-                        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
-                        bombRectangle.setX(bomb.getPos_x());
-                        bombRectangle.setY(bomb.getPos_y());
+                    new KeyFrame(Duration.seconds(5), e -> {
+                            bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                            bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+                            bombRectangle.setX(bomb.getPos_x());
+                            bombRectangle.setY(bomb.getPos_y());
                     })
             );
             bombGeneration.setCycleCount(Timeline.INDEFINITE); // Faz o timeline executar indefinidamente
