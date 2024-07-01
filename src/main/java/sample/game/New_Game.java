@@ -16,8 +16,6 @@ import javafx.util.Duration;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class New_Game extends Application {
     private int squareSize = 40;
@@ -79,7 +77,6 @@ public class New_Game extends Application {
         //BOMB IMPLEMENTATION
         Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
         bombRectangle.setFill(bomb.getColor());
-
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -183,7 +180,7 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView);
+        layout2.getChildren().addAll(label2,label3,label4,label5, b3, character, a1,shieldImageView, bootsImageView,bombRectangle);
 
 
         // Set the position of the label2
@@ -209,8 +206,6 @@ public class New_Game extends Application {
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
 
-        // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1,shieldImageView,bootsImageView);
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -325,7 +320,7 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
             Timeline bombGeneration = new Timeline(
-                    new KeyFrame(Duration.seconds(1), e -> {
+                    new KeyFrame(Duration.seconds(5), e -> {
                         bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
                         bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
@@ -333,10 +328,7 @@ public class New_Game extends Application {
                         bombRectangle.setY(bomb.getPos_y());
                     })
             );
-            bombGeneration.setCycleCount(Timeline.INDEFINITE); // Faz o timeline executar indefinidamente
             bombGeneration.play();
-
-
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
