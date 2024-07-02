@@ -14,9 +14,8 @@ public class Boots extends Map_Objects{
 
 
     public Boots(int width, int height, int pos_x, int pos_y, Color color) {
-
-        this.pos_x = r.nextInt(1001);
-        this.pos_y = r.nextInt(601);
+        this.pos_x = r.nextInt(width);
+        this.pos_y = r.nextInt(height);
         this.color=color;
     }
 
