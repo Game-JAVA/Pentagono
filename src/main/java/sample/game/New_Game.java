@@ -247,6 +247,7 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
         layout2.getChildren().addAll(
+               // board(),
                 label2,
                 label3,
                 label4,
@@ -256,6 +257,7 @@ public class New_Game extends Application {
                 a1,
                 shieldImageView,
                 bootsImageView,
+                createnewbomb(),
                 heathFull1,
                 heathFull2,
                 heathFull3,
@@ -263,6 +265,7 @@ public class New_Game extends Application {
                 heathEmpty2,
                 heathEmpty1,
                 heathShield
+
         );
         // Scene/Layout 3
         layout3.getChildren().addAll(label6, label7, label8, b4);
@@ -329,26 +332,13 @@ public class New_Game extends Application {
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         //Implemented Shield in Window
-        shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
-        shieldImageView.setX(shield.getPos_x());
-        shieldImageView.setY(shield.getPos_y());
+        shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         //Implemented Boots in window.
-        boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        bootsImageView.setX(boots.getPos_x());
-        bootsImageView.setY(boots.getPos_y());
-        /*
-        //BOMB IMPLEMENTATION
-        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
-        bombRectangle.setX(bomb.getPos_x());
-        bombRectangle.setY(bomb.getPos_y());
-        */
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
@@ -412,14 +402,13 @@ public class New_Game extends Application {
             }
 
             if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
-                boots.setPos_x(MO.aleatoryPositionX()*squareSize + startY);
-                boots.setPos_y(MO.aleatoryPositionY()*squareSize + startX);
+                bootsImageView.setX(MO.aleatoryPositionX()*squareSize + startX);
+                bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startY);
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
+
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
-                            boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-                            boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
                             bootsImageView.setVisible(true);
                             character.setSpeedLess();
                         })
@@ -562,6 +551,19 @@ public class New_Game extends Application {
         bombImageView.setY(MOA.aleatoryPositionY()*squareSize+startY);
 
         return bombImageView;
+    }
+
+
+    // INCREMENTAR IMAGEM DE FUNDO
+    private ImageView board(){
+        Map_Objects MOA = new Map_Objects();
+
+        ImageView boardImage = new ImageView(new Image("Board.png"));
+        boardImage.setFitHeight(520);
+        boardImage.setFitWidth(1080);
+        boardImage.setX(80);
+        boardImage.setY(80);
+        return boardImage;
     }
 
 
