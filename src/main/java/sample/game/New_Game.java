@@ -380,7 +380,7 @@ public class New_Game extends Application {
     private ImageView createnewbomb() {
         Map_Objects MOA = new Map_Objects();
 
-        ImageView bombImageView = new ImageView(new Image("Magic.png"));
+        ImageView bombImageView = new ImageView(new Image("Magic5.png"));
         bombImageView.setFitHeight(squareSize);
         bombImageView.setFitWidth(squareSize);
 
