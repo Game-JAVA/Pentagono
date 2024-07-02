@@ -353,6 +353,7 @@ public class New_Game extends Application {
                 pane.getChildren().addAll(square, numberLabel);
                 number++;
             }
+
         }
     }
 
@@ -428,6 +429,7 @@ public class New_Game extends Application {
         bombRectangleD.setY(bombD.getPos_y());
         return bombRectangleD ;
     }
+
 
 /*
 
