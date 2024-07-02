@@ -55,7 +55,7 @@ public class New_Game extends Application {
         Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
         // Create ImageView for the first character's heath
-        ImageView heathFull1 = new ImageView(new Image("heathFull.png"));
+        ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
         heathFull1.setFitHeight(60);
         heathFull1.setFitWidth(60);
         heathFull1.setX(130);
@@ -63,7 +63,7 @@ public class New_Game extends Application {
         heathFull1.setVisible(true);
 
         // Create ImageView for the second character's heath
-        ImageView heathFull2 = new ImageView(new Image("heathFull.png"));
+        ImageView heathFull2 = new ImageView(new Image("HeartFull.png"));
         heathFull2.setFitHeight(60);
         heathFull2.setFitWidth(60);
         heathFull2.setX(230);
@@ -71,7 +71,7 @@ public class New_Game extends Application {
         heathFull2.setVisible(true);
 
         // Create ImageView for the third character's heath
-        ImageView heathFull3 = new ImageView(new Image("heathFull.png"));
+        ImageView heathFull3 = new ImageView(new Image("HeartFull.png"));
         heathFull3.setFitHeight(60);
         heathFull3.setFitWidth(60);
         heathFull3.setX(330);
@@ -79,7 +79,7 @@ public class New_Game extends Application {
         heathFull3.setVisible(true);
 
         // Create ImageView for the third character's Empyt heath
-        ImageView heathEmpty3 = new ImageView(new Image("heathEmpty.png"));
+        ImageView heathEmpty3 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty3.setFitHeight(60);
         heathEmpty3.setFitWidth(60);
         heathEmpty3.setX(330);
@@ -87,7 +87,7 @@ public class New_Game extends Application {
         heathEmpty3.setVisible(false);
 
         // Create ImageView for the second character's Empyt heath
-        ImageView heathEmpty2 = new ImageView(new Image("heathEmpty.png"));
+        ImageView heathEmpty2 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty2.setFitHeight(60);
         heathEmpty2.setFitWidth(60);
         heathEmpty2.setX(230);
@@ -95,7 +95,7 @@ public class New_Game extends Application {
         heathEmpty2.setVisible(false);
 
         // Create ImageView for the first character's Empyt heath
-        ImageView heathEmpty1 = new ImageView(new Image("heathEmpty.png"));
+        ImageView heathEmpty1 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty1.setFitHeight(60);
         heathEmpty1.setFitWidth(60);
         heathEmpty1.setX(130);
@@ -103,7 +103,7 @@ public class New_Game extends Application {
         heathEmpty1.setVisible(false);
 
         // Create ImageView for the character's heathShield
-        ImageView heathShield = new ImageView(new Image("heathShield.png"));
+        ImageView heathShield = new ImageView(new Image("HeartShield.png"));
         heathShield.setFitHeight(60);
         heathShield.setFitWidth(60);
         heathShield.setX(330);

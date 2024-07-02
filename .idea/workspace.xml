@@ -5,62 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Design/Heart/HeartEmpty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Heart/HeartFull.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Heart/HeartShield.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Magic/Magic1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Magic/Magic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Magic/Magic3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Magic/Magic4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Design/Magic/Magic5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML diagram.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Board/Board.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Board/Board.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Heart/HeartEmpty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Heart/HeartFull.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Heart/HeartShield.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic animation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic1.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic2.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_files/Magic5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Board/Board.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Design/Board/Board.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Board/Board.png" beforeDir="false" afterPath="$PROJECT_DIR$/Design/Board/Board.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Bomb/Bomb Explosion.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Bomb Explosion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Bomb/Bomb animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Bomb animation.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Bomb/Bomb pre-explosion.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Bomb pre-explosion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Bomb/Bomb.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Bomb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Magic 2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Magic 3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Design/Magic/Magic animation.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic.png" beforeDir="false" afterPath="$PROJECT_DIR$/temp_files/Magic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pentagono" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Background/Desert.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Bomb/Bomb Explosion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Bomb/Bomb animation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Bomb/Bomb pre-explosion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Bomb/Bomb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Magic/Magic 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Magic/Magic 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Magic/Magic animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Design/Magic/Magic animation.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Design/Magic/Magic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,22 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.New_Game.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging feature/henrique1234",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Pentagono/target/classes",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.New_Game.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/henrique1234&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projetos/Geral/INTELLJ/Pentagono/target/classes&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
