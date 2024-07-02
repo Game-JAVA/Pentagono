@@ -1,27 +1,47 @@
-# Pentagono
+# Pentagon
 
-## Descrição
-Pentagono é um jogo de ação e estratégia no estilo de Bomberman, com uma temática medieval. O objetivo do jogo é sobreviver o maior tempo possível enquanto desvia dos ataques mágicos e coleta itens que aumentam sua pontuação e habilidades.
+## Index
+1. [Description](#description)
+2. [How to Play](#how-to-play)
+3. [Game Rules](#game-rules)
+4. [Controls](#controls)
+5. [Sound Effects](#sound-effects)
+6. [UML Diagram](#uml-diagram)
+7. [Requirements](#requirements)
 
-## Índice
-1. [Como Jogar](#como-jogar)
-2. [Regras do Jogo](#regras-do-jogo)
-3. [Controles](#controles)
+## Description
 
-## Como Jogar
-- **Movimentação:** Utilize as teclas de WASD para mover o personagem pelo mapa.
-- **Desvio de Ataques:** Os ataques (magias) surgem aleatoriamente na tela. Desvie deles para não perder vida.
-- **Itens:** Colete itens para melhorar suas chances de sobrevivência:
-  - **Escudo:** Protege você de um ataque.
-  - **Maçã:** Aumenta sua pontuação.
-  - **Bota:** Aumenta a velocidade do personagem.
+This is an action and strategy game in the style of Bomberman, with a medieval theme. The objective of the game is to survive as long as possible while dodging magical attacks and collecting items that increase your score and abilities.
 
-## Regras do Jogo
-- A dificuldade aumenta conforme a pontuação do jogador. Mais ataques mágicos surgem na tela conforme você avança.
-- O jogo termina quando você é atingido por um ataque e não possui mais vidas.
+## How to Play
+
+- **Movement:** Use the WASD keys to move the character around the map.
+- **Dodging Attacks:** Attacks (spells) appear randomly on the screen. Dodge them to avoid losing health.
+- **Items:** Collect items to improve your chances of survival:
+  - **Shield:** Protects you from one attack.
+  - **Apple:** Increases your score.
+  - **Boots:** Increases the character's speed.
+
+## Game Rules
+
+- The difficulty increases as the player's score goes up. More magical attacks appear on the screen as you progress.
+- The game ends when you are hit by an attack and have no more lives left.
+
+## Controls
+
+- **WASD:** Move the character.
+  - **W:** Move the character up.
+  - **A:** Move the character left.
+  - **S:** Move the character down.
+  - **D:** Move the character right.
+
+## Sound Effects
+
+- **Background Music:** There are two background tracks: one for the menu and one for gameplay.
+- **Attack Sound:** A sound effect for when an spell appears.
+- **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
 ## Controles
-- **W:** Movimentar o personagem para cima.
-- **A:** Movimentar o personagem para a esquerda.
-- **S:** Movimentar o personagem para baixo.
-- **D:** Movimentar o personagem para a direita.
+
+- **WASD:** Movimentar o personagem.
+

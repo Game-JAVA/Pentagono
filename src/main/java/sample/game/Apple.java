@@ -1,56 +1,56 @@
 package sample.game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import java.util.Random;
 
-public class Apple extends Map_Objects{
+public class Apple extends ImageView {
     // attributes
     private int score;
-    private int pos_x;
-    private int pos_y;
-
-    Random r = new Random();
+    private static Random random;
 
     // constructor
-
-
-
-    public Apple(int width, int height, int score, int pos_x, int pos_y) {
-        super(width, height);
-        this.score = 2;
-        this.pos_x = r.nextInt(1001);
-        this.pos_y = r.nextInt(601);
+    public Apple(int width, int height, int score, int pos_x, int pos_y, String imagePath) {
+        this.setImage(new Image(imagePath));
+        this.score = score;
+        this.setX(pos_x);
+        this.setY(pos_y);
+        this.setFitWidth(width);
+        this.setFitHeight(height);
     }
 
     // getters and setters
-
-
     public int getScore() {
-        return score;
+        return this.score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public int getPos_x() {
-        return pos_x;
+        return (int) this.getX();
+    }
+
+    public void setPos_x(int pos_x) {
+        this.setX(pos_x);
     }
 
     public int getPos_y() {
-        return pos_y;
+        return (int) this.getY();
     }
 
-    // methods
-
-    public void increase_Score(){
-        this.score+=20;
+    public void setPos_y(int pos_y) {
+        this.setY(pos_y);
     }
 
-    //toString
-
-
+    // toString
     @Override
     public String toString() {
         return "Apple{" +
                 "score=" + score +
-                ", pos_x=" + pos_x +
-                ", pos_y=" + pos_y +
+                ", pos_x=" + getPos_x() +
+                ", pos_y=" + getPos_y() +
                 '}';
     }
 }
