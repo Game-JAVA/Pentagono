@@ -549,6 +549,22 @@ public class New_Game extends Application {
         int seconds = secondsElapsed % 60;
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
+
+
+    private ImageView createnewbomb() {
+        Map_Objects MOA = new Map_Objects();
+
+        ImageView bombImageView = new ImageView(new Image("Magic5.png"));
+        bombImageView.setFitHeight(squareSize);
+        bombImageView.setFitWidth(squareSize);
+
+        bombImageView.setX(MOA.aleatoryPositionX()*squareSize+startX);
+        bombImageView.setY(MOA.aleatoryPositionY()*squareSize+startY);
+
+        return bombImageView;
+    }
+
+
 /*
 
     private void stopBackgroundSound() {
