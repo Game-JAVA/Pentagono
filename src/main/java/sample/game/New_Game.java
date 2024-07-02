@@ -148,8 +148,17 @@ public class New_Game extends Application {
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
         Label label6 = new Label("Title");
-        Label label7 = new Label("Objetivo do jogo:");
-        Label label8 = new Label("Como Jogar:");
+        Label label7 = new Label("Game Objective:");
+        Label label8 = new Label("How to Play:");
+        Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
+                "There are some items to help:\n"+
+                "Apple: increases the character's score;\n"+
+                "Shield: Gives the character extra life;\n"+
+                "Boots: increases the character's speed.\n");
+        Label label10 = new Label("W - Move forward\n"+
+                "A - Move left\n"+
+                "S - Move down\n"+
+                "D - Move right");
 
         // Initialize sounds
         try {
@@ -201,7 +210,7 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
-        layout3.getChildren().addAll(label6, label7, label8, b4);
+        layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10);
 
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
@@ -251,11 +260,29 @@ public class New_Game extends Application {
 
         // Set the position of the label8
         label8.setLayoutX(20);
-        label8.setLayoutY(200);
+        label8.setLayoutY(230);
 
         label8.setStyle(
                 "-fx-text-fill: black;"+
                         "-fx-font-size: 22px;"
+        );
+
+        // Set the position of the label9
+        label9.setLayoutX(20);
+        label9.setLayoutY(75);
+
+        label9.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 16px;"
+        );
+
+        // Set the position of the label10
+        label10.setLayoutX(20);
+        label10.setLayoutY(270);
+
+        label10.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 16px;"
         );
 
         // Set initial position of the character
