@@ -56,11 +56,11 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000, Color.BLACK);
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        // Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
 
 
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
+
         shieldImageView.setFitWidth(squareSize);
         shieldImageView.setFitHeight(squareSize);
 
@@ -77,9 +77,6 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        //BOMB IMPLEMENTATION
-        //  Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
-        //  bombRectangle.setFill(bomb.getColor());
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -183,7 +180,7 @@ public class New_Game extends Application {
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
+        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb());
 
 
         // Set the position of the label2
@@ -218,31 +215,24 @@ public class New_Game extends Application {
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         //Implemented Shield in Window
-        shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        shieldImageView.setX(shield.getPos_x());
-        shieldImageView.setY(shield.getPos_y());
+        shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
+
 
         //Implemented Boots in window.
-        boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        bootsImageView.setX(boots.getPos_x());
-        bootsImageView.setY(boots.getPos_y());
+        bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        //BOMB IMPLEMENTATION
-        //      bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        //       bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        //      bombRectangle.setX(bomb.getPos_x());
-        //      bombRectangle.setY(bomb.getPos_y());
+
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
         System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
 
         // Create the board of squares
-        createBoard(layout2);
+        //createBoard(layout2);
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
@@ -291,11 +281,13 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+
             if (character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()) {
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
-                boots.setPos_x(MO.aleatoryPositionX() * squareSize + startY);
-                boots.setPos_y(MO.aleatoryPositionY() * squareSize + startX);
+                bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startY);
+                bootsImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
+
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -325,7 +317,6 @@ public class New_Game extends Application {
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
         });
 
         // Build the Window
@@ -333,6 +324,7 @@ public class New_Game extends Application {
         primaryStage.setTitle("Hello!");
         primaryStage.show();
     }
+
 
     private void createBoard(Pane pane) {
         int number = 1;
@@ -355,6 +347,7 @@ public class New_Game extends Application {
             }
         }
     }
+
 
     private void startTimer() {
         secondsElapsed = 0;
@@ -383,18 +376,19 @@ public class New_Game extends Application {
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
-    private Rectangle createnewbomb() {
+    private ImageView createnewbomb() {
         Map_Objects MOA = new Map_Objects();
-        Bomb bomba = new Bomb(40, 40, MOA.aleatoryPositionX(), MOA.aleatoryPositionY(), Color.BLACK);
-        bomba.setPos_y(MOA.aleatoryPositionY() * squareSize + startY);
-        bomba.setPos_x(MOA.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectanglea = new Rectangle(bomba.getPos_x(), bomba.getPos_y(), squareSize, squareSize);
-        bombRectanglea.setFill(bomba.getColor());
-        bombRectanglea.setX(bomba.getPos_x());
-        bombRectanglea.setY(bomba.getPos_y());
-        return bombRectanglea ;
+
+        ImageView bombImageView = new ImageView(new Image("Magic.png"));
+        bombImageView.setFitHeight(squareSize);
+        bombImageView.setFitWidth(squareSize);
+
+        bombImageView.setX(MOA.aleatoryPositionX()*squareSize+startX);
+        bombImageView.setY(MOA.aleatoryPositionY()*squareSize+startY);
+
+        return bombImageView;
     }
-    private Rectangle createnewbombB() {
+    /*private Rectangle createnewbombB() {
         Map_Objects MOB = new Map_Objects();
         Bomb bombb = new Bomb(40, 40, MOB.aleatoryPositionX(), MOB.aleatoryPositionY(), Color.BLACK);
         bombb.setPos_y(MOB.aleatoryPositionY() * squareSize + startY);
@@ -403,7 +397,7 @@ public class New_Game extends Application {
         bombRectangleb.setFill(bombb.getColor());
         bombRectangleb.setX(bombb.getPos_x());
         bombRectangleb.setY(bombb.getPos_y());
-        return bombRectangleb ;
+        return bombRectangleb;
     }
     private Rectangle createnewbombaC() {
         Map_Objects MOC = new Map_Objects();
@@ -414,7 +408,7 @@ public class New_Game extends Application {
         bombRectanglec.setFill(bombc.getColor());
         bombRectanglec.setX(bombc.getPos_x());
         bombRectanglec.setY(bombc.getPos_y());
-        return bombRectanglec ;
+        return bombRectanglec;
     }
 
     private Rectangle createnewbombaD() {
@@ -426,9 +420,9 @@ public class New_Game extends Application {
         bombRectangleD.setFill(bombD.getColor());
         bombRectangleD.setX(bombD.getPos_x());
         bombRectangleD.setY(bombD.getPos_y());
-        return bombRectangleD ;
+        return bombRectangleD;
     }
-
+*/
 /*
 
     private void stopBackgroundSound() {
