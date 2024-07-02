@@ -13,16 +13,16 @@ public class Bomb extends Map_Objects{
     Random r = new Random();
 
     // constructor
-    public Bomb(int width, int height, int explosion_range, int explosion_diameter, int explosion_damage, int pos_x, int pos_y, Color color) {
+    public Bomb(int width, int height, int pos_x, int pos_y, Color color) {
         this.explosion_range = explosion_range;
         this.explosion_diameter = 40;
         this.explosion_damage = explosion_damage;
-        this.pos_x = r.nextInt(1001);
-        this.pos_y = r.nextInt(601);
+        this.pos_x = r.nextInt(width);
+        this.pos_y = r.nextInt(height);
+        this.color=color;
     }
 
     // getters and setters
-
     public int getExplosion_range() {
         return explosion_range;
     }
@@ -58,12 +58,6 @@ public class Bomb extends Map_Objects{
         this.r = r;
     }
     // methods
-
-    public void explode(){
-
-    }
-
-
 
     // toString
 

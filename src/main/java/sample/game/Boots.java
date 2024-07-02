@@ -5,7 +5,6 @@ import java.util.Random;
 public class Boots extends Map_Objects{
     // attributes
 
-    private double speed; // This speed must be innovative in the character class
     private int pos_x; //Position where square of the boots will be generated
     private int pos_y; //Position where square of the boots will be generated
     private Color color; //color of the square boots
@@ -14,19 +13,14 @@ public class Boots extends Map_Objects{
     // constructor
 
 
-    public Boots(int width, int height, double speed, int pos_x, int pos_y, Color color) {
-        this.speed = 1;
+    public Boots(int width, int height, int pos_x, int pos_y, Color color) {
+
         this.pos_x = r.nextInt(1001);
         this.pos_y = r.nextInt(601);
         this.color=color;
     }
 
     // getters and setters
-
-
-    public double getSpeed() {
-        return speed;
-    }
 
     public int getPos_x() {
         return pos_x;
@@ -45,10 +39,6 @@ public class Boots extends Map_Objects{
     }
 
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-
     public void setPos_x(int pos_x) {
         this.pos_x = pos_x;
     }
@@ -57,9 +47,6 @@ public class Boots extends Map_Objects{
         this.pos_y = pos_y;
     }
 
-    public void setR(Random r) {
-        this.r = r;
-    }
 
     // methods
 
@@ -69,7 +56,7 @@ public class Boots extends Map_Objects{
     @Override
     public String toString() {
         return "Boots{" +
-                "speed=" + speed +
+                "speed=" +
                 ", pos_x=" + pos_x +
                 ", pos_y=" + pos_y +
                 '}';

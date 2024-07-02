@@ -1,20 +1,22 @@
 package sample.game;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import java.util.Random;
 
-public class Apple extends Rectangle {
+public class Apple extends ImageView {
     // attributes
     private int score;
     private static Random random;
 
     // constructor
-    public Apple(int width, int height, int score, int pos_x, int pos_y, Color color) {
-        super(width, height, color);
+    public Apple(int width, int height, int score, int pos_x, int pos_y, String imagePath) {
+        this.setImage(new Image(imagePath));
         this.score = score;
         this.setX(pos_x);
         this.setY(pos_y);
+        this.setFitWidth(width);
+        this.setFitHeight(height);
     }
 
     // getters and setters
@@ -52,5 +54,3 @@ public class Apple extends Rectangle {
                 '}';
     }
 }
-
-
