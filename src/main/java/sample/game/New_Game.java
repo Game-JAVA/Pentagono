@@ -47,9 +47,11 @@ public class New_Game extends Application {
         ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
+        Pane layout3 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
+        Scene s3 = new Scene(layout3, 800, 500);
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
@@ -87,11 +89,14 @@ public class New_Game extends Application {
         Button b1 = new Button("New Game");
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
+        Button b4 = new Button("Return to Menu");
+
 
         VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
-        vbox.getChildren().addAll(b1, b2, b3);
+        VBox.setMargin(b3, new Insets(500, 10, 10, 300));
+        vbox.getChildren().addAll(b1, b2, b3, b4);
 
         String buttonStyle = "-fx-background-color: black;" +
                 "-fx-text-fill: yellow;" +
@@ -105,6 +110,7 @@ public class New_Game extends Application {
         b1.setStyle(buttonStyle);
         b2.setStyle(buttonStyle);
         b3.setStyle(buttonStyle);
+        b4.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
@@ -141,7 +147,9 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
-
+        Label label6 = new Label("Title");
+        Label label7 = new Label("Objetivo do jogo:");
+        Label label8 = new Label("Como Jogar:");
 
         // Initialize sounds
         try {
@@ -178,13 +186,25 @@ public class New_Game extends Application {
             startThemeSound();*/
         });
 
+        b2.setOnAction(e ->{
+            primaryStage.setScene(s3);
+        });
+
+        b4.setOnAction(e -> {
+            primaryStage.setScene(s1);
+
+        });
+
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
+        layout3.getChildren().addAll(label6, label7, label8, b4);
 
+        b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
+        b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
 
         // Set the position of the label2
         label2.setLayoutX(1100);
@@ -208,6 +228,35 @@ public class New_Game extends Application {
         // Set the position of the label5
         label5.setLayoutX(1100);
         label5.setLayoutY(10);
+
+        // Set the position of the label6
+        label6.setLayoutX(350);
+        label6.setLayoutY(10);
+
+        label6.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 26px;"
+
+
+        );
+
+        // Set the position of the label7
+        label7.setLayoutX(20);
+        label7.setLayoutY(40);
+
+        label7.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 22px;"
+        );
+
+        // Set the position of the label8
+        label8.setLayoutX(20);
+        label8.setLayoutY(200);
+
+        label8.setStyle(
+                "-fx-text-fill: black;"+
+                        "-fx-font-size: 22px;"
+        );
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -353,7 +402,6 @@ public class New_Game extends Application {
                 pane.getChildren().addAll(square, numberLabel);
                 number++;
             }
-
         }
     }
 
@@ -429,7 +477,6 @@ public class New_Game extends Application {
         bombRectangleD.setY(bombD.getPos_y());
         return bombRectangleD ;
     }
-
 
 /*
 
