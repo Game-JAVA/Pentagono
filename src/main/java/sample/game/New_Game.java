@@ -345,6 +345,7 @@ public class New_Game extends Application {
                 pane.getChildren().addAll(square, numberLabel);
                 number++;
             }
+
         }
     }
 
@@ -388,41 +389,7 @@ public class New_Game extends Application {
 
         return bombImageView;
     }
-    /*private Rectangle createnewbombB() {
-        Map_Objects MOB = new Map_Objects();
-        Bomb bombb = new Bomb(40, 40, MOB.aleatoryPositionX(), MOB.aleatoryPositionY(), Color.BLACK);
-        bombb.setPos_y(MOB.aleatoryPositionY() * squareSize + startY);
-        bombb.setPos_x(MOB.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectangleb = new Rectangle(bombb.getPos_x(), bombb.getPos_y(), squareSize, squareSize);
-        bombRectangleb.setFill(bombb.getColor());
-        bombRectangleb.setX(bombb.getPos_x());
-        bombRectangleb.setY(bombb.getPos_y());
-        return bombRectangleb;
-    }
-    private Rectangle createnewbombaC() {
-        Map_Objects MOC = new Map_Objects();
-        Bomb bombc = new Bomb(40, 40, MOC.aleatoryPositionX(), MOC.aleatoryPositionY(), Color.BLACK);
-        bombc.setPos_y(MOC.aleatoryPositionY() * squareSize + startY);
-        bombc.setPos_x(MOC.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectanglec = new Rectangle(bombc.getPos_x(), bombc.getPos_y(), squareSize, squareSize);
-        bombRectanglec.setFill(bombc.getColor());
-        bombRectanglec.setX(bombc.getPos_x());
-        bombRectanglec.setY(bombc.getPos_y());
-        return bombRectanglec;
-    }
 
-    private Rectangle createnewbombaD() {
-        Map_Objects MOD = new Map_Objects();
-        Bomb bombD = new Bomb(40, 40, MOD.aleatoryPositionX(), MOD.aleatoryPositionY(), Color.BLACK);
-        bombD.setPos_y(MOD.aleatoryPositionY() * squareSize + startY);
-        bombD.setPos_x(MOD.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectangleD = new Rectangle(bombD.getPos_x(), bombD.getPos_y(), squareSize, squareSize);
-        bombRectangleD.setFill(bombD.getColor());
-        bombRectangleD.setX(bombD.getPos_x());
-        bombRectangleD.setY(bombD.getPos_y());
-        return bombRectangleD;
-    }
-*/
 /*
 
     private void stopBackgroundSound() {
