@@ -11,18 +11,20 @@ public class Bomb extends ImageView {
     private int explosion_damage;
     private int posx;
     private int posy;
-    private int char_posx;
-    private int char_posy;
+    private int character_posx;
+    private int character_posy;
     private String imagePath;
     Random r = new Random();
 
     // constructor
-    public Bomb(int width, int height, int posx,int posy, String imagePath) {
+    public Bomb(int width, int height, int posx,int posy, String imagePath, int character_posx, int character_posy) {
         this.setFitHeight(height);
         this.setFitWidth(width);
         this.setImage(new Image(imagePath));
         this.setX(posx*40);
         this.setY(posy*40);
+        this.character_posx=character_posx;
+        this.character_posy=character_posy;
     }
 
     // getters and setters
@@ -44,8 +46,6 @@ public class Bomb extends ImageView {
     public int getPos_y() {
         return posy;
     }
-
-
     public void setPos_x(int pos_x) {
         this.posx = pos_x;
     }
@@ -60,12 +60,10 @@ public class Bomb extends ImageView {
     // methods
 
     public void explosion(){
-            System.out.println("você morreu");
+            if(character_posx==posx && character_posy == posy){
+                System.out.println("você perdeu!");
+            }
     }
-
-
-
-
     // toString
 
 
