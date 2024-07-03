@@ -47,6 +47,8 @@ public class New_Game extends Application {
         ImageView backg2 = new ImageView(backgroundImage2);
         Image backgroundImage3 = new Image("backgroundscene3.jpg");
         ImageView backg3 = new ImageView(backgroundImage3);
+        Image keys = new Image("wasdImage.jpg");
+        ImageView keysImageView = new ImageView(keys);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
@@ -216,13 +218,21 @@ public class New_Game extends Application {
 
         });
 
+
+        keysImageView.setFitWidth(150); // Defina a largura desejada
+        keysImageView.setFitHeight(110); // Defina a altura desejada
+
+        // Definir a posição da imagem na layout
+        keysImageView.setLayoutX(200);
+        keysImageView.setLayoutY(255);
+
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
 
         // Scene/Layout 2
         layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
-        layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10);
+        layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10, keysImageView);
 
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
@@ -276,7 +286,7 @@ public class New_Game extends Application {
         label6.setLayoutY(10);
 
         label6.setStyle(
-                "-fx-text-fill: yellow;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"
 
 
@@ -287,7 +297,7 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: yellow;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -296,7 +306,7 @@ public class New_Game extends Application {
         label8.setLayoutY(230);
 
         label8.setStyle(
-                "-fx-text-fill: yellow;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 22px;"
         );
 
