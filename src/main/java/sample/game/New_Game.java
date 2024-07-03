@@ -286,7 +286,7 @@ public class New_Game extends Application {
         label6.setLayoutY(10);
 
         label6.setStyle(
-                "-fx-text-fill: white;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 26px;"
 
 
@@ -297,7 +297,7 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: white;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -306,7 +306,7 @@ public class New_Game extends Application {
         label8.setLayoutY(230);
 
         label8.setStyle(
-                "-fx-text-fill: white;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -315,7 +315,7 @@ public class New_Game extends Application {
         label9.setLayoutY(75);
 
         label9.setStyle(
-                "-fx-text-fill: yellow;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 16px;"
         );
 
@@ -324,7 +324,7 @@ public class New_Game extends Application {
         label10.setLayoutY(270);
 
         label10.setStyle(
-                "-fx-text-fill: yellow;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 16px;"
         );
 
