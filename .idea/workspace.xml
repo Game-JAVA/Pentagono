@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Design/Magic/MagicAnimation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic animation.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +47,14 @@
   "keyToString": {
     "Application.New_Game.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "git-widget-placeholder": "Merging feature/henrique1234",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "feature/henrique1234",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Pentagono/Design/Magic"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\Design\Magic" />
       <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
       <recent name="$PROJECT_DIR$/../../../../Users/gabri/OneDrive/Área de Trabalho/Matérias Faculdade ADS/PRIMEIRO SEMESTRE/Pentagono/target/classes" />
       <recent name="$PROJECT_DIR$/target/classes" />
