@@ -6,23 +6,21 @@ import java.util.Random;
 
 public class Shield extends Map_Objects {
 
-    private int shield;
-    private Color color;
+    private boolean shield;
     private int pos_x;
     private int pos_y;
 
     Random r = new Random();
 
     // constructor
-    public Shield(int width, int height, Color color) {
-        this.shield = 0;
+    public Shield(int width, int height) {
+        this.shield = false;
         this.pos_x = r.nextInt(width);
         this.pos_y = r.nextInt(height);
-        this.color = color;
     }
 
     // getters and setters
-    public int getShield() {
+    public boolean getShield() {
          return shield;
     }
 
@@ -34,9 +32,6 @@ public class Shield extends Map_Objects {
         return pos_y;
     }
 
-    public Color getColor() {
-        return color;
-    }
 
     public void setPos_x(int pos_x) {
         this.pos_x = pos_x;
@@ -47,8 +42,8 @@ public class Shield extends Map_Objects {
     }
 
     // methods
-    public void increase_shield() {
-        this.shield += 1;
+    public void increase_shield(boolean value) {
+        this.shield = value;
     }
 
     // toString
@@ -58,7 +53,6 @@ public class Shield extends Map_Objects {
                 "shield=" + shield +
                 ", pos_x=" + pos_x +
                 ", pos_y=" + pos_y +
-                ", color=" + color +
                 '}';
     }
 }

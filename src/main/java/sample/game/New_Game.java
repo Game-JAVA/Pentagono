@@ -52,9 +52,9 @@ public class New_Game extends Application {
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
-        Shield shield = new Shield(1200, 1000, Color.BLACK);
-        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
+        Shield shield = new Shield(1200, 1000);
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
+        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"magic5.png");
 
         // Create ImageView for the first character's heath
         ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
@@ -104,13 +104,29 @@ public class New_Game extends Application {
         heathEmpty1.setY(10);
         heathEmpty1.setVisible(false);
 
-        // Create ImageView for the character's heathShield
-        ImageView heathShield = new ImageView(new Image("HeartShield.png"));
-        heathShield.setFitHeight(60);
-        heathShield.setFitWidth(60);
-        heathShield.setX(330);
-        heathShield.setY(10);
-        heathShield.setVisible(false);
+        // Create ImageView for the character's heathShield3
+        ImageView heathShield3 = new ImageView(new Image("HeartShield.png"));
+        heathShield3.setFitHeight(60);
+        heathShield3.setFitWidth(60);
+        heathShield3.setX(330);
+        heathShield3.setY(10);
+        heathShield3.setVisible(false);
+
+        // Create ImageView for the character's heathShield2
+        ImageView heathShield2 = new ImageView(new Image("HeartShield.png"));
+        heathShield2.setFitHeight(60);
+        heathShield2.setFitWidth(60);
+        heathShield2.setX(230);
+        heathShield2.setY(10);
+        heathShield2.setVisible(false);
+
+        // Create ImageView for the character's heathShield1
+        ImageView heathShield1 = new ImageView(new Image("HeartShield.png"));
+        heathShield1.setFitHeight(60);
+        heathShield1.setFitWidth(60);
+        heathShield1.setX(130);
+        heathShield1.setY(10);
+        heathShield1.setVisible(false);
 
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
@@ -129,6 +145,9 @@ public class New_Game extends Application {
         // Adjust position based on the Boots' location
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
+
+        bomb.set_x(MO.aleatoryPositionX() * squareSize + startX);
+        bomb.set_y(MO.aleatoryPositionY() * squareSize + startY);
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -159,7 +178,6 @@ public class New_Game extends Application {
         b4.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
-        BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -253,8 +271,8 @@ public class New_Game extends Application {
                 label4,
                 label5,
                 b3,
-                character,
                 a1,
+                bomb,
                 shieldImageView,
                 bootsImageView,
                 heathFull1,
@@ -263,9 +281,12 @@ public class New_Game extends Application {
                 heathEmpty3,
                 heathEmpty2,
                 heathEmpty1,
-                heathShield,
-                createnewbomb()
+                heathShield3,
+                heathShield2,
+                heathShield1,
+                character
         );
+
         // Scene/Layout 3
         layout3.getChildren().addAll(label6, label7, label8, b4);
 
@@ -338,21 +359,15 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        //BOMB IMPLEMENTATION
-        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
-        System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+        System.out.println("Bomb initial position: x = " + bomb.getPos_x() + ", y = " + bomb.getPos_y());
 
         // Create the board of squares
         createBoard(layout2);
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
-            int applePosX = a1.getPos_x();
-            int applePosY = a1.getPos_y();
 
             switch (event.getCode()) {
                 case W:
@@ -388,7 +403,7 @@ public class New_Game extends Application {
             }
 
             // Check if character and apple occupy the same square
-            if (character.getPos_x() == applePosX && character.getPos_y() == applePosY) {
+            if (character.getPos_x() == a1.getPos_x() && character.getPos_y() == a1.getPos_y()) {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
@@ -408,6 +423,7 @@ public class New_Game extends Application {
                 bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startY);
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
+
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             bootsImageView.setVisible(true);
@@ -421,11 +437,13 @@ public class New_Game extends Application {
                 shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldImageView.setVisible(false);
+                shield.increase_shield(true);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
                             shieldImageView.setVisible(true);
+                            shield.increase_shield(false);
                         })
                 );
                 delayTimeline.play();
@@ -438,40 +456,43 @@ public class New_Game extends Application {
             //Heath's conditions
             switch (character.getHealth()){
                 case 3:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(true);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(false);
-                    heathShield.setVisible(false);
-                    break;
-                case 4:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(false);
-                    heathShield.setVisible(true);
+                    if(!shield.getShield()) {
+                        heathFull1.setVisible(true);
+                        heathFull2.setVisible(true);
+                        heathFull3.setVisible(true);
+                        heathEmpty1.setVisible(false);
+                        heathEmpty2.setVisible(false);
+                        heathEmpty3.setVisible(false);
+                        heathShield3.setVisible(false);
+                    }else{
+                        heathShield3.setVisible(true);
+                    }
                     break;
                 case 2:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    if(!shield.getShield()) {
+                        heathFull1.setVisible(true);
+                        heathFull2.setVisible(true);
+                        heathFull3.setVisible(false);
+                        heathEmpty1.setVisible(false);
+                        heathEmpty2.setVisible(false);
+                        heathEmpty3.setVisible(true);
+                        heathShield2.setVisible(false);
+                    }else{
+                        heathShield2.setVisible(true);
+                    }
                     break;
                 case 1:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(false);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(true);
-                    heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    if(!shield.getShield()) {
+                        heathFull1.setVisible(true);
+                        heathFull2.setVisible(false);
+                        heathFull3.setVisible(false);
+                        heathEmpty1.setVisible(false);
+                        heathEmpty2.setVisible(true);
+                        heathEmpty3.setVisible(true);
+                        heathShield1.setVisible(false);
+                    }else{
+                        heathShield1.setVisible(true);
+                    }
                     break;
                 case 0:
                     heathFull1.setVisible(false);
@@ -480,7 +501,7 @@ public class New_Game extends Application {
                     heathEmpty1.setVisible(true);
                     heathEmpty2.setVisible(true);
                     heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    heathShield3.setVisible(false);
                     break;
             }
         });
@@ -489,6 +510,10 @@ public class New_Game extends Application {
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
+    }
+
+    private void shieldTimer(){
+
     }
 
     private void createBoard(Pane pane) {
@@ -541,17 +566,16 @@ public class New_Game extends Application {
     }
 
 
-    private ImageView createnewbomb() {
+    // INCREMENTAR IMAGEM DE FUNDO
+    private ImageView board(){
         Map_Objects MOA = new Map_Objects();
 
-        ImageView bombImageView = new ImageView(new Image("Magic5.png"));
-        bombImageView.setFitHeight(squareSize);
-        bombImageView.setFitWidth(squareSize);
-
-        bombImageView.setX(MOA.aleatoryPositionX()*squareSize+startX);
-        bombImageView.setY(MOA.aleatoryPositionY()*squareSize+startY);
-
-        return bombImageView;
+        ImageView boardImage = new ImageView(new Image("Board.png"));
+        boardImage.setFitHeight(520);
+        boardImage.setFitWidth(1080);
+        boardImage.setX(80);
+        boardImage.setY(80);
+        return boardImage;
     }
 
 

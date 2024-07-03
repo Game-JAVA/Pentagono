@@ -1,25 +1,25 @@
 package sample.game;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import java.util.Random;
 
-public class Bomb extends Map_Objects{
+public class Bomb extends ImageView {
 
     private int explosion_range;
     private int explosion_diameter;
     private int explosion_damage;
     private int pos_x;
     private int pos_y;
-    private Color color;
     Random r = new Random();
 
     // constructor
-    public Bomb(int width, int height, int pos_x, int pos_y, Color color) {
-        this.explosion_range = explosion_range;
-        this.explosion_diameter = 40;
-        this.explosion_damage = explosion_damage;
-        this.pos_x = r.nextInt(width);
-        this.pos_y = r.nextInt(height);
-        this.color=color;
+    public Bomb(int width, int height, int pos_x, int pos_y,String imagePath) {
+        this.setImage(new Image(imagePath));
+        this.setX(pos_x);
+        this.setY(pos_y);
+        this.setFitWidth(width);
+        this.setFitHeight(height);
     }
 
     // getters and setters
@@ -42,16 +42,12 @@ public class Bomb extends Map_Objects{
         return pos_y;
     }
 
-    public Color getColor() {
-        return color;
+    public void set_x(int pos_x) {
+        this.setX(pos_x);
     }
 
-    public void setPos_x(int pos_x) {
-        this.pos_x = pos_x;
-    }
-
-    public void setPos_y(int pos_y) {
-        this.pos_y = pos_y;
+    public void set_y(int pos_y) {
+        this.setY(pos_y);
     }
 
     public void setR(Random r) {

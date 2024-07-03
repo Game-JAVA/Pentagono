@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
+    <list default="true" id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Character.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +34,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">
-    <option name="associatedIndex" value="5" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,8 +48,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.New_Game.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "git-widget-placeholder": "Merging feature/henrique1234",
-    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Pentagono/target/classes"
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -77,17 +79,10 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="" />
+      <changelist id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="" />
       <created>1719347024750</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
