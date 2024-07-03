@@ -220,7 +220,7 @@ public class New_Game extends Application {
         label2.setLayoutY(30);
 
         label2.setStyle(
-                "-fx-text-fill: black;" +
+                "-fx-text-fill: white;" +
                         "-fx-font-size: 26px;" +
                         "-fx-padding: 10 0 0 10"
 
@@ -228,15 +228,36 @@ public class New_Game extends Application {
 
         // Set the position of the label3
         label3.setLayoutX(800);
-        label3.setLayoutY(10);
+        label3.setLayoutY(8);
+
+        label3.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 18px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
 
         // Set the position of the label4
         label4.setLayoutX(800);
         label4.setLayoutY(30);
 
+        label4.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 22px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
         // Set the position of the label5
         label5.setLayoutX(1100);
-        label5.setLayoutY(10);
+        label5.setLayoutY(8);
+
+        label5.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 18px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
 
         // Set the position of the label6
         label6.setLayoutX(350);
