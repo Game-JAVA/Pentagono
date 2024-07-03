@@ -52,17 +52,17 @@ public class New_Game extends Application {
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
-        Shield shield = new Shield(1200, 1000, Color.BLACK);
-        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
+        Shield shield = new Shield(1200, 1000);
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
+        Bomb bombast = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
 
         // Create ImageView for the first character's heath
         ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
         heathFull1.setFitHeight(60);
         heathFull1.setFitWidth(60);
-        heathFull1.setX(130);
-        heathFull1.setY(10);
-        heathFull1.setVisible(true);
+        heathFull1.setX(130); //POSITION IN WINDOWN
+        heathFull1.setY(10); // POSITION IN WINDOWN
+        heathFull1.setVisible(true); // DEFINE HOW VISIBLE
 
         // Create ImageView for the second character's heath
         ImageView heathFull2 = new ImageView(new Image("HeartFull.png"));
@@ -112,10 +112,12 @@ public class New_Game extends Application {
         heathShield.setY(10);
         heathShield.setVisible(false);
 
+
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
         shieldImageView.setFitWidth(squareSize);
         shieldImageView.setFitHeight(squareSize);
+
 
         // Adjust position based on the Boots' location
         shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
@@ -257,7 +259,7 @@ public class New_Game extends Application {
                 a1,
                 shieldImageView,
                 bootsImageView,
-                createnewbomb(),
+                bombast,
                 heathFull1,
                 heathFull2,
                 heathFull3,
@@ -339,38 +341,44 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
+        bombast.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        bombast.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
-        System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+        System.out.println("bomb initial position: x = " + bombast.getPos_x() + ", y = " + bombast.getPos_y());
 
         // Create the board of squares
         createBoard(layout2);
 
+
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
-            int applePosX = a1.getPos_x();
-            int applePosY = a1.getPos_y();
 
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
                         character.setPos_y(character.getPos_y() - character.getSpeed());
+
                     }
                     break;
                 case S:
                     if (character.getPos_y() < (squareSize * (rows - 1)) + startY) {
                         character.setPos_y(character.getPos_y() + character.getSpeed());
+
                     }
                     break;
                 case A:
                     if (character.getPos_x() > startX) {
                         character.setPos_x(character.getPos_x() - character.getSpeed());
+
                     }
                     break;
                 case D:
                     if (character.getPos_x() < (squareSize * (cols - 1)) + startX) {
                         character.setPos_x(character.getPos_x() + character.getSpeed());
+
                     }
                     break;
                 case O:
@@ -386,7 +394,7 @@ public class New_Game extends Application {
             }
 
             // Check if character and apple occupy the same square
-            if (character.getPos_x() == applePosX && character.getPos_y() == applePosY) {
+            if (character.getPos_x() == a1.getPos_x() && character.getPos_y() == a1.getPos_y()) {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
@@ -429,10 +437,13 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
+            if(character.getPos_x()==bombast.getX() && character.getPos_y()==bombast.getY()){
+                System.out.println("voce perdeu");
+            }
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+            System.out.println("Bomb position is : x = " + bombast.getX() + ", y = " + bombast.getY());
 
             //Heath's conditions
             switch (character.getHealth()){
@@ -483,6 +494,7 @@ public class New_Game extends Application {
                     break;
             }
         });
+
 
         // Build the Window
         primaryStage.setScene(s1);
@@ -537,20 +549,6 @@ public class New_Game extends Application {
         int minutes = secondsElapsed / 60;
         int seconds = secondsElapsed % 60;
         label2.setText(String.format("%02d:%02d", minutes, seconds));
-    }
-
-
-    private ImageView createnewbomb() {
-        Map_Objects MOA = new Map_Objects();
-
-        ImageView bombImageView = new ImageView(new Image("Magic5.png"));
-        bombImageView.setFitHeight(squareSize);
-        bombImageView.setFitWidth(squareSize);
-
-        bombImageView.setX(MOA.aleatoryPositionX()*squareSize+startX);
-        bombImageView.setY(MOA.aleatoryPositionY()*squareSize+startY);
-
-        return bombImageView;
     }
 
 
