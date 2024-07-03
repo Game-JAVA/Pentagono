@@ -26,6 +26,7 @@ public class New_Game extends Application {
     private Label label2 = new Label("00:00");
     private Timeline timeline;
     private int secondsElapsed = 0;
+    private int secondsExplosion = 0;
     private Sound backgroundSound;
     private Sound themeSound;
 
@@ -38,9 +39,7 @@ public class New_Game extends Application {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
         Image backgroundImage = new Image("backgroundStartWindow.jpeg");
-        ImageView backg = new ImageView(backgroundImage);
         Image backgroundImage2 = new Image("imgtela2.jpeg");
-        ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
@@ -54,7 +53,7 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000);
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
-        Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"magic5.png");
+        Bomb bomb = new Bomb(120, 120, MO.aleatoryPositionX()-2, MO.aleatoryPositionY()-2,"Magic animation.gif");
 
         // Create ImageView for the first character's heath
         ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
@@ -145,9 +144,6 @@ public class New_Game extends Application {
         // Adjust position based on the Boots' location
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
-
-        bomb.set_x(MO.aleatoryPositionX() * squareSize + startX);
-        bomb.set_y(MO.aleatoryPositionY() * squareSize + startY);
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -263,7 +259,6 @@ public class New_Game extends Application {
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
 
-
         // Scene/Layout 2
         layout2.getChildren().addAll(
                 label2,
@@ -272,7 +267,6 @@ public class New_Game extends Application {
                 label5,
                 b3,
                 a1,
-                bomb,
                 shieldImageView,
                 bootsImageView,
                 heathFull1,
@@ -359,9 +353,9 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        // Log positions
-        System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
-        System.out.println("Bomb initial position: x = " + bomb.getPos_x() + ", y = " + bomb.getPos_y());
+        bomb.set_x(MO.aleatoryPositionX() * squareSize + startX);
+        bomb.set_y(MO.aleatoryPositionY() * squareSize + startY);
+
 
         // Create the board of squares
         createBoard(layout2);
@@ -448,10 +442,31 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
+            /*
+            if(character.getPos_x() == bomb.getPos_x() && character.getPos_y() == bomb.getPos_y()){
+                bomb.set_y(MO.aleatoryPositionX()*squareSize + startY);
+                bomb.set_y(MO.aleatoryPositionY()*squareSize + startX);
+                bomb.setVisible(false);
+                if(!shield.getShield()) {
+                    character.setHealth(-1);
+                }else{
+                    shield.increase_shield(false);
+                }
+                Timeline delayTimeline = new Timeline(
+                        new KeyFrame(Duration.seconds(3), e -> {
+                            bomb.set_x(MO.aleatoryPositionX() * squareSize + startX);
+                            bomb.set_y(MO.aleatoryPositionY() * squareSize + startY);
+                            bomb.setVisible(true);
+                        })
+                );
+                delayTimeline.play();
+            }
+            */
+
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+            System.out.println("Bomb position is : x = " + bomb.getPos_x() + ", y = " + bomb.getPos_y());
 
             //Heath's conditions
             switch (character.getHealth()){
@@ -504,16 +519,13 @@ public class New_Game extends Application {
                     heathShield3.setVisible(false);
                     break;
             }
+            layout2.getChildren().add(explosionTimer(layout2));
         });
 
         // Build the Window
         primaryStage.setScene(s1);
         primaryStage.setTitle("Hello!");
         primaryStage.show();
-    }
-
-    private void shieldTimer(){
-
     }
 
     private void createBoard(Pane pane) {
@@ -536,6 +548,29 @@ public class New_Game extends Application {
                 number++;
             }
         }
+    }
+
+    private Bomb explosionTimer(Pane layout) {
+        secondsExplosion = 0;
+        Map_Objects MO = new Map_Objects();
+        Bomb bo = new Bomb(120, 120, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "MagicAnimation.gif");
+        bo.setVisible(true);
+
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    secondsExplosion++;
+                    if (secondsExplosion >= 5) {
+                        bo.setVisible(false);
+                        bo.set_y(MO.aleatoryPositionY() * squareSize + startY);
+                        bo.set_x(MO.aleatoryPositionX() * squareSize + startX);
+                        secondsExplosion = 0;
+                        timeline.stop();
+                    }
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+        return bo;
     }
 
     private void startTimer() {

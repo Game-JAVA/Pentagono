@@ -26,30 +26,18 @@ public class Bomb extends ImageView {
     public int getExplosion_range() {
         return explosion_range;
     }
-
     public int getExplosion_diameter() {
         return explosion_diameter;
     }
-
     public int getExplosion_damage() {
         return explosion_damage;
     }
-
-    public int getPos_x() {
-        return pos_x;
-    }
+    public int getPos_x() {return (int) this.getX();}
     public int getPos_y() {
-        return pos_y;
+        return (int) this.getY();
     }
-
-    public void set_x(int pos_x) {
-        this.setX(pos_x);
-    }
-
-    public void set_y(int pos_y) {
-        this.setY(pos_y);
-    }
-
+    public void set_x(int pos_x) {this.setX(pos_x);}
+    public void set_y(int pos_y) {this.setY(pos_y);}
     public void setR(Random r) {
         this.r = r;
     }
