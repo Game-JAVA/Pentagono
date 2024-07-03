@@ -45,6 +45,8 @@ public class New_Game extends Application {
         ImageView backg = new ImageView(backgroundImage);
         Image backgroundImage2 = new Image("imgtela2.jpeg");
         ImageView backg2 = new ImageView(backgroundImage2);
+        Image backgroundImage3 = new Image("backgroundscene3.jpg");
+        ImageView backg3 = new ImageView(backgroundImage3);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
@@ -114,6 +116,7 @@ public class New_Game extends Application {
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+        BackgroundSize backgroundSize3 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -130,8 +133,17 @@ public class New_Game extends Application {
                 backgroundSize
         );
 
+        BackgroundImage background3 = new BackgroundImage(
+                backgroundImage3,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
+        );
+
         layout1.setBackground(new Background(background));
         layout2.setBackground(new Background(background2));
+        layout3.setBackground(new Background(background3));
 
 
         Label label1 = new Label("Welcome to Page 1");
@@ -264,7 +276,7 @@ public class New_Game extends Application {
         label6.setLayoutY(10);
 
         label6.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 26px;"
 
 
@@ -275,7 +287,7 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -284,7 +296,7 @@ public class New_Game extends Application {
         label8.setLayoutY(230);
 
         label8.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -293,7 +305,7 @@ public class New_Game extends Application {
         label9.setLayoutY(75);
 
         label9.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 16px;"
         );
 
@@ -302,7 +314,7 @@ public class New_Game extends Application {
         label10.setLayoutY(270);
 
         label10.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: yellow;"+
                         "-fx-font-size: 16px;"
         );
 
