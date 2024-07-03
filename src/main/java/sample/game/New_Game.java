@@ -54,7 +54,7 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000);
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
-        Bomb bombast = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"Magic5.png" );
+        Bomb bombast = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
 
         // Create ImageView for the first character's heath
         ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
@@ -437,6 +437,9 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
+            if(character.getPos_x()==bombast.getX() && character.getPos_y()==bombast.getY()){
+                System.out.println("voce perdeu");
+            }
 
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
@@ -491,6 +494,7 @@ public class New_Game extends Application {
                     break;
             }
         });
+
 
         // Build the Window
         primaryStage.setScene(s1);
