@@ -1,5 +1,10 @@
 # Pentagon
 
+Agile team collaboration framework: Scrum
+Programming Language: Java
+Version: 21
+Library: JavaFX
+
 ## Index
 1. [Description](#description)
 2. [How to Play](#how-to-play)
@@ -27,7 +32,7 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - The difficulty increases as the player's score goes up. More magical attacks appear on the screen as you progress.
 - The game ends when you are hit by an attack and have no more lives left.
 
-## Controls
+## ⌨️ Controls
 
 - **WASD:** Move the character.
   - **W:** Move the character up.
