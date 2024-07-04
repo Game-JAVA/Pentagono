@@ -1,8 +1,11 @@
 # Pentagon
 
 Agile team collaboration framework: Scrum
+
 Programming Language: Java
+
 Version: 21
+
 Library: JavaFX
 
 ## Index
