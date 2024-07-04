@@ -165,6 +165,8 @@ public class New_Game extends Application {
         Label label7 = new Label("Game Objective:");
         Label label8 = new Label("How to Play:");
         Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
+                "The difficulty increases as the player's score goes up.\nMore magical attacks appear on the screen as you progress;\n"+
+                "The game ends when you are hit by an attack and have no more lives left;\n"+
                 "There are some items to help:\n"+
                 "Apple: increases the character's score;\n"+
                 "Shield: Gives the character extra life;\n"+
@@ -224,7 +226,7 @@ public class New_Game extends Application {
 
         // Definir a posição da imagem na layout
         keysImageView.setLayoutX(200);
-        keysImageView.setLayoutY(255);
+        keysImageView.setLayoutY(325);
 
         // Scene/Layout 1
         layout1.getChildren().addAll(label1, b1, b2);
@@ -303,7 +305,7 @@ public class New_Game extends Application {
 
         // Set the position of the label8
         label8.setLayoutX(20);
-        label8.setLayoutY(230);
+        label8.setLayoutY(300);
 
         label8.setStyle(
                 "-fx-text-fill: yellow;"+
@@ -321,7 +323,7 @@ public class New_Game extends Application {
 
         // Set the position of the label10
         label10.setLayoutX(20);
-        label10.setLayoutY(270);
+        label10.setLayoutY(340);
 
         label10.setStyle(
                 "-fx-text-fill: white;"+
