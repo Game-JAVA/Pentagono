@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Design/Magic/MagicAnimation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic animation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +26,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "git-widget-placeholder": "feature/henrique1234",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Pentagono/Design/Magic"
+    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/ScreenSaver2"
   }
 }]]></component>
   <component name="RecentsManager">
