@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +31,8 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
   <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,22 +41,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.New_Game.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/henrique1234",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Melina",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -64,22 +50,18 @@
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/OneDrive/Área de Trabalho/Matérias Faculdade ADS/PRIMEIRO SEMESTRE/Pentagono/target/classes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projetos/Geral/INTELLJ/tst/Pentagono/target/classes&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projetos\Geral\INTELLJ\tst\Pentagono\target\classes" />
       <recent name="C:\Users\gabri\OneDrive\Área de Trabalho\Matérias Faculdade ADS\PRIMEIRO SEMESTRE\Pentagono\target\classes" />
       <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
-      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes\sample" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes\sample" />
     </key>
   </component>
   <component name="RunManager">

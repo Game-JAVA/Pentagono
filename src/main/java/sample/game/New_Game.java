@@ -54,17 +54,12 @@ public class New_Game extends Application {
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000);
         Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
-        Bomb bombast = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
+        Bomb bombast = new Bomb(120, 120, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
 
         // Create ImageView for the first character's heath
         ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
         heathFull1.setFitHeight(60);
         heathFull1.setFitWidth(60);
-<<<<<<< HEAD
-        heathFull1.setX(130);
-        heathFull1.setY(10);
-        heathFull1.setVisible(true);
-=======
         heathFull1.setX(130); //POSITION IN WINDOWN
         heathFull1.setY(10); // POSITION IN WINDOWN
         heathFull1.setVisible(true); // DEFINE HOW VISIBLE
@@ -116,10 +111,9 @@ public class New_Game extends Application {
         heathShield.setX(330);
         heathShield.setY(10);
         heathShield.setVisible(false);
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
 
         // Create ImageView for the second character's heath
-        ImageView heathFull2 = new ImageView(new Image("HeartFull.png"));
+        ImageView hearthFull2 = new ImageView(new Image("HeartFull.png"));
         heathFull2.setFitHeight(60);
         heathFull2.setFitWidth(60);
         heathFull2.setX(230);
@@ -127,7 +121,7 @@ public class New_Game extends Application {
         heathFull2.setVisible(true);
 
         // Create ImageView for the third character's heath
-        ImageView heathFull3 = new ImageView(new Image("HeartFull.png"));
+        ImageView hearthFull3 = new ImageView(new Image("HeartFull.png"));
         heathFull3.setFitHeight(60);
         heathFull3.setFitWidth(60);
         heathFull3.setX(330);
@@ -135,7 +129,7 @@ public class New_Game extends Application {
         heathFull3.setVisible(true);
 
         // Create ImageView for the third character's Empyt heath
-        ImageView heathEmpty3 = new ImageView(new Image("HeartEmpty.png"));
+        ImageView hearthEmpty3 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty3.setFitHeight(60);
         heathEmpty3.setFitWidth(60);
         heathEmpty3.setX(330);
@@ -143,7 +137,7 @@ public class New_Game extends Application {
         heathEmpty3.setVisible(false);
 
         // Create ImageView for the second character's Empyt heath
-        ImageView heathEmpty2 = new ImageView(new Image("HeartEmpty.png"));
+        ImageView hearthEmpty2 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty2.setFitHeight(60);
         heathEmpty2.setFitWidth(60);
         heathEmpty2.setX(230);
@@ -151,7 +145,7 @@ public class New_Game extends Application {
         heathEmpty2.setVisible(false);
 
         // Create ImageView for the first character's Empyt heath
-        ImageView heathEmpty1 = new ImageView(new Image("HeartEmpty.png"));
+        ImageView hearthEmpty1 = new ImageView(new Image("HeartEmpty.png"));
         heathEmpty1.setFitHeight(60);
         heathEmpty1.setFitWidth(60);
         heathEmpty1.setX(130);
@@ -159,7 +153,7 @@ public class New_Game extends Application {
         heathEmpty1.setVisible(false);
 
         // Create ImageView for the character's heathShield
-        ImageView heathShield = new ImageView(new Image("HeartShield.png"));
+        ImageView hearthShield = new ImageView(new Image("HeartShield.png"));
         heathShield.setFitHeight(60);
         heathShield.setFitWidth(60);
         heathShield.setX(330);
@@ -302,10 +296,8 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
         layout2.getChildren().addAll(
-<<<<<<< HEAD
-=======
+
                // board(),
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
                 label2,
                 label3,
                 label4,
@@ -315,10 +307,7 @@ public class New_Game extends Application {
                 a1,
                 shieldImageView,
                 bootsImageView,
-<<<<<<< HEAD
-=======
                 bombast,
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
                 heathFull1,
                 heathFull2,
                 heathFull3,
@@ -326,18 +315,11 @@ public class New_Game extends Application {
                 heathEmpty2,
                 heathEmpty1,
                 heathShield
-<<<<<<< HEAD
         );
         // Scene/Layout 3
         layout3.getChildren().addAll(label6, label7, label8, b4);
 
-=======
 
-        );
-        // Scene/Layout 3
-        layout3.getChildren().addAll(label6, label7, label8, b4);
-
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
 
@@ -407,39 +389,21 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-<<<<<<< HEAD
-        bootsImageView.setX(boots.getPos_x());
-        bootsImageView.setY(boots.getPos_y());
-        /*
-        //BOMB IMPLEMENTATION
-        bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
-        bombRectangle.setX(bomb.getPos_x());
-        bombRectangle.setY(bomb.getPos_y());
-        */
-=======
         bombast.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
         bombast.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
 
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
 
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
         System.out.println("bomb initial position: x = " + bombast.getPos_x() + ", y = " + bombast.getPos_y());
 
         // Create the board of squares
-        createBoard(layout2);
+       // createBoard(layout2);
 
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
-<<<<<<< HEAD
-            int applePosX = a1.getPos_x();
-            int applePosY = a1.getPos_y();
-=======
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
-
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
@@ -494,7 +458,6 @@ public class New_Game extends Application {
             }
 
             if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
-<<<<<<< HEAD
                 boots.setPos_x(MO.aleatoryPositionX()*squareSize + startY);
                 boots.setPos_y(MO.aleatoryPositionY()*squareSize + startX);
                 bootsImageView.setVisible(false);
@@ -503,15 +466,6 @@ public class New_Game extends Application {
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-=======
-                bootsImageView.setX(MO.aleatoryPositionX()*squareSize + startX);
-                bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startY);
-                bootsImageView.setVisible(false);
-                character.setSpeedMore();
-
-                Timeline delayTimeline = new Timeline(
-                        new KeyFrame(Duration.seconds(3), e -> {
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
                             bootsImageView.setVisible(true);
                             character.setSpeedLess();
                         })
@@ -532,12 +486,7 @@ public class New_Game extends Application {
                 );
                 delayTimeline.play();
             }
-<<<<<<< HEAD
 
-            // Log position after movement
-            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
-=======
             if(character.getPos_x()==bombast.getX() && character.getPos_y()==bombast.getY()){
                 System.out.println("voce perdeu");
             }
@@ -545,7 +494,6 @@ public class New_Game extends Application {
             // Log position after movement
             System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
             System.out.println("Bomb position is : x = " + bombast.getX() + ", y = " + bombast.getY());
->>>>>>> b41bc1b2f3dba6dc1659706b2c1595053392738d
 
             //Heath's conditions
             switch (character.getHealth()){
