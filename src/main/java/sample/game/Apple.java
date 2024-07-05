@@ -32,17 +32,13 @@ public class Apple extends ImageView {
         return (int) this.getX();
     }
 
-    public void setPos_x(int pos_x) {
-        this.setX(pos_x);
-    }
+    public void setPos_x(int pos_x) {this.setX(pos_x);}
 
     public int getPos_y() {
         return (int) this.getY();
     }
 
-    public void setPos_y(int pos_y) {
-        this.setY(pos_y);
-    }
+    public void setPos_y(int pos_y) {this.setY(pos_y);}
 
     // toString
     @Override
