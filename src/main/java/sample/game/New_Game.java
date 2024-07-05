@@ -37,9 +37,9 @@ public class New_Game extends Application {
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
-        Image backgroundImage = new Image("backgroundStartWindow.jpeg");
+        Image backgroundImage = new Image("backgroundMenu.png");
         ImageView backg = new ImageView(backgroundImage);
-        Image backgroundImage2 = new Image("imgtela2.jpeg");
+        Image backgroundImage2 = new Image("board.png");
         ImageView backg2 = new ImageView(backgroundImage2);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
@@ -187,7 +187,7 @@ public class New_Game extends Application {
         Button b3 = new Button("Return to Menu");
         Button b4 = new Button("Return to Menu");
 
-        VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
+        VBox.setMargin(b1, new Insets(150, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(500, 10, 10, 300));
@@ -227,15 +227,6 @@ public class New_Game extends Application {
 
         layout1.setBackground(new Background(background));
         layout2.setBackground(new Background(background2));
-
-
-        Label label1 = new Label("Welcome to Page 1");
-        label1.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 26px;"+
-                        "-fx-padding: 10 0 0 60"
-        );
-
 
         layout1.setBackground(new Background(background));
 
@@ -291,7 +282,7 @@ public class New_Game extends Application {
 
         });
         // Scene/Layout 1
-        layout1.getChildren().addAll(label1, b1, b2);
+        layout1.getChildren().addAll(b1, b2);
 
 
         // Scene/Layout 2
@@ -328,8 +319,28 @@ public class New_Game extends Application {
         label2.setLayoutY(30);
 
         label2.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 10"
+
+        );
+        label3.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+        label4.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+        label5.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
                         "-fx-padding: 10 0 0 10"
 
         );
@@ -351,7 +362,7 @@ public class New_Game extends Application {
         label6.setLayoutY(10);
 
         label6.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"
         );
 
@@ -360,7 +371,7 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -369,7 +380,7 @@ public class New_Game extends Application {
         label8.setLayoutY(200);
 
         label8.setStyle(
-                "-fx-text-fill: black;"+
+                "-fx-text-fill: white;"+
                         "-fx-font-size: 22px;"
         );
 
@@ -408,26 +419,28 @@ public class New_Game extends Application {
                 case W:
                     if (character.getPos_y() > startY) {
                         character.setPos_y(character.getPos_y() - character.getSpeed());
-
+                        character.updateImage("MainUpStand.gif");
                     }
                     break;
                 case S:
                     if (character.getPos_y() < (squareSize * (rows - 1)) + startY) {
                         character.setPos_y(character.getPos_y() + character.getSpeed());
-
+                        character.updateImage("MainDownStand.gif");
                     }
                     break;
                 case A:
                     if (character.getPos_x() > startX) {
                         character.setPos_x(character.getPos_x() - character.getSpeed());
-
+                        character.updateImage("MainLeftStand.gif");
                     }
                     break;
                 case D:
                     if (character.getPos_x() < (squareSize * (cols - 1)) + startX) {
                         character.setPos_x(character.getPos_x() + character.getSpeed());
-
+                        character.updateImage("MainRightStand.gif");
                     }
+                    break;
+                default:
                     break;
                 case O:
                     if(character.getHealth()<=4 && character.getHealth()>0)
@@ -548,7 +561,7 @@ public class New_Game extends Application {
 
         // Build the Window
         primaryStage.setScene(s1);
-        primaryStage.setTitle("Hello!");
+        primaryStage.setTitle("Pentagon Blast");
         primaryStage.show();
     }
 
@@ -603,16 +616,7 @@ public class New_Game extends Application {
 
 
     // INCREMENTAR IMAGEM DE FUNDO
-    private ImageView board(){
-        Map_Objects MOA = new Map_Objects();
 
-        ImageView boardImage = new ImageView(new Image("Board.png"));
-        boardImage.setFitHeight(520);
-        boardImage.setFitWidth(1080);
-        boardImage.setX(80);
-        boardImage.setY(80);
-        return boardImage;
-    }
 
 
 /*
