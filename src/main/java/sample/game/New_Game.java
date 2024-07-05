@@ -14,8 +14,6 @@ import javafx.util.Duration;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 public class New_Game extends Application {
     private int squareSize = 40;
