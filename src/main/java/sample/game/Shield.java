@@ -1,15 +1,10 @@
 package sample.game;
-
-import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class Shield extends Map_Objects {
-
     private boolean shield;
     private int pos_x;
     private int pos_y;
-
     Random r = new Random();
 
     // constructor
