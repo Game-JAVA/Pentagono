@@ -41,7 +41,11 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - **Attack Sound:** A sound effect for when an spell appears.
 - **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
-## Controles
+## UML Diagram
+![alt text](<UML diagram.jpg>)
 
-- **WASD:** Movimentar o personagem.
+## Requirements
 
+- **Java:** Version 8 or higher.
+- **JavaFX:** Version 11 or higher.
+- **Maven:** Version 3.6.0 or higher.
