@@ -1,11 +1,9 @@
 package sample.game;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import java.util.Random;
 
 public class Bomb extends ImageView {
-
     private int explosion_range;
     private int explosion_diameter;
     private int explosion_damage;
@@ -42,6 +40,11 @@ public class Bomb extends ImageView {
         this.r = r;
     }
     // methods
+    public void explosion(){
+        if(character_posx==posx && character_posy == posy){
+            System.out.println("você perdeu!");
+        }
+    }
 
     // toString
 
