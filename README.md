@@ -1,13 +1,5 @@
 # Pentagon
 
-Agile team collaboration framework: Scrum
-
-Programming Language: Java
-
-Version: 21
-
-Library: JavaFX
-
 ## Index
 1. [Description](#description)
 2. [How to Play](#how-to-play)
@@ -35,7 +27,7 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - The difficulty increases as the player's score goes up. More magical attacks appear on the screen as you progress.
 - The game ends when you are hit by an attack and have no more lives left.
 
-## ⌨️ Controls
+## Controls
 
 - **WASD:** Move the character.
   - **W:** Move the character up.
@@ -49,7 +41,11 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - **Attack Sound:** A sound effect for when an spell appears.
 - **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
-## Controles
+## UML Diagram
+![alt text](<UML diagram.jpg>)
 
-- **WASD:** Movimentar o personagem.
+## Requirements
 
+- **Java:** Version 8 or higher.
+- **JavaFX:** Version 11 or higher.
+- **Maven:** Version 3.6.0 or higher.
