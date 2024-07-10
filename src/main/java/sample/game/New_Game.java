@@ -269,6 +269,7 @@ public class New_Game extends Application {
 
 
 
+
         // Initialize sounds
         try {
             String backgroundUrl = "https://www.dropbox.com/scl/fi/mb2oriy1rnqik15fwwpyt/741558_the_ramdom_cheese_echos-of-the-mead-hall-online-audio-converter.com.wav?rlkey=m6h0ag0awxvj71ftwrgenxa8p&dl=1";
@@ -293,13 +294,18 @@ public class New_Game extends Application {
             stopThemeSound();
             startBackgroundSound();*/
         });
-
+        int zerar = 0;
         // Button b3 to Scene s1
         b3.setOnAction(e -> {
             primaryStage.setScene(s1);
             primaryStage.setX(435);
             primaryStage.setY(45);
-            stopTimer();/*
+            stopTimer();
+            character.scoreToZero();
+            label4.setText(String.valueOf(character.getScore()));
+            character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+            character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+            /*
             stopBackgroundSound();
             startThemeSound();*/
         });
