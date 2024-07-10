@@ -64,6 +64,10 @@ public class Character extends ImageView {
         health += value;
     }
 
+    public void updateImage(String imagePath) {
+        this.setImage(new Image(imagePath));
+    }
+
     // toString
     @Override
     public String toString() {
