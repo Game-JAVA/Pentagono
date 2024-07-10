@@ -17,10 +17,6 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 
-import java.util.Random;
-
-import static eu.hansolo.tilesfx.tools.Country.MO;
-
 public class New_Game extends Application {
     private int squareSize = 40;
     private int startX = 80;
@@ -41,9 +37,9 @@ public class New_Game extends Application {
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
-        Image backgroundImage = new Image("backgroundStartWindow.jpeg");
+        Image backgroundImage = new Image("backgroundMenu.png");
         ImageView backg = new ImageView(backgroundImage);
-        Image backgroundImage2 = new Image("imgtela2.jpeg");
+        Image backgroundImage2 = new Image("Board.png");
         ImageView backg2 = new ImageView(backgroundImage2);
         Image backgroundImage3 = new Image("backgroundscene3.jpg");
         ImageView backg3 = new ImageView(backgroundImage3);
@@ -60,15 +56,119 @@ public class New_Game extends Application {
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
-        Shield shield = new Shield(1200, 1000, Color.BLACK);
-        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.PURPLE);
-        // Bomb bomb = new Bomb(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), Color.RED);
+        Shield shield = new Shield(1200, 1000);
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
+        Bomb bombast = new Bomb(120, 120, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
 
+        // Create ImageView for the first character's heath
+        ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
+        heathFull1.setFitHeight(60);
+        heathFull1.setFitWidth(60);
+        heathFull1.setX(130); //POSITION IN WINDOWN
+        heathFull1.setY(10); // POSITION IN WINDOWN
+        heathFull1.setVisible(true); // DEFINE HOW VISIBLE
+
+        // Create ImageView for the second character's heath
+        ImageView heathFull2 = new ImageView(new Image("HeartFull.png"));
+        heathFull2.setFitHeight(60);
+        heathFull2.setFitWidth(60);
+        heathFull2.setX(230);
+        heathFull2.setY(10);
+        heathFull2.setVisible(true);
+
+        // Create ImageView for the third character's heath
+        ImageView heathFull3 = new ImageView(new Image("HeartFull.png"));
+        heathFull3.setFitHeight(60);
+        heathFull3.setFitWidth(60);
+        heathFull3.setX(330);
+        heathFull3.setY(10);
+        heathFull3.setVisible(true);
+
+        // Create ImageView for the third character's Empyt heath
+        ImageView heathEmpty3 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty3.setFitHeight(60);
+        heathEmpty3.setFitWidth(60);
+        heathEmpty3.setX(330);
+        heathEmpty3.setY(10);
+        heathEmpty3.setVisible(false);
+
+        // Create ImageView for the second character's Empyt heath
+        ImageView heathEmpty2 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty2.setFitHeight(60);
+        heathEmpty2.setFitWidth(60);
+        heathEmpty2.setX(230);
+        heathEmpty2.setY(10);
+        heathEmpty2.setVisible(false);
+
+        // Create ImageView for the first character's Empyt heath
+        ImageView heathEmpty1 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty1.setFitHeight(60);
+        heathEmpty1.setFitWidth(60);
+        heathEmpty1.setX(130);
+        heathEmpty1.setY(10);
+        heathEmpty1.setVisible(false);
+
+        // Create ImageView for the character's heathShield
+        ImageView heathShield = new ImageView(new Image("HeartShield.png"));
+        heathShield.setFitHeight(60);
+        heathShield.setFitWidth(60);
+        heathShield.setX(330);
+        heathShield.setY(10);
+        heathShield.setVisible(false);
+
+        // Create ImageView for the second character's heath
+        ImageView hearthFull2 = new ImageView(new Image("HeartFull.png"));
+        heathFull2.setFitHeight(60);
+        heathFull2.setFitWidth(60);
+        heathFull2.setX(230);
+        heathFull2.setY(10);
+        heathFull2.setVisible(true);
+
+        // Create ImageView for the third character's heath
+        ImageView hearthFull3 = new ImageView(new Image("HeartFull.png"));
+        heathFull3.setFitHeight(60);
+        heathFull3.setFitWidth(60);
+        heathFull3.setX(330);
+        heathFull3.setY(10);
+        heathFull3.setVisible(true);
+
+        // Create ImageView for the third character's Empyt heath
+        ImageView hearthEmpty3 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty3.setFitHeight(60);
+        heathEmpty3.setFitWidth(60);
+        heathEmpty3.setX(330);
+        heathEmpty3.setY(10);
+        heathEmpty3.setVisible(false);
+
+        // Create ImageView for the second character's Empyt heath
+        ImageView hearthEmpty2 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty2.setFitHeight(60);
+        heathEmpty2.setFitWidth(60);
+        heathEmpty2.setX(230);
+        heathEmpty2.setY(10);
+        heathEmpty2.setVisible(false);
+
+        // Create ImageView for the first character's Empyt heath
+        ImageView hearthEmpty1 = new ImageView(new Image("HeartEmpty.png"));
+        heathEmpty1.setFitHeight(60);
+        heathEmpty1.setFitWidth(60);
+        heathEmpty1.setX(130);
+        heathEmpty1.setY(10);
+        heathEmpty1.setVisible(false);
+
+        // Create ImageView for the character's heathShield
+        ImageView hearthShield = new ImageView(new Image("HeartShield.png"));
+        heathShield.setFitHeight(60);
+        heathShield.setFitWidth(60);
+        heathShield.setX(330);
+        heathShield.setY(10);
+        heathShield.setVisible(false);
 
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
         shieldImageView.setFitWidth(squareSize);
         shieldImageView.setFitHeight(squareSize);
+
 
         // Adjust position based on the Boots' location
         shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
@@ -83,10 +183,6 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        //BOMB IMPLEMENTATION
-        //  Rectangle bombRectangle = new Rectangle(bomb.getPos_x(), bomb.getPos_y(), squareSize, squareSize);
-        //  bombRectangle.setFill(bomb.getColor());
-
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
 
@@ -96,11 +192,14 @@ public class New_Game extends Application {
         Button b4 = new Button("Return to Menu");
 
 
-        VBox.setMargin(b1, new Insets(10, 20, 10, 155)); // cima, direita, baixo, esquerda
+        VBox.setMargin(b1, new Insets(150, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(500, 10, 10, 300));
+
         vbox.getChildren().addAll(b1, b2, b3, b4);
+
+
 
         String buttonStyle = "-fx-background-color: black;" +
                 "-fx-text-fill: yellow;" +
@@ -108,7 +207,7 @@ public class New_Game extends Application {
                 "-fx-border-radius: 5;" +
                 "-fx-background-radius: 5;" +
                 "-fx-padding: 15 15 15 15;" +
-                "-fx-border-color: yellow;" +
+                "-fx-border-color: yellow;"+
                 "-fx-cursor: hand";
 
         b1.setStyle(buttonStyle);
@@ -147,21 +246,13 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
         layout3.setBackground(new Background(background3));
 
-
-        Label label1 = new Label("Welcome to Page 1");
-        label1.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 26px;" +
-                        "-fx-padding: 10 0 0 60"
-        );
-
-
         layout1.setBackground(new Background(background));
 
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
         Label label6 = new Label("Title");
+
         Label label7 = new Label("Game Objective:");
         Label label8 = new Label("How to Play:");
         Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
@@ -175,6 +266,8 @@ public class New_Game extends Application {
                 "A - Move left;\n"+
                 "S - Move down;\n"+
                 "D - Move right.");
+
+
 
         // Initialize sounds
         try {
@@ -221,6 +314,7 @@ public class New_Game extends Application {
         });
 
 
+
         keysImageView.setFitWidth(150); // Defina a largura desejada
         keysImageView.setFitHeight(110); // Defina a altura desejada
 
@@ -228,13 +322,41 @@ public class New_Game extends Application {
         keysImageView.setLayoutX(200);
         keysImageView.setLayoutY(325);
 
+
         // Scene/Layout 1
-        layout1.getChildren().addAll(label1, b1, b2);
+        layout1.getChildren().addAll(b1, b2);
 
 
         // Scene/Layout 2
-        layout2.getChildren().addAll(label2, label3, label4, label5, b3, character, a1, shieldImageView, bootsImageView, createnewbomb(), createnewbombB(), createnewbombaC(), createnewbombaD());
+
         layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10, keysImageView);
+
+
+        layout2.getChildren().addAll(
+
+               // board(),
+                label2,
+                label3,
+                label4,
+                label5,
+                b3,
+                character,
+                a1,
+                shieldImageView,
+                bootsImageView,
+                bombast,
+                heathFull1,
+                heathFull2,
+                heathFull3,
+                heathEmpty3,
+                heathEmpty2,
+                heathEmpty1,
+                heathShield
+        );
+        // Scene/Layout 3
+
+
+
 
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
@@ -244,8 +366,32 @@ public class New_Game extends Application {
         label2.setLayoutY(30);
 
         label2.setStyle(
+
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 26px;" +
+
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 10"
+
+        );
+        label3.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+        label4.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+        label5.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 20px;" +
                         "-fx-padding: 10 0 0 10"
 
         );
@@ -330,6 +476,33 @@ public class New_Game extends Application {
                         "-fx-font-size: 16px;"
         );
 
+        // Set the position of the label6
+        label6.setLayoutX(350);
+        label6.setLayoutY(10);
+
+        label6.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 26px;"
+        );
+
+        // Set the position of the label7
+        label7.setLayoutX(20);
+        label7.setLayoutY(40);
+
+        label7.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 22px;"
+        );
+
+        // Set the position of the label8
+        label8.setLayoutX(20);
+        label8.setLayoutY(200);
+
+        label8.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 22px;"
+        );
+
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -339,65 +512,69 @@ public class New_Game extends Application {
         a1.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
 
         //Implemented Shield in Window
-        shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-
-        shieldImageView.setX(shield.getPos_x());
-        shieldImageView.setY(shield.getPos_y());
+        shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         //Implemented Boots in window.
-        boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+        bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-        bootsImageView.setX(boots.getPos_x());
-        bootsImageView.setY(boots.getPos_y());
 
-        //BOMB IMPLEMENTATION
-        //      bomb.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-        //       bomb.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        bombast.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
+        bombast.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
 
-        //      bombRectangle.setX(bomb.getPos_x());
-        //      bombRectangle.setY(bomb.getPos_y());
+
         // Log positions
         System.out.println("Character initial position: x = " + character.getPos_x() + ", y = " + character.getPos_y());
-        System.out.println("Apple initial position: x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+        System.out.println("bomb initial position: x = " + bombast.getPos_x() + ", y = " + bombast.getPos_y());
 
         // Create the board of squares
-        createBoard(layout2);
+       // createBoard(layout2);
+
 
         // Rectangle's Movement
         s2.setOnKeyPressed(event -> {
-            int applePosX = a1.getPos_x();
-            int applePosY = a1.getPos_y();
-
-
             switch (event.getCode()) {
                 case W:
                     if (character.getPos_y() > startY) {
                         character.setPos_y(character.getPos_y() - character.getSpeed());
+                        character.updateImage("MainUpStand.gif");
                     }
                     break;
                 case S:
                     if (character.getPos_y() < (squareSize * (rows - 1)) + startY) {
                         character.setPos_y(character.getPos_y() + character.getSpeed());
+                        character.updateImage("MainDownStand.gif");
                     }
                     break;
                 case A:
                     if (character.getPos_x() > startX) {
                         character.setPos_x(character.getPos_x() - character.getSpeed());
+                        character.updateImage("MainLeftStand.gif");
                     }
                     break;
                 case D:
                     if (character.getPos_x() < (squareSize * (cols - 1)) + startX) {
                         character.setPos_x(character.getPos_x() + character.getSpeed());
+                        character.updateImage("MainRightStand.gif");
                     }
                     break;
                 default:
                     break;
+                case O:
+                    if(character.getHealth()<=4 && character.getHealth()>0)
+                        character.setHealth(-1);
+                    character.setHealth(0);
+                    break;
+                case P:
+                    if(character.getHealth()<4)
+                        character.setHealth(+1);
+                    character.setHealth(0);
+                    break;
             }
 
             // Check if character and apple occupy the same square
-            if (character.getPos_x() == applePosX && character.getPos_y() == applePosY) {
+            if (character.getPos_x() == a1.getPos_x() && character.getPos_y() == a1.getPos_y()) {
                 // Reset apple position
                 character.setScore(a1.getScore());
                 label4.setText(String.valueOf(character.getScore()));
@@ -412,26 +589,25 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
-            if (character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()) {
+            if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
+                boots.setPos_x(MO.aleatoryPositionX()*squareSize + startY);
+                boots.setPos_y(MO.aleatoryPositionY()*squareSize + startX);
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
-                boots.setPos_x(MO.aleatoryPositionX() * squareSize + startY);
-                boots.setPos_y(MO.aleatoryPositionY() * squareSize + startX);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
                             boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
-                            character.setSpeedLess();
                             bootsImageView.setVisible(true);
+                            character.setSpeedLess();
                         })
                 );
                 delayTimeline.play();
             }
 
-
-            if (character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()) {
-                shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startY);
-                shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startX);
+            if(character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()){
+                shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
+                shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldImageView.setVisible(false);
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
@@ -443,15 +619,68 @@ public class New_Game extends Application {
                 delayTimeline.play();
             }
 
+            if(character.getPos_x()==bombast.getX() && character.getPos_y()==bombast.getY()){
+                System.out.println("voce perdeu");
+            }
 
             // Log position after movement
-            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore());
-            System.out.println("Apple position is : x = " + a1.getPos_x() + ", y = " + a1.getPos_y());
+            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
+            System.out.println("Bomb position is : x = " + bombast.getX() + ", y = " + bombast.getY());
+
+            //Heath's conditions
+            switch (character.getHealth()){
+                case 3:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(true);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(false);
+                    heathShield.setVisible(false);
+                    break;
+                case 4:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(false);
+                    heathShield.setVisible(true);
+                    break;
+                case 2:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(true);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(false);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+                case 1:
+                    heathFull1.setVisible(true);
+                    heathFull2.setVisible(false);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(false);
+                    heathEmpty2.setVisible(true);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+                case 0:
+                    heathFull1.setVisible(false);
+                    heathFull2.setVisible(false);
+                    heathFull3.setVisible(false);
+                    heathEmpty1.setVisible(true);
+                    heathEmpty2.setVisible(true);
+                    heathEmpty3.setVisible(true);
+                    heathShield.setVisible(false);
+                    break;
+            }
         });
+
 
         // Build the Window
         primaryStage.setScene(s1);
-        primaryStage.setTitle("Hello!");
+        primaryStage.setTitle("Pentagon Blast");
         primaryStage.show();
     }
 
@@ -504,51 +733,9 @@ public class New_Game extends Application {
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
-    private Rectangle createnewbomb() {
-        Map_Objects MOA = new Map_Objects();
-        Bomb bomba = new Bomb(40, 40, MOA.aleatoryPositionX(), MOA.aleatoryPositionY(), Color.BLACK);
-        bomba.setPos_y(MOA.aleatoryPositionY() * squareSize + startY);
-        bomba.setPos_x(MOA.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectanglea = new Rectangle(bomba.getPos_x(), bomba.getPos_y(), squareSize, squareSize);
-        bombRectanglea.setFill(bomba.getColor());
-        bombRectanglea.setX(bomba.getPos_x());
-        bombRectanglea.setY(bomba.getPos_y());
-        return bombRectanglea ;
-    }
-    private Rectangle createnewbombB() {
-        Map_Objects MOB = new Map_Objects();
-        Bomb bombb = new Bomb(40, 40, MOB.aleatoryPositionX(), MOB.aleatoryPositionY(), Color.BLACK);
-        bombb.setPos_y(MOB.aleatoryPositionY() * squareSize + startY);
-        bombb.setPos_x(MOB.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectangleb = new Rectangle(bombb.getPos_x(), bombb.getPos_y(), squareSize, squareSize);
-        bombRectangleb.setFill(bombb.getColor());
-        bombRectangleb.setX(bombb.getPos_x());
-        bombRectangleb.setY(bombb.getPos_y());
-        return bombRectangleb ;
-    }
-    private Rectangle createnewbombaC() {
-        Map_Objects MOC = new Map_Objects();
-        Bomb bombc = new Bomb(40, 40, MOC.aleatoryPositionX(), MOC.aleatoryPositionY(), Color.BLACK);
-        bombc.setPos_y(MOC.aleatoryPositionY() * squareSize + startY);
-        bombc.setPos_x(MOC.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectanglec = new Rectangle(bombc.getPos_x(), bombc.getPos_y(), squareSize, squareSize);
-        bombRectanglec.setFill(bombc.getColor());
-        bombRectanglec.setX(bombc.getPos_x());
-        bombRectanglec.setY(bombc.getPos_y());
-        return bombRectanglec ;
-    }
 
-    private Rectangle createnewbombaD() {
-        Map_Objects MOD = new Map_Objects();
-        Bomb bombD = new Bomb(40, 40, MOD.aleatoryPositionX(), MOD.aleatoryPositionY(), Color.BLACK);
-        bombD.setPos_y(MOD.aleatoryPositionY() * squareSize + startY);
-        bombD.setPos_x(MOD.aleatoryPositionX() * squareSize + startX);
-        Rectangle bombRectangleD = new Rectangle(bombD.getPos_x(), bombD.getPos_y(), squareSize, squareSize);
-        bombRectangleD.setFill(bombD.getColor());
-        bombRectangleD.setX(bombD.getPos_x());
-        bombRectangleD.setY(bombD.getPos_y());
-        return bombRectangleD ;
-    }
+    // INCREMENTAR IMAGEM DE FUNDO
+
 
 /*
 

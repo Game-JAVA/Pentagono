@@ -3,12 +3,11 @@ package sample.game;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-
 public class Character extends ImageView {
     private String name;
     private int score = 0;
     private int speed = 10;
-
+    private int health = 3;
 
     // Constructor
     public Character(String name, int pos_x, int pos_y, int width, int height, String imagePath) {
@@ -26,11 +25,11 @@ public class Character extends ImageView {
     }
 
     public void setSpeedMore(){
-        this.speed = getSpeed() + 10;
+        this.speed += 10;
     }
 
     public void setSpeedLess(){
-        this.speed = getSpeed() - 10;
+        this.speed -= 10;
     }
 
     public int getSpeed(){
@@ -55,6 +54,18 @@ public class Character extends ImageView {
 
     public void setPos_y(int pos_y) {
         this.setY(pos_y);
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public void setHealth(int value) {
+        health += value;
+    }
+
+    public void updateImage(String imagePath) {
+        this.setImage(new Image(imagePath));
     }
 
     // toString

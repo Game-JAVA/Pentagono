@@ -1,4 +1,4 @@
-# Pentagon
+# Pentagon Blast
 
 ## Index
 1. [Description](#description)

@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="" />
+    <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Design/Board/backgroundMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainDownStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainLeftStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainRightStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Characters/Main/MainUpStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Design/Magic/MagicAnimation.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Board/backgroundMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainDownStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainLeftStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainRightStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Characters/Main/MainUpStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Design/Magic/MagicAnimation.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design/Board/Board.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design/Board/Board.png" beforeDir="false" afterPath="$PROJECT_DIR$/Design/Board/Board.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design/Magic/Magic animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design/Shield/Shield.png" beforeDir="false" afterPath="$PROJECT_DIR$/Design/Shield/Shield.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Design/Board/Board.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Design/Board/Board.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Design/Board/Board.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Bomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Boots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/Shield.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +63,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-        &quot;associatedIndex&quot;: 5
-        }</component>
+  <component name="ProjectColorInfo">
+    <option name="associatedIndex" value="5" />
+  </component>
   <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -34,26 +74,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.New_Game.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/julio&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProjetosJava/PentagonoAtualizado/target/classes&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.New_Game.executor": "Run",
+    "git-widget-placeholder": "Merging develop",
+    "last_opened_file_path": "C:/ProjetosJava/PentagonoJOGO/target/classes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ProjetosJava\PentagonoAtualizado\target\classes" />
-      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
+      <recent name="C:\ProjetosJava\PentagonoJOGO\target\classes" />
+      <recent name="C:\Users\msaor\OneDrive\Documentos\Estágio\Pentagono\src\main\resources" />
+      <recent name="C:\Users\msaor\OneDrive\Documentos\Estágio\Pentagono\src\main\java" />
+      <recent name="C:\Projetos\Geral\INTELLJ\tst\Pentagono\target\classes" />
+      <recent name="C:\Users\gabri\OneDrive\Área de Trabalho\Matérias Faculdade ADS\PRIMEIRO SEMESTRE\Pentagono\target\classes" />
     </key>
   </component>
   <component name="RunManager">
@@ -109,16 +143,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/sample/game/New_Game.java</url>
-          <line>332</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
