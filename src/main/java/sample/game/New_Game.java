@@ -43,15 +43,19 @@ public class New_Game extends Application {
         ImageView backg2 = new ImageView(backgroundImage2);
         Image backgroundImage3 = new Image("backgroundscene3.jpg");
         ImageView backg3 = new ImageView(backgroundImage3);
+        Image backgroundImage4 = new Image("backgroundGameOver.png");
+        ImageView back4 = new ImageView(backgroundImage4);
         Image keys = new Image("wasdImage.jpg");
         ImageView keysImageView = new ImageView(keys);
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
+        Pane layout4 = new Pane();
 
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
         Scene s3 = new Scene(layout3, 800, 500);
+        Scene s4 = new Scene(layout4, 400,500);
 
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
@@ -190,16 +194,16 @@ public class New_Game extends Application {
         Button b2 = new Button("Instructions");
         Button b3 = new Button("Return to Menu");
         Button b4 = new Button("Return to Menu");
+        Button b5 = new Button("Menu");
 
 
         VBox.setMargin(b1, new Insets(150, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(500, 10, 10, 300));
+        VBox.setMargin(b5, new Insets(150, 20, 10, 155));
 
-        vbox.getChildren().addAll(b1, b2, b3, b4);
-
-
+        vbox.getChildren().addAll(b1, b2, b3, b4, b5);
 
         String buttonStyle = "-fx-background-color: black;" +
                 "-fx-text-fill: yellow;" +
@@ -214,10 +218,12 @@ public class New_Game extends Application {
         b2.setStyle(buttonStyle);
         b3.setStyle(buttonStyle);
         b4.setStyle(buttonStyle);
+        b5.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundSize backgroundSize3 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+        BackgroundSize backgroundSize4 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -242,9 +248,18 @@ public class New_Game extends Application {
                 backgroundSize
         );
 
+        BackgroundImage background4 = new BackgroundImage(
+                backgroundImage4,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
+        );
+
         layout1.setBackground(new Background(background));
         layout2.setBackground(new Background(background2));
         layout3.setBackground(new Background(background3));
+        layout4.setBackground(new Background(background4));
 
         layout1.setBackground(new Background(background));
 
@@ -312,7 +327,14 @@ public class New_Game extends Application {
 
         });
 
-
+        b5.setOnAction(e -> {
+            primaryStage.setScene(s1);
+            primaryStage.setX(435);
+            primaryStage.setY(45);
+            stopTimer();/*
+            stopBackgroundSound();
+            startThemeSound();*/
+        });
 
         keysImageView.setFitWidth(150); // Defina a largura desejada
         keysImageView.setFitHeight(110); // Defina a altura desejada
@@ -356,7 +378,7 @@ public class New_Game extends Application {
 
 
 
-
+        layout4.getChildren().addAll(b5);
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
 
@@ -654,6 +676,7 @@ public class New_Game extends Application {
                     heathEmpty2.setVisible(true);
                     heathEmpty3.setVisible(true);
                     heathShield.setVisible(false);
+                    primaryStage.setScene(s4);
                     break;
             }
         });
