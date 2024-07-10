@@ -294,7 +294,7 @@ public class New_Game extends Application {
             stopThemeSound();
             startBackgroundSound();*/
         });
-        int zerar = 0;
+
         // Button b3 to Scene s1
         b3.setOnAction(e -> {
             primaryStage.setScene(s1);
