@@ -171,10 +171,10 @@ public class New_Game extends Application {
                 "Apple: increases the character's score;\n"+
                 "Shield: Gives the character extra life;\n"+
                 "Boots: increases the character's speed.\n");
-        Label label10 = new Label("W - Move forward\n"+
-                "A - Move left\n"+
-                "S - Move down\n"+
-                "D - Move right");
+        Label label10 = new Label("W - Move forward;\n"+
+                "A - Move left;\n"+
+                "S - Move down;\n"+
+                "D - Move right.");
 
         // Initialize sounds
         try {
