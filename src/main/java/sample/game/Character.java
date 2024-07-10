@@ -68,6 +68,10 @@ public class Character extends ImageView {
         this.setImage(new Image(imagePath));
     }
 
+    public void scoreToZero(){
+        this.score=0;
+    }
+
     // toString
     @Override
     public String toString() {
