@@ -251,10 +251,9 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
-        Label label6 = new Label("Title");
+        Label label6 = new Label("Instructions");
 
-        Label label7 = new Label("Game Objective:");
-        Label label8 = new Label("How to Play:");
+        Label label7 = new Label("Game Objective:\n");
         Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
                 "The difficulty increases as the player's score goes up.\nMore magical attacks appear on the screen as you progress;\n"+
                 "The game ends when you are hit by an attack and have no more lives left;\n"+
@@ -329,7 +328,7 @@ public class New_Game extends Application {
 
         // Scene/Layout 2
 
-        layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10, keysImageView);
+        layout3.getChildren().addAll(label6, label7, b4, label9, label10, keysImageView);
 
 
         layout2.getChildren().addAll(
@@ -449,15 +448,6 @@ public class New_Game extends Application {
                         "-fx-font-size: 22px;"
         );
 
-        // Set the position of the label8
-        label8.setLayoutX(20);
-        label8.setLayoutY(300);
-
-        label8.setStyle(
-                "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 22px;"
-        );
-
         // Set the position of the label9
         label9.setLayoutX(20);
         label9.setLayoutY(75);
@@ -490,15 +480,6 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 22px;"
-        );
-
-        // Set the position of the label8
-        label8.setLayoutX(20);
-        label8.setLayoutY(200);
-
-        label8.setStyle(
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 22px;"
         );
