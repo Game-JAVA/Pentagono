@@ -1,27 +1,31 @@
 package sample.game;
-
-import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class Shield extends Map_Objects {
+<<<<<<< HEAD
+    private boolean shield;
+=======
 
     private int shield;
 
+>>>>>>> 783e63c90885079cf9a9f2da2edec5da01e208a4
     private int pos_x;
     private int pos_y;
-
     Random r = new Random();
 
     // constructor
     public Shield(int width, int height) {
+<<<<<<< HEAD
+        this.shield = false;
+=======
         this.shield = 0;
+>>>>>>> 783e63c90885079cf9a9f2da2edec5da01e208a4
         this.pos_x = r.nextInt(width);
         this.pos_y = r.nextInt(height);
     }
 
     // getters and setters
-    public int getShield() {
+    public boolean getShield() {
          return shield;
     }
 
@@ -43,8 +47,8 @@ public class Shield extends Map_Objects {
     }
 
     // methods
-    public void increase_shield() {
-        this.shield += 1;
+    public void increase_shield(boolean value) {
+        this.shield = value;
     }
 
     // toString
