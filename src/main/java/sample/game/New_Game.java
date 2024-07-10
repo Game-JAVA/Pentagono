@@ -42,9 +42,16 @@ public class New_Game extends Application {
 =======
         Image backgroundImage = new Image("backgroundMenu.png");
         ImageView backg = new ImageView(backgroundImage);
-        Image backgroundImage2 = new Image("board.png");
+        Image backgroundImage2 = new Image("Board.png");
         ImageView backg2 = new ImageView(backgroundImage2);
+<<<<<<< HEAD
 >>>>>>> 783e63c90885079cf9a9f2da2edec5da01e208a4
+=======
+        Image backgroundImage3 = new Image("backgroundscene3.jpg");
+        ImageView backg3 = new ImageView(backgroundImage3);
+        Image keys = new Image("wasdImage.jpg");
+        ImageView keysImageView = new ImageView(keys);
+>>>>>>> a5ae061f6c973eaa7c321f9b1d567e0ca390dc2d
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
@@ -210,11 +217,15 @@ public class New_Game extends Application {
         Button b3 = new Button("Return to Menu");
         Button b4 = new Button("Return to Menu");
 
+
         VBox.setMargin(b1, new Insets(150, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(500, 10, 10, 300));
-        vbox.getChildren().addAll(b1, b2, b3);
+
+        vbox.getChildren().addAll(b1, b2, b3, b4);
+
+
 
         String buttonStyle = "-fx-background-color: black;" +
                 "-fx-text-fill: yellow;" +
@@ -231,6 +242,11 @@ public class New_Game extends Application {
         b4.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+<<<<<<< HEAD
+=======
+        BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+        BackgroundSize backgroundSize3 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+>>>>>>> a5ae061f6c973eaa7c321f9b1d567e0ca390dc2d
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -247,8 +263,17 @@ public class New_Game extends Application {
                 backgroundSize
         );
 
+        BackgroundImage background3 = new BackgroundImage(
+                backgroundImage3,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                backgroundSize
+        );
+
         layout1.setBackground(new Background(background));
         layout2.setBackground(new Background(background2));
+        layout3.setBackground(new Background(background3));
 
 <<<<<<< HEAD
 
@@ -267,9 +292,21 @@ public class New_Game extends Application {
         Label label3 = new Label("SCORE:");
         Label label4 = new Label("00");
         Label label5 = new Label("TIMER:");
-        Label label6 = new Label("Title");
-        Label label7 = new Label("Objetivo do jogo:");
-        Label label8 = new Label("Como Jogar:");
+        Label label6 = new Label("Instructions");
+
+        Label label7 = new Label("Game Objective:\n");
+        Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
+                "The difficulty increases as the player's score goes up.\nMore magical attacks appear on the screen as you progress;\n"+
+                "The game ends when you are hit by an attack and have no more lives left;\n"+
+                "There are some items to help:\n"+
+                "Apple: increases the character's score;\n"+
+                "Shield: Gives the character extra life;\n"+
+                "Boots: increases the character's speed.\n");
+        Label label10 = new Label("W - Move forward;\n"+
+                "A - Move left;\n"+
+                "S - Move down;\n"+
+                "D - Move right.");
+
 
 
         // Initialize sounds
@@ -316,10 +353,25 @@ public class New_Game extends Application {
             primaryStage.setScene(s1);
 
         });
+
+
+
+        keysImageView.setFitWidth(150); // Defina a largura desejada
+        keysImageView.setFitHeight(110); // Defina a altura desejada
+
+        // Definir a posição da imagem na layout
+        keysImageView.setLayoutX(200);
+        keysImageView.setLayoutY(325);
+
+
         // Scene/Layout 1
         layout1.getChildren().addAll(b1, b2);
 
         // Scene/Layout 2
+
+        layout3.getChildren().addAll(label6, label7, b4, label9, label10, keysImageView);
+
+
         layout2.getChildren().addAll(
 <<<<<<< HEAD
 =======
@@ -355,7 +407,8 @@ public class New_Game extends Application {
         );
 
         // Scene/Layout 3
-        layout3.getChildren().addAll(label6, label7, label8, b4);
+
+
 
 <<<<<<< HEAD
 =======
@@ -370,9 +423,16 @@ public class New_Game extends Application {
 
         label2.setStyle(
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "-fx-text-fill: black;" +
                         "-fx-font-size: 26px;" +
 =======
+=======
+
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 26px;" +
+
+>>>>>>> a5ae061f6c973eaa7c321f9b1d567e0ca390dc2d
                 "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
 >>>>>>> 783e63c90885079cf9a9f2da2edec5da01e208a4
@@ -402,15 +462,74 @@ public class New_Game extends Application {
 
         // Set the position of the label3
         label3.setLayoutX(800);
-        label3.setLayoutY(10);
+        label3.setLayoutY(8);
+
+        label3.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 18px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
 
         // Set the position of the label4
         label4.setLayoutX(800);
         label4.setLayoutY(30);
 
+        label4.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 22px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
         // Set the position of the label5
         label5.setLayoutX(1100);
-        label5.setLayoutY(10);
+        label5.setLayoutY(8);
+
+        label5.setStyle(
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 18px;" +
+                        "-fx-padding: 10 0 0 10"
+
+        );
+
+        // Set the position of the label6
+        label6.setLayoutX(350);
+        label6.setLayoutY(10);
+
+        label6.setStyle(
+                "-fx-text-fill: yellow;"+
+                        "-fx-font-size: 26px;"
+
+
+        );
+
+        // Set the position of the label7
+        label7.setLayoutX(20);
+        label7.setLayoutY(40);
+
+        label7.setStyle(
+                "-fx-text-fill: yellow;"+
+                        "-fx-font-size: 22px;"
+        );
+
+        // Set the position of the label9
+        label9.setLayoutX(20);
+        label9.setLayoutY(75);
+
+        label9.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 16px;"
+        );
+
+        // Set the position of the label10
+        label10.setLayoutX(20);
+        label10.setLayoutY(340);
+
+        label10.setStyle(
+                "-fx-text-fill: white;"+
+                        "-fx-font-size: 16px;"
+        );
 
         // Set the position of the label6
         label6.setLayoutX(350);
@@ -438,6 +557,7 @@ public class New_Game extends Application {
                         "-fx-font-size: 22px;"
         );
 
+<<<<<<< HEAD
         // Set the position of the label8
         label8.setLayoutX(20);
         label8.setLayoutY(200);
@@ -451,6 +571,8 @@ public class New_Game extends Application {
                         "-fx-font-size: 22px;"
         );
 
+=======
+>>>>>>> a5ae061f6c973eaa7c321f9b1d567e0ca390dc2d
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -768,7 +890,6 @@ public class New_Game extends Application {
         Map_Objects MOA = new Map_Objects();
 =======
 >>>>>>> 783e63c90885079cf9a9f2da2edec5da01e208a4
-
 
 /*
 
