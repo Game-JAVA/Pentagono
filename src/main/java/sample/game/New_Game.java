@@ -50,7 +50,7 @@ public class New_Game extends Application {
         VBox layout1 = new VBox(10);
         Pane layout2 = new Pane();
         Pane layout3 = new Pane();
-        Pane layout4 = new Pane();
+        VBox layout4 = new VBox(10);
 
         Scene s1 = new Scene(layout1, 400, 500);
         Scene s2 = new Scene(layout2, 1200, 1000);
@@ -201,7 +201,7 @@ public class New_Game extends Application {
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(500, 10, 10, 300));
-        VBox.setMargin(b5, new Insets(150, 20, 10, 155));
+        VBox.setMargin(b5, new Insets(150, 10, 10, 165));
 
         vbox.getChildren().addAll(b1, b2, b3, b4, b5);
 
@@ -329,8 +329,8 @@ public class New_Game extends Application {
 
         b5.setOnAction(e -> {
             primaryStage.setScene(s1);
-            primaryStage.setX(435);
-            primaryStage.setY(45);
+            primaryStage.setX(40);
+            primaryStage.setY(0);
             stopTimer();/*
             stopBackgroundSound();
             startThemeSound();*/
@@ -375,8 +375,6 @@ public class New_Game extends Application {
                 heathShield
         );
         // Scene/Layout 3
-
-
 
         layout4.getChildren().addAll(b5);
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
