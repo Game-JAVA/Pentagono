@@ -2,16 +2,20 @@
 
 ## Index
 1. [Description](#description)
-2. [How to Play](#how-to-play)
-3. [Game Rules](#game-rules)
-4. [Controls](#controls)
-5. [Sound Effects](#sound-effects)
-6. [UML Diagram](#uml-diagram)
-7. [Requirements](#requirements)
+2. [Story](#story)
+3. [How to Play](#how-to-play)
+4. [Game Rules](#game-rules)
+5. [Controls](#controls)
+6. [Sound Effects](#sound-effects)
+7. [UML Diagram](#uml-diagram)
+8. [Requirements](#requirements)
 
 ## Description
 
-This is an action and strategy game in the style of Bomberman, with a medieval theme. The objective of the game is to survive as long as possible while dodging magical attacks and collecting items that increase your score and abilities.
+Pentagon Blast is an action and strategy game in the style of Bomberman, with a medieval theme. The objective of the game is to survive as long as possible while dodging magical attacks and collecting items that increase your score and abilities.
+
+## Story
+Aidan, a young adventurer, entered a mysterious cave in search of ancient treasures. The cave walls glowed with runes, casting a mysterious light. As he ventured deeper, fire spells began attacking him from all directions. He must dodge and try to survive as much as possible with the help of items left in the cave by other explorers.
 
 ## How to Play
 
