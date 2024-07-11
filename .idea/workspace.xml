@@ -1,5 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Bomb.java" afterDir="false" />
+    <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Board.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Boot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HeartEmpty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HeartFull.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HeartShield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MagicAnimation.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Main Boot Shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Main Boot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Main Shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainDownStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainLeftWalk6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainRightStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainUpStand.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/backgroundGameOver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/backgroundMenu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Design/Board/Board.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Design/Board/Board.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Design/Board/Board.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+me="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.New_Game.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "git-widget-placeholder": "feature/henrique1234",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Projetos/Geral/INTELLJ/Pentagono"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/msaor/OneDrive/Documentos/Estágio/Pentagono/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "last_opened_file_path": "C:/Users/msaor/OneDrive/Documentos/Estágio/Pentagono/src/main/resources"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\Design\Magic" />
+      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
+      <recent name="$PROJECT_DIR$/../../../../Users/gabri/OneDrive/Área de Trabalho/Matérias Faculdade ADS/PRIMEIRO SEMESTRE/Pentagono/target/classes" />
+      <recent name="$PROJECT_DIR$/target/classes" />
+      <recent name="$PROJECT_DIR$/target/classes/sample" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/target/classes/sample" />
+      <recent name="C:\Users\msaor\OneDrive\Documentos\Estágio\Pentagono\src\main\resources" />
+      <recent name="C:\ProjetosJava\PentagonoJOGO\target\classes" />
+      <recent name="C:\Users\msaor\OneDrive\Documentos\Estágio\Pentagono\src\main\java" />
+      <recent name="C:\Projetos\Geral\INTELLJ\tst\Pentagono\target\classes" />
+      <recent name="C:\Users\gabri\OneDrive\Área de Trabalho\Matérias Faculdade ADS\PRIMEIRO SEMESTRE\Pentagono\target\classes" />
+      <recent name="C:\Projetos\Geral\INTELLJ\Pentagono\target\classes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PentagonoFile" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PentagonoFile" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abb87c97-cb0b-4cb1-a0cf-37a6b4f0d09b" name="Changes" comment="" />
+      <created>1719347024750</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719347024750</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+</project>
     <component name="AutoImportSettings">
         <option name="autoReloadType" value="SELECTIVE" />
     </component>
