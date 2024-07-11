@@ -1,13 +1,10 @@
+
 package sample.game;
-
-import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class Shield extends Map_Objects {
 
-    private int shield;
-
+    private boolean shield;
     private int pos_x;
     private int pos_y;
 
@@ -15,14 +12,14 @@ public class Shield extends Map_Objects {
 
     // constructor
     public Shield(int width, int height) {
-        this.shield = 0;
+        this.shield = false;
         this.pos_x = r.nextInt(width);
         this.pos_y = r.nextInt(height);
     }
 
     // getters and setters
-    public int getShield() {
-         return shield;
+    public boolean getShield() {
+        return shield;
     }
 
     public int getPos_x() {
@@ -43,8 +40,8 @@ public class Shield extends Map_Objects {
     }
 
     // methods
-    public void increase_shield() {
-        this.shield += 1;
+    public boolean increase_shield(boolean value) {
+        return shield = value;
     }
 
     // toString
