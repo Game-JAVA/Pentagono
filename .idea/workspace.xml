@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e09c7193-3f37-4be1-9e3e-c81f2b6af8df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/game/New_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/game/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/game/New_Game.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +31,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">
-    <option name="associatedIndex" value="5" />
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2iO1tWrJaHOdtLTKGO12cDCSnRP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -36,13 +42,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.New_Game.executor": "Run",
-    "git-widget-placeholder": "feature/julio",
-    "last_opened_file_path": "C:/ProjetosJava/PentagonoJOGO/target/classes"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.New_Game.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/julio&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ProjetosJava/PentagonoAtualizado&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ProjetosJava\PentagonoJOGO\target\classes" />
@@ -50,6 +58,9 @@
       <recent name="C:\Users\msaor\OneDrive\Documentos\Estágio\Pentagono\src\main\java" />
       <recent name="C:\Projetos\Geral\INTELLJ\tst\Pentagono\target\classes" />
       <recent name="C:\Users\gabri\OneDrive\Área de Trabalho\Matérias Faculdade ADS\PRIMEIRO SEMESTRE\Pentagono\target\classes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ProjetosJava\PentagonoJOGO\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
