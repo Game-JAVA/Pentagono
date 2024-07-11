@@ -1,4 +1,5 @@
 package sample.game;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import java.util.Random;
 
@@ -12,9 +13,10 @@ public class Boots extends Map_Objects{
     // constructor
 
 
-    public Boots(int width, int height, int pos_x, int pos_y) {
+    public Boots(int width, int height, int pos_x, int pos_y, String imagePath) {
         this.pos_x = r.nextInt(width);
         this.pos_y = r.nextInt(height);
+        this.setImage(new Image(imagePath));
     }
 
     // getters and setters

@@ -68,7 +68,7 @@ public class Character extends ImageView {
         this.setImage(new Image(imagePath));
     }
 
-    public void scoreToZero(){
+    public void resetScore(){
         this.score=0;
     }
 

@@ -4,7 +4,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import java.util.Random;
 
-public class Bomb extends ImageView {
+public class Bomb extends Map_Objects {
 
     private int explosion_range;
     private int explosion_diameter;
@@ -31,15 +31,12 @@ public class Bomb extends ImageView {
     public int getExplosion_range() {
         return explosion_range;
     }
-
     public int getExplosion_diameter() {
         return explosion_diameter;
     }
-
     public int getExplosion_damage() {
         return explosion_damage;
     }
-
     public int getPos_x() {
         return posx;
     }
@@ -49,20 +46,18 @@ public class Bomb extends ImageView {
     public void setPos_x(int pos_x) {
         this.posx = pos_x;
     }
-
     public void setPos_y(int pos_y) {
         this.posy = pos_y;
     }
-
     public void setR(Random r) {
         this.r = r;
     }
     // methods
 
     public void explosion(){
-            if(character_posx==posx && character_posy == posy){
-                System.out.println("você perdeu!");
-            }
+        if(character_posx==posx && character_posy == posy){
+            System.out.println("você perdeu!");
+        }
     }
     // toString
 

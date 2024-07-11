@@ -37,12 +37,12 @@ public class New_Game extends Application {
     public void start(Stage primaryStage) {
         // Classes Instances
         Map_Objects MO = new Map_Objects();
+
         Image backgroundImage = new Image("backgroundMenu.png");
-        ImageView backg = new ImageView(backgroundImage);
+
         Image backgroundImage2 = new Image("Board.png");
-        ImageView backg2 = new ImageView(backgroundImage2);
+
         Image backgroundImage3 = new Image("backgroundscene3.jpg");
-        ImageView backg3 = new ImageView(backgroundImage3);
         Image keys = new Image("wasdImage.jpg");
         ImageView keysImageView = new ImageView(keys);
         VBox layout1 = new VBox(10);
@@ -53,135 +53,106 @@ public class New_Game extends Application {
         Scene s2 = new Scene(layout2, 1200, 1000);
         Scene s3 = new Scene(layout3, 800, 500);
 
+        // Carregar o arquivo CSS
+        try {
+            String css = getClass().getResource("style.css").toExternalForm();
+            s1.getStylesheets().add(css);
+            s2.getStylesheets().add(css);
+            s3.getStylesheets().add(css);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            System.err.println("Error: 'style.css' not found. Ensure the file is in the correct path.");
+            return;
+        }
+
         // Components
         Character character = new Character("Character", MO.aleatoryPositionX(), MO.aleatoryPositionY(), 40, 40, "Main.png");
         Apple a1 = new Apple(40, 40, 20, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Apple.png");
         Shield shield = new Shield(1200, 1000);
-        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY());
+        Boots boots = new Boots(40, 40, MO.aleatoryPositionX(), MO.aleatoryPositionY(), "Boot.png");
         Bomb bombast = new Bomb(120, 120, MO.aleatoryPositionX(), MO.aleatoryPositionY(),"MagicAnimation.gif", character.getPos_y(), character.getPos_x());
 
-        // Create ImageView for the first character's heath
-        ImageView heathFull1 = new ImageView(new Image("HeartFull.png"));
-        heathFull1.setFitHeight(60);
-        heathFull1.setFitWidth(60);
-        heathFull1.setX(130); //POSITION IN WINDOWN
-        heathFull1.setY(10); // POSITION IN WINDOWN
-        heathFull1.setVisible(true); // DEFINE HOW VISIBLE
+        // Create ImageView for the first character's heart
+        ImageView heartFull1 = new ImageView(new Image("HeartFull.png"));
+        heartFull1.setFitHeight(60);
+        heartFull1.setFitWidth(60);
+        heartFull1.setX(130); //POSITION IN WINDOWN
+        heartFull1.setY(10); // POSITION IN WINDOWN
+        heartFull1.setVisible(true); // DEFINE HOW VISIBLE
 
-        // Create ImageView for the second character's heath
-        ImageView heathFull2 = new ImageView(new Image("HeartFull.png"));
-        heathFull2.setFitHeight(60);
-        heathFull2.setFitWidth(60);
-        heathFull2.setX(230);
-        heathFull2.setY(10);
-        heathFull2.setVisible(true);
+        // Create ImageView for the second character's heart
+        ImageView heartFull2 = new ImageView(new Image("HeartFull.png"));
+        heartFull2.setFitHeight(60);
+        heartFull2.setFitWidth(60);
+        heartFull2.setX(230);
+        heartFull2.setY(10);
+        heartFull2.setVisible(true);
 
-        // Create ImageView for the third character's heath
-        ImageView heathFull3 = new ImageView(new Image("HeartFull.png"));
-        heathFull3.setFitHeight(60);
-        heathFull3.setFitWidth(60);
-        heathFull3.setX(330);
-        heathFull3.setY(10);
-        heathFull3.setVisible(true);
+        // Create ImageView for the third character's heart
+        ImageView heartFull3 = new ImageView(new Image("HeartFull.png"));
+        heartFull3.setFitHeight(60);
+        heartFull3.setFitWidth(60);
+        heartFull3.setX(330);
+        heartFull3.setY(10);
+        heartFull3.setVisible(true);
 
-        // Create ImageView for the third character's Empyt heath
-        ImageView heathEmpty3 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty3.setFitHeight(60);
-        heathEmpty3.setFitWidth(60);
-        heathEmpty3.setX(330);
-        heathEmpty3.setY(10);
-        heathEmpty3.setVisible(false);
+        // Create ImageView for the third character's Empyt heart
+        ImageView heartEmpty3 = new ImageView(new Image("HeartEmpty.png"));
+        heartEmpty3.setFitHeight(60);
+        heartEmpty3.setFitWidth(60);
+        heartEmpty3.setX(330);
+        heartEmpty3.setY(10);
+        heartEmpty3.setVisible(false);
 
-        // Create ImageView for the second character's Empyt heath
-        ImageView heathEmpty2 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty2.setFitHeight(60);
-        heathEmpty2.setFitWidth(60);
-        heathEmpty2.setX(230);
-        heathEmpty2.setY(10);
-        heathEmpty2.setVisible(false);
+        // Create ImageView for the second character's Empyt heart
+        ImageView heartEmpty2 = new ImageView(new Image("HeartEmpty.png"));
+        heartEmpty2.setFitHeight(60);
+        heartEmpty2.setFitWidth(60);
+        heartEmpty2.setX(230);
+        heartEmpty2.setY(10);
+        heartEmpty2.setVisible(false);
 
-        // Create ImageView for the first character's Empyt heath
-        ImageView heathEmpty1 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty1.setFitHeight(60);
-        heathEmpty1.setFitWidth(60);
-        heathEmpty1.setX(130);
-        heathEmpty1.setY(10);
-        heathEmpty1.setVisible(false);
+        // Create ImageView for the first character's Empyt heart
+        ImageView heartEmpty1 = new ImageView(new Image("HeartEmpty.png"));
+        heartEmpty1.setFitHeight(60);
+        heartEmpty1.setFitWidth(60);
+        heartEmpty1.setX(130);
+        heartEmpty1.setY(10);
+        heartEmpty1.setVisible(false);
 
-        // Create ImageView for the character's heathShield
-        ImageView heathShield = new ImageView(new Image("HeartShield.png"));
-        heathShield.setFitHeight(60);
-        heathShield.setFitWidth(60);
-        heathShield.setX(330);
-        heathShield.setY(10);
-        heathShield.setVisible(false);
+        // Create ImageView for the character's heartShield
+        ImageView heartShield3 = new ImageView(new Image("HeartShield.png"));
+        heartShield3.setFitHeight(60);
+        heartShield3.setFitWidth(60);
+        heartShield3.setX(330);
+        heartShield3.setY(10);
+        heartShield3.setVisible(false);
 
-        // Create ImageView for the second character's heath
-        ImageView hearthFull2 = new ImageView(new Image("HeartFull.png"));
-        heathFull2.setFitHeight(60);
-        heathFull2.setFitWidth(60);
-        heathFull2.setX(230);
-        heathFull2.setY(10);
-        heathFull2.setVisible(true);
+        // Create ImageView for the second character's heart
+        ImageView heartShield2 = new ImageView(new Image("HeartShield.png"));
+        heartShield2.setFitHeight(60);
+        heartShield2.setFitWidth(60);
+        heartShield2.setX(230);
+        heartShield2.setY(10);
+        heartShield2.setVisible(false);
 
-        // Create ImageView for the third character's heath
-        ImageView hearthFull3 = new ImageView(new Image("HeartFull.png"));
-        heathFull3.setFitHeight(60);
-        heathFull3.setFitWidth(60);
-        heathFull3.setX(330);
-        heathFull3.setY(10);
-        heathFull3.setVisible(true);
-
-        // Create ImageView for the third character's Empyt heath
-        ImageView hearthEmpty3 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty3.setFitHeight(60);
-        heathEmpty3.setFitWidth(60);
-        heathEmpty3.setX(330);
-        heathEmpty3.setY(10);
-        heathEmpty3.setVisible(false);
-
-        // Create ImageView for the second character's Empyt heath
-        ImageView hearthEmpty2 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty2.setFitHeight(60);
-        heathEmpty2.setFitWidth(60);
-        heathEmpty2.setX(230);
-        heathEmpty2.setY(10);
-        heathEmpty2.setVisible(false);
-
-        // Create ImageView for the first character's Empyt heath
-        ImageView hearthEmpty1 = new ImageView(new Image("HeartEmpty.png"));
-        heathEmpty1.setFitHeight(60);
-        heathEmpty1.setFitWidth(60);
-        heathEmpty1.setX(130);
-        heathEmpty1.setY(10);
-        heathEmpty1.setVisible(false);
-
-        // Create ImageView for the character's heathShield
-        ImageView hearthShield = new ImageView(new Image("HeartShield.png"));
-        heathShield.setFitHeight(60);
-        heathShield.setFitWidth(60);
-        heathShield.setX(330);
-        heathShield.setY(10);
-        heathShield.setVisible(false);
+        // Create ImageView for the third character's heart
+        ImageView heartShield1 = new ImageView(new Image("HeartShield.png"));
+        heartShield1.setFitHeight(60);
+        heartShield1.setFitWidth(60);
+        heartShield1.setX(130);
+        heartShield1.setY(10);
+        heartShield1.setVisible(false);
 
         // Create ImageView for the shield
         ImageView shieldImageView = new ImageView(new Image("Shield.png"));
         shieldImageView.setFitWidth(squareSize);
         shieldImageView.setFitHeight(squareSize);
 
-
-        // Adjust position based on the Boots' location
-        shieldImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
-        shieldImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
-
         // Create ImageView for the Boots
         ImageView bootsImageView = new ImageView(new Image("Boot.png"));
         bootsImageView.setFitWidth(squareSize);
         bootsImageView.setFitHeight(squareSize);
-
-        // Adjust position based on the Boots' location
-        bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
-        bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER);
@@ -191,7 +162,6 @@ public class New_Game extends Application {
         Button b3 = new Button("Return to Menu");
         Button b4 = new Button("Return to Menu");
 
-
         VBox.setMargin(b1, new Insets(150, 20, 10, 155)); // cima, direita, baixo, esquerda
         VBox.setMargin(b2, new Insets(10, 20, 10, 155));
         VBox.setMargin(b3, new Insets(10, 20, 10, 155));
@@ -199,25 +169,15 @@ public class New_Game extends Application {
 
         vbox.getChildren().addAll(b1, b2, b3, b4);
 
+        // Aplicar classe CSS aos botões
+        b1.getStyleClass().add("button");
+        b2.getStyleClass().add("button");
+        b3.getStyleClass().add("button");
+        b4.getStyleClass().add("button");
 
-
-        String buttonStyle = "-fx-background-color: black;" +
-                "-fx-text-fill: yellow;" +
-                "-fx-font-size: 12px;" +
-                "-fx-border-radius: 5;" +
-                "-fx-background-radius: 5;" +
-                "-fx-padding: 15 15 15 15;" +
-                "-fx-border-color: yellow;"+
-                "-fx-cursor: hand";
-
-        b1.setStyle(buttonStyle);
-        b2.setStyle(buttonStyle);
-        b3.setStyle(buttonStyle);
-        b4.setStyle(buttonStyle);
 
         BackgroundSize backgroundSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
-        BackgroundSize backgroundSize2 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
-        BackgroundSize backgroundSize3 = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
+
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,
@@ -246,27 +206,42 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
         layout3.setBackground(new Background(background3));
 
-        layout1.setBackground(new Background(background));
+        Label label1 = new Label("Welcome to my game!");
+        label1.getStyleClass().add("label-yellow");
 
-        Label label3 = new Label("SCORE:");
-        Label label4 = new Label("00");
-        Label label5 = new Label("TIMER:");
-        Label label6 = new Label("Title");
+        // Create Timer Label
+        Label label2 = new Label("Time: 0");
+        label2.getStyleClass().add("label-white");
 
-        Label label7 = new Label("Game Objective:");
-        Label label8 = new Label("How to Play:");
-        Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
-                "The difficulty increases as the player's score goes up.\nMore magical attacks appear on the screen as you progress;\n"+
-                "The game ends when you are hit by an attack and have no more lives left;\n"+
-                "There are some items to help:\n"+
-                "Apple: increases the character's score;\n"+
-                "Shield: Gives the character extra life;\n"+
-                "Boots: increases the character's speed.\n");
-        Label label10 = new Label("W - Move forward;\n"+
-                "A - Move left;\n"+
-                "S - Move down;\n"+
-                "D - Move right.");
+        // Create a new Label for Score
+        Label label3 = new Label("Score: 0");
+        label3.getStyleClass().add("label-white");
 
+        // Create a new Label for Score
+        Label label4 = new Label("Points:");
+        label4.getStyleClass().add("label-white");
+
+        // Create a new Label for Objectives
+        Label label5 = new Label("Objectives:");
+        label5.getStyleClass().add("label-yellow");
+
+        // Create a new Label for Time
+        Label label6 = new Label("Time:");
+        label6.getStyleClass().add("label-yellow");
+
+        // Create a new Label for the instructions
+        Label label7 = new Label("Instructions:");
+        label7.getStyleClass().add("label-yellow");
+
+        // Create a new Label for Details
+        Label label8 = new Label("Details:");
+        label8.getStyleClass().add("label-white");
+
+        Label label9 = new Label("Use arrow keys to move.");
+        label9.getStyleClass().add("label-small-white");
+
+        Label label10 = new Label("Avoid obstacles and collect items.");
+        label10.getStyleClass().add("label-small-white");
 
 
 
@@ -301,11 +276,12 @@ public class New_Game extends Application {
             primaryStage.setX(435);
             primaryStage.setY(45);
             stopTimer();
-            character.scoreToZero();
+            character.resetScore();
             label4.setText(String.valueOf(character.getScore()));
             character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
             character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
             /*
+
             stopBackgroundSound();
             startThemeSound();*/
         });
@@ -319,8 +295,6 @@ public class New_Game extends Application {
 
         });
 
-
-
         keysImageView.setFitWidth(150); // Defina a largura desejada
         keysImageView.setFitHeight(110); // Defina a altura desejada
 
@@ -328,19 +302,16 @@ public class New_Game extends Application {
         keysImageView.setLayoutX(200);
         keysImageView.setLayoutY(325);
 
-
         // Scene/Layout 1
         layout1.getChildren().addAll(b1, b2);
 
-
         // Scene/Layout 2
 
-        layout3.getChildren().addAll(label6, label7, label8, b4, label9, label10, keysImageView);
-
+        layout3.getChildren().addAll(label6, label7, b4, label9, label10, keysImageView);
 
         layout2.getChildren().addAll(
 
-               // board(),
+                // board(),
                 label2,
                 label3,
                 label4,
@@ -351,18 +322,17 @@ public class New_Game extends Application {
                 shieldImageView,
                 bootsImageView,
                 bombast,
-                heathFull1,
-                heathFull2,
-                heathFull3,
-                heathEmpty3,
-                heathEmpty2,
-                heathEmpty1,
-                heathShield
+                heartFull1,
+                heartFull2,
+                heartFull3,
+                heartEmpty3,
+                heartEmpty2,
+                heartEmpty1,
+                heartShield1,
+                heartShield2,
+                heartShield3
         );
         // Scene/Layout 3
-
-
-
 
         b4.setLayoutX(680);  // Ajuste a posição X conforme necessário
         b4.setLayoutY(450);  // Ajuste a posição Y conforme necessário
@@ -372,34 +342,29 @@ public class New_Game extends Application {
         label2.setLayoutY(30);
 
         label2.setStyle(
-
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 26px;" +
 
-                "-fx-text-fill: white;"+
+                        "-fx-text-fill: white;"+
                         "-fx-font-size: 26px;"+
                         "-fx-padding: 10 0 0 10"
-
         );
         label3.setStyle(
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 20px;" +
                         "-fx-padding: 10 0 0 10"
-
         );
 
         label4.setStyle(
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 20px;" +
                         "-fx-padding: 10 0 0 10"
-
         );
 
         label5.setStyle(
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 20px;" +
                         "-fx-padding: 10 0 0 10"
-
         );
 
         // Set the position of the label3
@@ -432,7 +397,6 @@ public class New_Game extends Application {
                 "-fx-text-fill: white;" +
                         "-fx-font-size: 18px;" +
                         "-fx-padding: 10 0 0 10"
-
         );
 
         // Set the position of the label6
@@ -442,8 +406,6 @@ public class New_Game extends Application {
         label6.setStyle(
                 "-fx-text-fill: yellow;"+
                         "-fx-font-size: 26px;"
-
-
         );
 
         // Set the position of the label7
@@ -451,15 +413,6 @@ public class New_Game extends Application {
         label7.setLayoutY(40);
 
         label7.setStyle(
-                "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 22px;"
-        );
-
-        // Set the position of the label8
-        label8.setLayoutX(20);
-        label8.setLayoutY(300);
-
-        label8.setStyle(
                 "-fx-text-fill: yellow;"+
                         "-fx-font-size: 22px;"
         );
@@ -500,15 +453,6 @@ public class New_Game extends Application {
                         "-fx-font-size: 22px;"
         );
 
-        // Set the position of the label8
-        label8.setLayoutX(20);
-        label8.setLayoutY(200);
-
-        label8.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 22px;"
-        );
-
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
         character.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
@@ -525,7 +469,6 @@ public class New_Game extends Application {
         bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
         bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
 
-
         bombast.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
         bombast.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
 
@@ -535,7 +478,7 @@ public class New_Game extends Application {
         System.out.println("bomb initial position: x = " + bombast.getPos_x() + ", y = " + bombast.getPos_y());
 
         // Create the board of squares
-       // createBoard(layout2);
+        createBoard(layout2);
 
 
         // Rectangle's Movement
@@ -568,12 +511,12 @@ public class New_Game extends Application {
                 default:
                     break;
                 case O:
-                    if(character.getHealth()<=4 && character.getHealth()>0)
+                    if(character.getHealth()<=3 && character.getHealth()>0)
                         character.setHealth(-1);
                     character.setHealth(0);
                     break;
                 case P:
-                    if(character.getHealth()<4)
+                    if(character.getHealth()<3)
                         character.setHealth(+1);
                     character.setHealth(0);
                     break;
@@ -596,14 +539,14 @@ public class New_Game extends Application {
             }
 
             if(character.getPos_x() == bootsImageView.getX() && character.getPos_y() == bootsImageView.getY()){
-                boots.setPos_x(MO.aleatoryPositionX()*squareSize + startY);
-                boots.setPos_y(MO.aleatoryPositionY()*squareSize + startX);
+                bootsImageView.setX(MO.aleatoryPositionX()*squareSize + startX);
+                bootsImageView.setY(MO.aleatoryPositionY()*squareSize + startY);
                 bootsImageView.setVisible(false);
                 character.setSpeedMore();
                 Timeline delayTimeline = new Timeline(
                         new KeyFrame(Duration.seconds(3), e -> {
-                            boots.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
-                            boots.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
+                            bootsImageView.setX(MO.aleatoryPositionX() * squareSize + startX);
+                            bootsImageView.setY(MO.aleatoryPositionY() * squareSize + startY);
                             bootsImageView.setVisible(true);
                             character.setSpeedLess();
                         })
@@ -612,6 +555,7 @@ public class New_Game extends Application {
             }
 
             if(character.getPos_x() == shieldImageView.getX() && character.getPos_y() == shieldImageView.getY()){
+                shield.increase_shield(true);
                 shieldImageView.setX(MO.aleatoryPositionX()*squareSize + startY);
                 shieldImageView.setY(MO.aleatoryPositionY()*squareSize + startX);
                 shieldImageView.setVisible(false);
@@ -620,69 +564,70 @@ public class New_Game extends Application {
                             shield.setPos_x(MO.aleatoryPositionX() * squareSize + startX);
                             shield.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
                             shieldImageView.setVisible(true);
+                            shield.increase_shield(false);
                         })
                 );
                 delayTimeline.play();
             }
 
-            if(character.getPos_x()==bombast.getX() && character.getPos_y()==bombast.getY()){
+            if(character.getPos_x() >= bombast.getPos_x() && character.getPos_x()<=(bombast.getPos_y()+120)){
                 System.out.println("voce perdeu");
             }
-
             // Log position after movement
-            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", Heath = " + character.getHealth());
-            System.out.println("Bomb position is : x = " + bombast.getX() + ", y = " + bombast.getY());
+            System.out.println("Character moved to: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", heart = " + character.getHealth());
+            System.out.println("Bomb: x = " + character.getPos_x() + ", y = " + character.getPos_y() + ", Score = " + character.getScore() + ", heart = " + character.getHealth());
 
-            //Heath's conditions
+            //heart's conditions
             switch (character.getHealth()){
                 case 3:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(true);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(false);
-                    heathShield.setVisible(false);
-                    break;
-                case 4:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(false);
-                    heathShield.setVisible(true);
+                    if(!shield.getShield()) {
+                        heartFull1.setVisible(true);
+                        heartFull2.setVisible(true);
+                        heartFull3.setVisible(true);
+                        heartEmpty1.setVisible(false);
+                        heartEmpty2.setVisible(false);
+                        heartEmpty3.setVisible(false);
+                        heartShield3.setVisible(false);
+                    }else{
+                        heartShield3.setVisible(true);
+                    }
                     break;
                 case 2:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(true);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(false);
-                    heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    if(!shield.getShield()) {
+                        heartFull1.setVisible(true);
+                        heartFull2.setVisible(true);
+                        heartFull3.setVisible(false);
+                        heartEmpty1.setVisible(false);
+                        heartEmpty2.setVisible(false);
+                        heartEmpty3.setVisible(true);
+                        heartShield2.setVisible(false);
+                    }else{
+                        heartShield2.setVisible(true);
+                    }
                     break;
                 case 1:
-                    heathFull1.setVisible(true);
-                    heathFull2.setVisible(false);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(false);
-                    heathEmpty2.setVisible(true);
-                    heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    if(!shield.getShield()) {
+                        heartFull1.setVisible(true);
+                        heartFull2.setVisible(false);
+                        heartFull3.setVisible(false);
+                        heartEmpty1.setVisible(false);
+                        heartEmpty2.setVisible(true);
+                        heartEmpty3.setVisible(true);
+                        heartShield1.setVisible(false);
+                    }else{
+                        heartShield1.setVisible(true);
+                    }
                     break;
                 case 0:
-                    heathFull1.setVisible(false);
-                    heathFull2.setVisible(false);
-                    heathFull3.setVisible(false);
-                    heathEmpty1.setVisible(true);
-                    heathEmpty2.setVisible(true);
-                    heathEmpty3.setVisible(true);
-                    heathShield.setVisible(false);
+                    heartFull1.setVisible(false);
+                    heartFull2.setVisible(false);
+                    heartFull3.setVisible(false);
+                    heartEmpty1.setVisible(true);
+                    heartEmpty2.setVisible(true);
+                    heartEmpty3.setVisible(true);
                     break;
             }
         });
-
 
         // Build the Window
         primaryStage.setScene(s1);

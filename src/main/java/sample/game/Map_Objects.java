@@ -1,8 +1,10 @@
 package sample.game;
 
+import javafx.scene.image.ImageView;
+
 import java.util.Random;
 
-public class  Map_Objects{
+public class  Map_Objects extends ImageView {
 
     private static int width;
     private static int height;
