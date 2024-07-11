@@ -1,0 +1,47 @@
+/* style.css */
+
+/* Button styles */
+.button {
+    -fx-background-color: black;
+    -fx-text-fill: yellow;
+    -fx-font-size: 12px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 15 15 15 15;
+    -fx-border-color: yellow;
+    -fx-cursor: hand;
+}
+
+/* Label styles */
+.label-white {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 10 0 0 10;
+}
+
+.label-yellow {
+    -fx-text-fill: yellow;
+    -fx-font-size: 26px;
+}
+
+.label-small-white {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+/* Additional styles for different label sizes and positions */
+.label-large {
+    -fx-font-size: 26px;
+}
+
+.label-medium {
+    -fx-font-size: 22px;
+}
+
+.label-timer {
+    "-fx-text-fill: white;" +
+    "-fx-font-size: 26px;" +
+    "-fx-text-fill: white;"+
+    "-fx-font-size: 26px;"+
+    "-fx-padding: 10 0 0 10"
+}

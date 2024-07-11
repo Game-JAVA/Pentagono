@@ -55,13 +55,12 @@ public class New_Game extends Application {
 
         // Carregar o arquivo CSS
         try {
-            String css = getClass().getResource("style.css").toExternalForm();
-            s1.getStylesheets().add(css);
-            s2.getStylesheets().add(css);
-            s3.getStylesheets().add(css);
+            s1.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+            s2.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+            s3.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
         } catch (NullPointerException e) {
             e.printStackTrace();
-            System.err.println("Error: 'style.css' not found. Ensure the file is in the correct path.");
+            System.err.println("Error: 'main.css' not found. Ensure the file is in the correct path.");
             return;
         }
 
@@ -206,44 +205,54 @@ public class New_Game extends Application {
         layout2.setBackground(new Background(background2));
         layout3.setBackground(new Background(background3));
 
-        Label label1 = new Label("Welcome to my game!");
-        label1.getStyleClass().add("label-yellow");
+        label2.setStyle(
 
-        // Create Timer Label
-        Label label2 = new Label("Time: 0");
-        label2.getStyleClass().add("label-white");
+                "-fx-text-fill: white;" +
+                        "-fx-font-size: 26px;" +
 
+                        "-fx-text-fill: white;"+
+                        "-fx-font-size: 26px;"+
+                        "-fx-padding: 10 0 0 10"
+
+        );
         // Create a new Label for Score
-        Label label3 = new Label("Score: 0");
+        Label label3 = new Label("SCORE:");
         label3.getStyleClass().add("label-white");
 
         // Create a new Label for Score
-        Label label4 = new Label("Points:");
+        Label label4 = new Label("00");
         label4.getStyleClass().add("label-white");
 
         // Create a new Label for Objectives
-        Label label5 = new Label("Objectives:");
-        label5.getStyleClass().add("label-yellow");
+        Label label5 = new Label("TIMER:");
+        label5.getStyleClass().add("label-white");
 
         // Create a new Label for Time
-        Label label6 = new Label("Time:");
+        Label label6 = new Label("Pentagon Blast");
         label6.getStyleClass().add("label-yellow");
 
         // Create a new Label for the instructions
-        Label label7 = new Label("Instructions:");
+        Label label7 = new Label("Game Objective:");
         label7.getStyleClass().add("label-yellow");
 
         // Create a new Label for Details
-        Label label8 = new Label("Details:");
+        Label label8 = new Label("How to Play:");
         label8.getStyleClass().add("label-white");
 
-        Label label9 = new Label("Use arrow keys to move.");
+        Label label9 = new Label("The main objective is to get the character through the levels without being blown up by the bombs.\n"+
+                "The difficulty increases as the player's score goes up.\nMore magical attacks appear on the screen as you progress;\n"+
+                "The game ends when you are hit by an attack and have no more lives left;\n"+
+                "There are some items to help:\n"+
+                "Apple: increases the character's score;\n"+
+                "Shield: Gives the character extra life;\n"+
+                "Boots: increases the character's speed.\n");
         label9.getStyleClass().add("label-small-white");
 
-        Label label10 = new Label("Avoid obstacles and collect items.");
+        Label label10 = new Label("W - Move forward;\n"+
+                "A - Move left;\n"+
+                "S - Move down;\n"+
+                "D - Move right.");
         label10.getStyleClass().add("label-small-white");
-
-
 
         // Initialize sounds
         try {
@@ -310,7 +319,6 @@ public class New_Game extends Application {
         layout3.getChildren().addAll(label6, label7, b4, label9, label10, keysImageView);
 
         layout2.getChildren().addAll(
-
                 // board(),
                 label2,
                 label3,
@@ -341,117 +349,47 @@ public class New_Game extends Application {
         label2.setLayoutX(1100);
         label2.setLayoutY(30);
 
-        label2.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 26px;" +
-
-                        "-fx-text-fill: white;"+
-                        "-fx-font-size: 26px;"+
-                        "-fx-padding: 10 0 0 10"
-        );
-        label3.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 20px;" +
-                        "-fx-padding: 10 0 0 10"
-        );
-
-        label4.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 20px;" +
-                        "-fx-padding: 10 0 0 10"
-        );
-
-        label5.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 20px;" +
-                        "-fx-padding: 10 0 0 10"
-        );
 
         // Set the position of the label3
         label3.setLayoutX(800);
         label3.setLayoutY(8);
 
-        label3.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 18px;" +
-                        "-fx-padding: 10 0 0 10"
-
-        );
-
         // Set the position of the label4
         label4.setLayoutX(800);
         label4.setLayoutY(30);
-
-        label4.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 22px;" +
-                        "-fx-padding: 10 0 0 10"
-
-        );
 
         // Set the position of the label5
         label5.setLayoutX(1100);
         label5.setLayoutY(8);
 
-        label5.setStyle(
-                "-fx-text-fill: white;" +
-                        "-fx-font-size: 18px;" +
-                        "-fx-padding: 10 0 0 10"
-        );
 
         // Set the position of the label6
         label6.setLayoutX(350);
         label6.setLayoutY(10);
 
-        label6.setStyle(
-                "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 26px;"
-        );
 
         // Set the position of the label7
         label7.setLayoutX(20);
         label7.setLayoutY(40);
-
-        label7.setStyle(
-                "-fx-text-fill: yellow;"+
-                        "-fx-font-size: 22px;"
-        );
 
         // Set the position of the label9
         label9.setLayoutX(20);
         label9.setLayoutY(75);
 
-        label9.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 16px;"
-        );
 
         // Set the position of the label10
         label10.setLayoutX(20);
         label10.setLayoutY(340);
 
-        label10.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 16px;"
-        );
 
         // Set the position of the label6
         label6.setLayoutX(350);
         label6.setLayoutY(10);
 
-        label6.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 26px;"
-        );
-
         // Set the position of the label7
         label7.setLayoutX(20);
         label7.setLayoutY(40);
 
-        label7.setStyle(
-                "-fx-text-fill: white;"+
-                        "-fx-font-size: 22px;"
-        );
 
         // Set initial position of the character
         character.setPos_y(MO.aleatoryPositionY() * squareSize + startY);
@@ -683,11 +621,7 @@ public class New_Game extends Application {
         int seconds = secondsElapsed % 60;
         label2.setText(String.format("%02d:%02d", minutes, seconds));
     }
-
-
     // INCREMENTAR IMAGEM DE FUNDO
-
-
 /*
 
     private void stopBackgroundSound() {
