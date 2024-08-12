@@ -42,7 +42,8 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 - **Sources:** All sounds were sourced from Freesound and uploaded to Dropbox.
 
 ## UML Diagram
-![alt text](<UML diagram.jpg>)
+![alt text](![Diagrama Jogo Java](https://github.com/user-attachments/assets/64a40c9f-c429-43d7-b3b5-d1b29005f9ea)
+)
 
 ## Requirements
 
