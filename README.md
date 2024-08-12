@@ -43,7 +43,8 @@ This is an action and strategy game in the style of Bomberman, with a medieval t
 
 ## UML Diagram
 <!--- ![alt text](<UML diagram.jpg>)-->
-![Diagrama Jogo Java drawio](https://github.com/user-attachments/assets/29e20158-7b27-4cbb-8b1a-d896b388d440)
+![Diagrama Jogo Java](https://github.com/user-attachments/assets/8548f3e4-25ee-41f5-ac4d-3a690d42b906)
+
 
 ## Requirements
 
